@@ -28,16 +28,16 @@ export default function SpeakerCard({ session }: SpeakerCardProps) {
             type='single'
             collapsible
             defaultValue='item'
-            className='w-full border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-200 bg-white dark:bg-gray-800/50 backdrop-blur-sm'
+            className='w-full border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden shadow-xs hover:shadow-md transition-all duration-200 bg-white dark:bg-gray-800/50 backdrop-blur-xs'
         >
             <AccordionItem value='item' className='border-none'>
-                <AccordionTrigger className='hover:no-underline p-6 pb-4 [&[data-state=open]]:pb-4'>
+                <AccordionTrigger className='hover:no-underline p-6 pb-4 data-[state=open]:pb-4'>
                     <div className='flex flex-col sm:flex-row gap-4 w-full text-left'>
                         {/* Speaker Info Section */}
                         <div className='flex items-center gap-4 flex-1 min-w-0'>
                             <Suspense
                                 fallback={
-                                    <Skeleton className='w-16 h-16 sm:w-20 sm:h-20 rounded-full flex-shrink-0' />
+                                    <Skeleton className='w-16 h-16 sm:w-20 sm:h-20 rounded-full shrink-0' />
                                 }
                             >
                                 <Image
@@ -45,7 +45,7 @@ export default function SpeakerCard({ session }: SpeakerCardProps) {
                                     alt={session.speakerName}
                                     width={80}
                                     height={80}
-                                    className='w-16 h-16 sm:w-20 sm:h-20 rounded-full object-cover flex-shrink-0 border-2 border-gray-200 dark:border-gray-600'
+                                    className='w-16 h-16 sm:w-20 sm:h-20 rounded-full object-cover shrink-0 border-2 border-gray-200 dark:border-gray-600'
                                 />
                             </Suspense>
                             <div className='flex flex-col gap-1 min-w-0 flex-1'>
@@ -80,7 +80,7 @@ export default function SpeakerCard({ session }: SpeakerCardProps) {
                 </AccordionTrigger>
                 
                 <AccordionContent className='px-6 pb-6 pt-2'>
-                    <div className='bg-gradient-to-r from-gray-50 to-gray-100 dark:from-gray-700/50 dark:to-gray-800/50 rounded-lg p-4 border border-gray-200 dark:border-gray-600'>
+                    <div className='bg-linear-to-r from-gray-50 to-gray-100 dark:from-gray-700/50 dark:to-gray-800/50 rounded-lg p-4 border border-gray-200 dark:border-gray-600'>
                         <h5 className='font-semibold text-gray-900 dark:text-gray-100 mb-3 text-sm uppercase tracking-wide'>
                             Talk Description
                         </h5>

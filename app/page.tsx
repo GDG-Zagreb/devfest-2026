@@ -33,9 +33,9 @@ const MainPage = () => {
                 <section className='min-h-[90vh] flex items-center justify-center py-20'>
                     <div className='max-w-6xl mx-auto text-center space-y-12'>
                         {/* Floating Badge */}
-                        <div className='inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-[#4285F4]/10 to-[#EA4335]/10 backdrop-blur-xl border border-[#4285F4]/20 shadow-2xl animate-float'>
+                        <div className='inline-flex items-center gap-2 px-6 py-3 rounded-full bg-linear-to-r from-[#4285F4]/10 to-[#EA4335]/10 backdrop-blur-xl border border-[#4285F4]/20 shadow-2xl animate-float'>
                             <Sparkles className='w-5 h-5 text-[#4285F4]' />
-                            <span className='text-sm font-semibold bg-gradient-to-r from-[#4285F4] to-[#EA4335] bg-clip-text text-transparent'>
+                            <span className='text-sm font-semibold bg-linear-to-r from-[#4285F4] to-[#EA4335] bg-clip-text text-transparent'>
                                 October 2026
                             </span>
                         </div>
@@ -43,10 +43,10 @@ const MainPage = () => {
                         {/* Main Headline */}
                         <div className='space-y-6'>
                             <h1 className='text-7xl md:text-8xl lg:text-9xl font-black tracking-tight'>
-                                <span className='block bg-gradient-to-r from-[#4285F4] via-[#EA4335] via-[#FBBC04] to-[#34A853] bg-clip-text text-transparent animate-gradient bg-[length:200%_200%]'>
+                                <span className='block bg-linear-to-r from-[#4285F4] via-[#EA4335] via-[#FBBC04] to-[#34A853] bg-clip-text text-transparent animate-gradient bg-size-[200%_200%]'>
                                     DevFest
                                 </span>
-                                <span className='block text-6xl md:text-7xl lg:text-8xl mt-2 bg-gradient-to-r from-[#4285F4] via-[#EA4335] to-[#FBBC04] bg-clip-text text-transparent'>
+                                <span className='block text-6xl md:text-7xl lg:text-8xl mt-2 bg-linear-to-r from-[#4285F4] via-[#EA4335] to-[#FBBC04] bg-clip-text text-transparent'>
                                     Croatia 2026
                                 </span>
                             </h1>
@@ -54,7 +54,7 @@ const MainPage = () => {
                             <p className='text-2xl md:text-3xl lg:text-4xl font-light text-gray-700 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed'>
                                 Where innovation meets community.
                                 <br />
-                                <span className='font-semibold bg-gradient-to-r from-[#4285F4] via-[#EA4335] to-[#FBBC04] bg-clip-text text-transparent'>
+                                <span className='font-semibold bg-linear-to-r from-[#4285F4] via-[#EA4335] to-[#FBBC04] bg-clip-text text-transparent'>
                                     Be part of something extraordinary.
                                 </span>
                             </p>
@@ -67,8 +67,8 @@ const MainPage = () => {
                                 target='_blank'
                                 className='group relative'
                             >
-                                <div className='absolute -inset-1 bg-gradient-to-r from-[#4285F4] via-[#EA4335] to-[#FBBC04] rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse' />
-                                <Button className='relative w-64 h-16 rounded-2xl text-xl font-bold bg-gradient-to-r from-[#4285F4] to-[#EA4335] hover:from-[#4285F4]/90 hover:to-[#EA4335]/90 text-white shadow-2xl transform transition-all duration-300 hover:scale-105'>
+                                <div className='absolute -inset-1 bg-linear-to-r from-[#4285F4] via-[#EA4335] to-[#FBBC04] rounded-2xl blur-sm opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse' />
+                                <Button className='relative w-64 h-16 rounded-2xl text-xl font-bold bg-linear-to-r from-[#4285F4] to-[#EA4335] hover:from-[#4285F4]/90 hover:to-[#EA4335]/90 text-white shadow-2xl transform transition-all duration-300 hover:scale-105'>
                                     <Ticket className='mr-3 w-6 h-6' />
                                     Get Tickets
                                 </Button>
@@ -87,11 +87,11 @@ const MainPage = () => {
 
                         {/* Stats Cards */}
                         <div className='grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto pt-12'>
-                            <div className='group relative overflow-hidden rounded-3xl bg-gradient-to-br from-white/80 to-white/40 dark:from-gray-800/80 dark:to-gray-900/40 backdrop-blur-xl border border-[#4285F4]/20 p-8 shadow-2xl hover:shadow-[#4285F4]/50 transition-all duration-500 hover:scale-105'>
-                                <div className='absolute inset-0 bg-gradient-to-br from-[#4285F4]/0 to-[#4285F4]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500' />
+                            <div className='group relative overflow-hidden rounded-3xl bg-linear-to-br from-white/80 to-white/40 dark:from-gray-800/80 dark:to-gray-900/40 backdrop-blur-xl border border-[#4285F4]/20 p-8 shadow-2xl hover:shadow-[#4285F4]/50 transition-all duration-500 hover:scale-105'>
+                                <div className='absolute inset-0 bg-linear-to-br from-[#4285F4]/0 to-[#4285F4]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500' />
                                 <div className='relative'>
                                     <Users className='w-10 h-10 text-[#4285F4] mb-4' />
-                                    <div className='text-4xl font-black bg-gradient-to-r from-[#4285F4] to-[#EA4335] bg-clip-text text-transparent'>
+                                    <div className='text-4xl font-black bg-linear-to-r from-[#4285F4] to-[#EA4335] bg-clip-text text-transparent'>
                                         10+
                                     </div>
                                     <div className='text-sm font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-wider'>
@@ -100,11 +100,11 @@ const MainPage = () => {
                                 </div>
                             </div>
 
-                            <div className='group relative overflow-hidden rounded-3xl bg-gradient-to-br from-white/80 to-white/40 dark:from-gray-800/80 dark:to-gray-900/40 backdrop-blur-xl border border-[#EA4335]/20 p-8 shadow-2xl hover:shadow-[#EA4335]/50 transition-all duration-500 hover:scale-105'>
-                                <div className='absolute inset-0 bg-gradient-to-br from-[#EA4335]/0 to-[#EA4335]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500' />
+                            <div className='group relative overflow-hidden rounded-3xl bg-linear-to-br from-white/80 to-white/40 dark:from-gray-800/80 dark:to-gray-900/40 backdrop-blur-xl border border-[#EA4335]/20 p-8 shadow-2xl hover:shadow-[#EA4335]/50 transition-all duration-500 hover:scale-105'>
+                                <div className='absolute inset-0 bg-linear-to-br from-[#EA4335]/0 to-[#EA4335]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500' />
                                 <div className='relative'>
                                     <Sparkles className='w-10 h-10 text-[#EA4335] mb-4' />
-                                    <div className='text-4xl font-black bg-gradient-to-r from-[#EA4335] to-[#FBBC04] bg-clip-text text-transparent'>
+                                    <div className='text-4xl font-black bg-linear-to-r from-[#EA4335] to-[#FBBC04] bg-clip-text text-transparent'>
                                         2
                                     </div>
                                     <div className='text-sm font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-wider'>
@@ -113,11 +113,11 @@ const MainPage = () => {
                                 </div>
                             </div>
 
-                            <div className='group relative overflow-hidden rounded-3xl bg-gradient-to-br from-white/80 to-white/40 dark:from-gray-800/80 dark:to-gray-900/40 backdrop-blur-xl border border-[#34A853]/20 p-8 shadow-2xl hover:shadow-[#34A853]/50 transition-all duration-500 hover:scale-105'>
-                                <div className='absolute inset-0 bg-gradient-to-br from-[#34A853]/0 to-[#34A853]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500' />
+                            <div className='group relative overflow-hidden rounded-3xl bg-linear-to-br from-white/80 to-white/40 dark:from-gray-800/80 dark:to-gray-900/40 backdrop-blur-xl border border-[#34A853]/20 p-8 shadow-2xl hover:shadow-[#34A853]/50 transition-all duration-500 hover:scale-105'>
+                                <div className='absolute inset-0 bg-linear-to-br from-[#34A853]/0 to-[#34A853]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500' />
                                 <div className='relative'>
                                     <MapPin className='w-10 h-10 text-[#34A853] mb-4' />
-                                    <div className='text-4xl font-black bg-gradient-to-r from-[#FBBC04] to-[#34A853] bg-clip-text text-transparent'>
+                                    <div className='text-4xl font-black bg-linear-to-r from-[#FBBC04] to-[#34A853] bg-clip-text text-transparent'>
                                         Zagreb
                                     </div>
                                     <div className='text-sm font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-wider'>
@@ -132,7 +132,7 @@ const MainPage = () => {
                 {/* Topics Section */}
                 <section className='py-20'>
                     <div className='max-w-6xl mx-auto'>
-                        <div className='relative overflow-hidden rounded-[3rem] bg-gradient-to-br from-white/80 to-white/40 dark:from-gray-800/80 dark:to-gray-900/40 backdrop-blur-xl border border-gray-200/50 dark:border-gray-700/50 p-12 md:p-16 shadow-2xl'>
+                        <div className='relative overflow-hidden rounded-[3rem] bg-linear-to-br from-white/80 to-white/40 dark:from-gray-800/80 dark:to-gray-900/40 backdrop-blur-xl border border-gray-200/50 dark:border-gray-700/50 p-12 md:p-16 shadow-2xl'>
                             <div className='relative text-center space-y-8'>
                                 <h2 className='text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-700 dark:text-gray-300'>
                                     Innovation Across All Platforms
@@ -169,7 +169,7 @@ const MainPage = () => {
                 {/* Location Section */}
                 <section className='py-20'>
                     <div className='max-w-6xl mx-auto'>
-                        <div className='relative overflow-hidden rounded-[3rem] bg-gradient-to-br from-white/80 to-white/40 dark:from-gray-800/80 dark:to-gray-900/40 backdrop-blur-xl border border-gray-200/50 dark:border-gray-700/50 p-12 shadow-2xl'>
+                        <div className='relative overflow-hidden rounded-[3rem] bg-linear-to-br from-white/80 to-white/40 dark:from-gray-800/80 dark:to-gray-900/40 backdrop-blur-xl border border-gray-200/50 dark:border-gray-700/50 p-12 shadow-2xl'>
                             <h2 className='text-2xl md:text-3xl font-semibold text-center mb-4 text-gray-700 dark:text-gray-300'>
                                 Location
                             </h2>
@@ -204,7 +204,7 @@ const MainPage = () => {
                 {/* Sponsors Section */}
                 <section id="sponsors" className='py-20'>
                     <div className='max-w-6xl mx-auto'>
-                        <div className='relative overflow-hidden rounded-[3rem] bg-gradient-to-br from-white/90 to-white/50 dark:from-gray-800/90 dark:to-gray-900/50 backdrop-blur-xl border border-gray-200/50 dark:border-gray-700/50 p-12 md:p-16 shadow-2xl'>
+                        <div className='relative overflow-hidden rounded-[3rem] bg-linear-to-br from-white/90 to-white/50 dark:from-gray-800/90 dark:to-gray-900/50 backdrop-blur-xl border border-gray-200/50 dark:border-gray-700/50 p-12 md:p-16 shadow-2xl'>
                             <div className='text-center space-y-8'>
                                 <div className='flex flex-col lg:flex-row items-center justify-center gap-4 mb-8 relative'>
                                     <div className='p-4 bg-gray-100 dark:bg-gray-700 rounded-3xl shadow-xl'>
@@ -238,16 +238,16 @@ const MainPage = () => {
                                         Showcase your brand to hundreds of passionate developers.
                                     </p>
 
-                                    <div className='relative overflow-hidden rounded-3xl bg-gradient-to-br from-purple-500/10 to-blue-500/10 backdrop-blur-xl border border-purple-500/20 p-8 shadow-xl'>
+                                    <div className='relative overflow-hidden rounded-3xl bg-linear-to-br from-purple-500/10 to-blue-500/10 backdrop-blur-xl border border-purple-500/20 p-8 shadow-xl'>
                                         <Button
                                             onClick={openModal}
-                                            className='w-full max-w-md h-16 rounded-2xl text-xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white shadow-2xl transform transition-all duration-300 hover:scale-105 mx-auto block'
+                                            className='w-full max-w-md h-16 rounded-2xl text-xl font-bold bg-linear-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white shadow-2xl transform transition-all duration-300 hover:scale-105 mx-auto block'
                                         >
                                             View Sponsorship Packages
                                         </Button>
                                     </div>
 
-                                    <div className='relative overflow-hidden rounded-3xl bg-gradient-to-br from-gray-50/80 to-gray-100/50 dark:from-gray-700/50 dark:to-gray-800/30 backdrop-blur-xl border border-gray-200 dark:border-gray-600 p-6 shadow-lg'>
+                                    <div className='relative overflow-hidden rounded-3xl bg-linear-to-br from-gray-50/80 to-gray-100/50 dark:from-gray-700/50 dark:to-gray-800/30 backdrop-blur-xl border border-gray-200 dark:border-gray-600 p-6 shadow-lg'>
                                         <div className='flex items-center justify-center gap-3 flex-wrap'>
                                             <svg className='w-6 h-6 text-purple-600 dark:text-purple-400' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
                                                 <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z' />
@@ -275,13 +275,13 @@ const MainPage = () => {
                         <div className='relative w-full h-full flex items-center justify-center p-4 animate-in zoom-in-95 duration-300'>
                             <button
                                 onClick={closeModal}
-                                className='absolute top-4 right-4 z-10 p-3 bg-white/20 hover:bg-white/30 rounded-full backdrop-blur-sm transition-all duration-200 hover:scale-110 animate-in slide-in-from-top-4 duration-300'
+                                className='absolute top-4 right-4 z-10 p-3 bg-white/20 hover:bg-white/30 rounded-full backdrop-blur-xs transition-all duration-200 hover:scale-110 animate-in slide-in-from-top-4 duration-300'
                             >
                                 <X className='w-8 h-8 text-white' />
                             </button>
 
                             <div className='relative max-w-7xl max-h-full'>
-                                <div className='mb-4 bg-black/70 backdrop-blur-sm rounded-lg p-4 text-white text-center'>
+                                <div className='mb-4 bg-black/70 backdrop-blur-xs rounded-lg p-4 text-white text-center'>
                                     <h3 className='text-xl font-bold mb-2'>DevFest 2026 Sponsorship Packages</h3>
                                     <p className='text-sm opacity-90'>
                                         Ready to become a sponsor? Contact us at{' '}
@@ -317,7 +317,7 @@ const MainPage = () => {
                 {/* Organizers Section */}
                 <section className='py-20'>
                     <div className='max-w-6xl mx-auto'>
-                        <div className='relative overflow-hidden rounded-[3rem] bg-gradient-to-br from-white/90 to-white/50 dark:from-gray-800/90 dark:to-gray-900/50 backdrop-blur-xl border border-gray-200/50 dark:border-gray-700/50 p-12 shadow-2xl'>
+                        <div className='relative overflow-hidden rounded-[3rem] bg-linear-to-br from-white/90 to-white/50 dark:from-gray-800/90 dark:to-gray-900/50 backdrop-blur-xl border border-gray-200/50 dark:border-gray-700/50 p-12 shadow-2xl'>
                             <h2 className='text-center mb-12 text-2xl md:text-3xl font-semibold text-gray-700 dark:text-gray-300'>
                                 Organized by
                             </h2>

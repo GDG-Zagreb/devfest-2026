@@ -93,7 +93,7 @@ export default function CommunityPartners() {
                     rel='noopener noreferrer'
                     className='block'
                 >
-                    <div className={`group relative bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 rounded-2xl p-8 shadow-lg border-2 border-dashed border-blue-300 dark:border-blue-600 hover:shadow-2xl transition-all duration-300 hover:scale-105 flex items-center justify-center ${CARD_HEIGHT}`}>
+                    <div className={`group relative bg-linear-to-br from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 rounded-2xl p-8 shadow-lg border-2 border-dashed border-blue-300 dark:border-blue-600 hover:shadow-2xl transition-all duration-300 hover:scale-105 flex items-center justify-center ${CARD_HEIGHT}`}>
                         <div className='text-center space-y-3'>
                             <Users className='w-12 h-12 text-blue-600 dark:text-blue-400 mx-auto' />
                             <p className='text-lg font-bold text-gray-800 dark:text-gray-200'>
