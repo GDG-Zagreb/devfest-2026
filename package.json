@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint .",
     "type-check": "tsc --noEmit",
     "type-check:watch": "tsc --noEmit --watch",
     "check": "npm run lint && npm run type-check"
@@ -24,8 +24,6 @@
     "autoprefixer": "^10.4.21",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
-    "eslint": "8.51.0",
-    "eslint-config-next": "^15.5.2",
     "framer-motion": "^10.16.4",
     "img-comparison-slider": "^8.0.1",
     "lucide-react": "^1.55.0",
@@ -40,5 +38,10 @@
     "tailwindcss-animate": "^1.0.7",
     "typescript": "^5.9.3",
     "yet-another-react-lightbox": "^3.25.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.3.7",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^15.5.27"
   }
 }
