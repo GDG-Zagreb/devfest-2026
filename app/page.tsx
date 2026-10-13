@@ -7,11 +7,23 @@ import CommunityPartners from '@/components/community-partners';
 import { Button } from '@/components/ui/button';
 import GDGZagrebLogo from '@/public/assets/GDG-Zagreb-logo@3x.png';
 import SponzorskiPaketi from '@/public/assets/sponzorski-paketi.png';
-import GDGKrapinaLogo from '@/public/gdg-krapina-logo.png';
-import { MapPin, Sparkles, Users, X, Smartphone, Globe, Cloud } from 'lucide-react';
+import { MapPin, Sparkles, Users, X, Smartphone, Globe, Cloud, Ticket } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
+
+// TODO: Replace with the actual DevFest Croatia promo video ID when available.
+// Current value is Big Buck Bunny (Creative Commons) as a safe placeholder.
+const HERO_VIDEO_ID = 'aqz-KE-bpKQ';
+
+// TODO: Replace with the real ticket URL once the Entrio event page is live.
+const TICKET_URL = '#';
+
+// RIT Croatia Zagreb — venue partner for the 2026 edition.
+const RIT_URL = 'https://www.croatia.rit.edu/';
+const VENUE_ADDRESS = 'Damira Tomljanovića Gavrana 15, 10000 Zagreb';
+const VENUE_MAPS_URL = 'https://www.google.com/maps/search/?api=1&query=RIT+Croatia+Zagreb+Damira+Tomljanovi%C4%87a+Gavrana+15';
+const VENUE_EMBED_URL = 'https://www.google.com/maps?q=RIT+Croatia+Zagreb+Damira+Tomljanovi%C4%87a+Gavrana+15,+Zagreb&output=embed';
 
 const MainPage = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -30,63 +42,89 @@ const MainPage = () => {
 
             <div className='container mx-auto px-4'>
                 {/* Hero Section */}
-                <section className='min-h-[90vh] flex items-center justify-center py-20'>
-                    <div className='max-w-6xl mx-auto text-center space-y-12'>
-                        {/* Floating Badge */}
-                        <div className='inline-flex items-center gap-2 px-6 py-3 rounded-full bg-linear-to-r from-[#4285F4]/10 to-[#EA4335]/10 backdrop-blur-xl border border-[#4285F4]/20 shadow-2xl animate-float'>
-                            <Sparkles className='w-5 h-5 text-[#4285F4]' />
-                            <span className='text-sm font-semibold bg-linear-to-r from-[#4285F4] to-[#EA4335] bg-clip-text text-transparent'>
-                                October 2026
-                            </span>
+                <section className='min-h-[90vh] flex items-center py-20'>
+                    <div className='max-w-6xl mx-auto w-full space-y-16'>
+                        <div className='grid gap-12 lg:grid-cols-2 lg:items-center'>
+                            {/* Left: text + CTA */}
+                            <div className='text-center lg:text-left space-y-8'>
+                                {/* Floating Badge */}
+                                <div className='inline-flex items-center gap-2 px-6 py-3 rounded-full bg-linear-to-r from-[#4285F4]/10 to-[#EA4335]/10 backdrop-blur-xl border border-[#4285F4]/20 shadow-2xl animate-float'>
+                                    <Sparkles className='w-5 h-5 text-[#4285F4]' />
+                                    <span className='text-sm font-semibold bg-linear-to-r from-[#4285F4] to-[#EA4335] bg-clip-text text-transparent'>
+                                        December 5, 2026
+                                    </span>
+                                </div>
+
+                                {/* Main Headline */}
+                                <div className='space-y-4'>
+                                    <h1 className='text-6xl md:text-7xl lg:text-8xl font-black tracking-tight'>
+                                        <span className='block bg-linear-to-r from-[#4285F4] via-[#EA4335] via-[#FBBC04] to-[#34A853] bg-clip-text text-transparent animate-gradient bg-size-[200%_200%]'>
+                                            DevFest
+                                        </span>
+                                        <span className='block text-5xl md:text-6xl lg:text-7xl mt-2 bg-linear-to-r from-[#4285F4] via-[#EA4335] to-[#FBBC04] bg-clip-text text-transparent'>
+                                            Croatia 2026
+                                        </span>
+                                    </h1>
+
+                                    {/* RIT co-brand */}
+                                    <Link
+                                        href={RIT_URL}
+                                        target='_blank'
+                                        rel='noopener noreferrer'
+                                        className='group inline-flex items-center justify-center lg:justify-start gap-4 pt-2'
+                                    >
+                                        <span className='text-xs md:text-sm uppercase tracking-widest text-gray-600 dark:text-gray-400 font-semibold'>
+                                            In partnership with
+                                        </span>
+                                        <Image
+                                            src='/partners/2026/rit-croatia-logo.svg'
+                                            alt='RIT Croatia'
+                                            width={140}
+                                            height={24}
+                                            className='invert dark:invert-0 opacity-85 group-hover:opacity-100 transition-opacity duration-300'
+                                        />
+                                    </Link>
+                                </div>
+
+                                <p className='text-xl md:text-2xl lg:text-3xl font-light text-gray-700 dark:text-gray-300 leading-relaxed'>
+                                    Where innovation meets community.
+                                    <br />
+                                    <span className='font-semibold bg-linear-to-r from-[#4285F4] via-[#EA4335] to-[#FBBC04] bg-clip-text text-transparent'>
+                                        Be part of something extraordinary.
+                                    </span>
+                                </p>
+
+                                {/* CTA */}
+                                <div className='flex items-center justify-center lg:justify-start pt-2'>
+                                    <Link
+                                        href={TICKET_URL}
+                                        target={TICKET_URL === '#' ? undefined : '_blank'}
+                                        className='group relative inline-block'
+                                    >
+                                        <div className='absolute -inset-1 bg-linear-to-r from-[#4285F4] via-[#EA4335] to-[#FBBC04] rounded-2xl blur-sm opacity-60 group-hover:opacity-90 transition duration-500 animate-pulse' />
+                                        <Button className='relative w-64 h-16 rounded-2xl text-xl font-bold bg-linear-to-r from-[#4285F4] to-[#EA4335] hover:from-[#4285F4]/90 hover:to-[#EA4335]/90 text-white shadow-2xl transform transition-all duration-300 hover:scale-105'>
+                                            <Ticket className='mr-3 w-6 h-6' />
+                                            Get Tickets
+                                        </Button>
+                                    </Link>
+                                </div>
+                            </div>
+
+                            {/* Right: video */}
+                            <div className='relative aspect-video rounded-2xl overflow-hidden shadow-2xl ring-1 ring-gray-200/50 dark:ring-gray-700/50 bg-black'>
+                                <iframe
+                                    className='absolute inset-0 w-full h-full'
+                                    src={`https://www.youtube-nocookie.com/embed/${HERO_VIDEO_ID}?rel=0`}
+                                    title='DevFest Croatia 2026 preview'
+                                    allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+                                    allowFullScreen
+                                    loading='lazy'
+                                />
+                            </div>
                         </div>
-
-                        {/* Main Headline */}
-                        <div className='space-y-6'>
-                            <h1 className='text-7xl md:text-8xl lg:text-9xl font-black tracking-tight'>
-                                <span className='block bg-linear-to-r from-[#4285F4] via-[#EA4335] via-[#FBBC04] to-[#34A853] bg-clip-text text-transparent animate-gradient bg-size-[200%_200%]'>
-                                    DevFest
-                                </span>
-                                <span className='block text-6xl md:text-7xl lg:text-8xl mt-2 bg-linear-to-r from-[#4285F4] via-[#EA4335] to-[#FBBC04] bg-clip-text text-transparent'>
-                                    Croatia 2026
-                                </span>
-                            </h1>
-
-                            <p className='text-2xl md:text-3xl lg:text-4xl font-light text-gray-700 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed'>
-                                Where innovation meets community.
-                                <br />
-                                <span className='font-semibold bg-linear-to-r from-[#4285F4] via-[#EA4335] to-[#FBBC04] bg-clip-text text-transparent'>
-                                    Be part of something extraordinary.
-                                </span>
-                            </p>
-                        </div>
-
-                        {/* CTA Buttons */}
-                        {/* <div className='flex flex-col sm:flex-row items-center justify-center gap-6 pt-8'>
-                            <Link
-                                href='https://www.entrio.hr/event/devfest-2025-21473'
-                                target='_blank'
-                                className='group relative'
-                            >
-                                <div className='absolute -inset-1 bg-linear-to-r from-[#4285F4] via-[#EA4335] to-[#FBBC04] rounded-2xl blur-sm opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse' />
-                                <Button className='relative w-64 h-16 rounded-2xl text-xl font-bold bg-linear-to-r from-[#4285F4] to-[#EA4335] hover:from-[#4285F4]/90 hover:to-[#EA4335]/90 text-white shadow-2xl transform transition-all duration-300 hover:scale-105'>
-                                    <Ticket className='mr-3 w-6 h-6' />
-                                    Get Tickets
-                                </Button>
-                            </Link>
-
-                            <Link href='/agenda' className='group'>
-                                <Button
-                                    variant='outline'
-                                    className='w-64 h-16 rounded-2xl text-xl font-semibold border-2 border-[#4285F4]/50 hover:border-[#4285F4] bg-white/50 dark:bg-gray-900/50 backdrop-blur-xl shadow-xl transform transition-all duration-300 hover:scale-105'
-                                >
-                                    <Calendar className='mr-3 w-6 h-6' />
-                                    View Agenda
-                                </Button>
-                            </Link>
-                        </div> */}
 
                         {/* Stats Cards */}
-                        <div className='grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto pt-12'>
+                        <div className='grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto'>
                             <div className='group relative overflow-hidden rounded-3xl bg-linear-to-br from-white/80 to-white/40 dark:from-gray-800/80 dark:to-gray-900/40 backdrop-blur-xl border border-[#4285F4]/20 p-8 shadow-2xl hover:shadow-[#4285F4]/50 transition-all duration-500 hover:scale-105'>
                                 <div className='absolute inset-0 bg-linear-to-br from-[#4285F4]/0 to-[#4285F4]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500' />
                                 <div className='relative'>
@@ -121,7 +159,7 @@ const MainPage = () => {
                                         Zagreb
                                     </div>
                                     <div className='text-sm font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-wider'>
-                                        WESPA Lounge
+                                        RIT Croatia
                                     </div>
                                 </div>
                             </div>
@@ -173,29 +211,33 @@ const MainPage = () => {
                             <h2 className='text-2xl md:text-3xl font-semibold text-center mb-4 text-gray-700 dark:text-gray-300'>
                                 Location
                             </h2>
-                            <Link href='https://wespa.hr/' target='_blank'>
-                                <h3 className='text-center mb-12 text-xl md:text-2xl font-medium text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 hover:scale-105 transition-all duration-300'>
-                                    WESPA Business & Lounge, Zagreb
+                            <Link href={RIT_URL} target='_blank' rel='noopener noreferrer'>
+                                <h3 className='text-center mb-2 text-xl md:text-2xl font-medium text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 hover:scale-105 transition-all duration-300'>
+                                    RIT Croatia Zagreb
                                 </h3>
                             </Link>
-                            <div className='flex flex-col lg:flex-row gap-8 justify-between w-full'>
-                                <div className='w-full lg:w-auto lg:h-[400px] rounded-3xl overflow-hidden shadow-2xl'>
-                                    <Image
-                                        className='w-full h-full object-cover hover:scale-110 transition-transform duration-700'
-                                        src={'/wespa-lounge.jpg'}
-                                        alt={'Wespa spaces lounge'}
-                                        height={400}
-                                        width={400}
-                                    />
-                                </div>
-                                <div className='w-full lg:h-[400px] rounded-3xl overflow-hidden shadow-2xl'>
-                                    <iframe
-                                        className='w-full h-full'
-                                        src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2781.4632311407963!2d15.999859577358484!3d45.801980410836315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4765d7403d03984b%3A0x9e5d18ec57e2bd78!2sWESPA%20Business%20%26%20Lounge!5e0!3m2!1sen!2shr!4v1693745621894!5m2!1sen!2shr'
-                                        loading='lazy'
-                                        referrerPolicy='no-referrer-when-downgrade'
-                                    />
-                                </div>
+                            <p className='text-center mb-10 text-base md:text-lg text-gray-500 dark:text-gray-500'>
+                                {VENUE_ADDRESS}
+                            </p>
+                            <div className='w-full h-[400px] md:h-[500px] rounded-3xl overflow-hidden shadow-2xl'>
+                                <iframe
+                                    className='w-full h-full'
+                                    src={VENUE_EMBED_URL}
+                                    title='Map to RIT Croatia Zagreb'
+                                    loading='lazy'
+                                    referrerPolicy='no-referrer-when-downgrade'
+                                />
+                            </div>
+                            <div className='flex justify-center mt-6'>
+                                <Link
+                                    href={VENUE_MAPS_URL}
+                                    target='_blank'
+                                    rel='noopener noreferrer'
+                                    className='inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/80 dark:bg-gray-800/80 backdrop-blur-xl border border-gray-200 dark:border-gray-700 text-sm font-semibold text-gray-700 dark:text-gray-300 hover:bg-white dark:hover:bg-gray-800 hover:scale-105 shadow-md transition-all duration-300'
+                                >
+                                    <MapPin className='w-4 h-4' />
+                                    Open in Google Maps
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -327,17 +369,6 @@ const MainPage = () => {
                                         src={GDGZagrebLogo}
                                         alt='GDG Zagreb'
                                         height={50}
-                                    />
-                                </Link>
-                                <Link
-                                    href='https://gdg.community.dev/gdg-krapina/'
-                                    target='_blank'
-                                    className='transform hover:scale-110 transition-transform duration-300'
-                                >
-                                    <Image
-                                        src={GDGKrapinaLogo}
-                                        alt='GDG Krapina'
-                                        height={140}
                                     />
                                 </Link>
                             </div>

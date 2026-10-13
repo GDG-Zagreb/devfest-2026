@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a **Next.js 15** website for the **DevFest 2025** conference organized by GDG Zagreb and GDG Krapina. The site showcases speakers, agenda, sponsors, and provides information about the annual DevFest Croatia conference.
+This is a **Next.js 16** website for the **DevFest Croatia 2026** conference organized by GDG Zagreb. The site showcases speakers, agenda, sponsors, and provides information about the annual DevFest Croatia conference.
 
 ## Development Commands
 

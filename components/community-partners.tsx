@@ -7,6 +7,12 @@ type Partner = {
     name: string;
     logo: string;
     website?: string;
+    /**
+     * The partner cards use a light background in both themes. Set this for
+     * logos that ship as white (e.g. RIT Croatia's footer logo) so they stay
+     * visible on the light card.
+     */
+    invertOnCard?: boolean;
 };
 
 export default function CommunityPartners() {
@@ -15,20 +21,11 @@ export default function CommunityPartners() {
 
     const partners: Partner[] = [
         {
-            name: 'The Geek Gathering',
-            logo: '/partners/2025/TGG_logo_black.svg',
-            website: 'https://thegeekgathering.org/'
+            name: 'RIT Croatia',
+            logo: '/partners/2026/rit-croatia-logo.svg',
+            website: 'https://www.croatia.rit.edu/',
+            invertOnCard: true,
         },
-        {
-            name: 'Tabu',
-            logo: '/partners/2025/tabu-logo.svg',
-            website: 'https://tabu.hr/'
-        },
-        {
-            name: 'Wespa',
-            logo: '/partners/2025/wespa-logo.svg',
-            website: 'https://wespa.hr/en/'
-        }
     ];
 
     return (
@@ -38,7 +35,7 @@ export default function CommunityPartners() {
                 <div className='flex items-center justify-center gap-3 mb-4'>
                     <Users className='w-8 h-8 text-blue-600' />
                     <h2 className='text-3xl md:text-4xl font-bold text-gray-800 dark:text-gray-200'>
-                        Our Community Partners in 2025
+                        Our Community Partners
                     </h2>
                 </div>
                 <p className='text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto'>
@@ -60,7 +57,7 @@ export default function CommunityPartners() {
                                     src={partner.logo}
                                     alt={`${partner.name} logo`}
                                     fill
-                                    className='object-contain transition-all duration-300 p-4'
+                                    className={`object-contain transition-all duration-300 p-4 ${partner.invertOnCard ? 'invert' : ''}`}
                                     sizes='(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw'
                                 />
                             </div>
