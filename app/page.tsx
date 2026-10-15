@@ -1,6 +1,9 @@
 'use client';
 
-import ImageGallery from '@/components/image-gallery';
+import ImageMarquee from '@/components/image-marquee';
+// Alternate gallery: `@/components/image-gallery` (enlarged in-place mosaic, Option A).
+// To swap back, replace the ImageMarquee import above and the <ImageMarquee /> render
+// below with their ImageGallery equivalents.
 import PoweredBy from '@/components/powered-by';
 import Sponsors from '@/components/sponsors';
 import CommunityPartners from '@/components/community-partners';
@@ -13,7 +16,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 
+// Horizontal video for desktop (16:9).
 const HERO_VIDEO_ID = 'mLDa5ZLpp0Q';
+// Vertical Shorts clip for mobile (9:16).
+const HERO_VIDEO_SHORT_ID = '4QwAqwQ6zPs';
 
 // TODO: Replace with the real ticket URL once ticketing goes live,
 // then restore the "Get Tickets" button in the hero (replaces the
@@ -34,22 +40,22 @@ const MainPage = () => {
 
     return (
         <div className='relative overflow-hidden'>
-            {/* Animated Background Blobs */}
+            {/* Ambient Background Blobs — subtle, decorative */}
             <div className='fixed inset-0 -z-10 overflow-hidden pointer-events-none'>
-                <div className='absolute top-0 -left-40 w-96 h-96 bg-accent-blue/30 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob' />
-                <div className='absolute top-0 -right-40 w-96 h-96 bg-accent-red/30 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000' />
-                <div className='absolute -bottom-40 left-1/2 w-96 h-96 bg-accent-yellow/30 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-4000' />
+                <div className='absolute top-0 -left-40 w-96 h-96 bg-accent-blue/20 rounded-full mix-blend-multiply filter blur-3xl opacity-40' />
+                <div className='absolute top-0 -right-40 w-96 h-96 bg-accent-red/20 rounded-full mix-blend-multiply filter blur-3xl opacity-40' />
+                <div className='absolute -bottom-40 left-1/2 w-96 h-96 bg-accent-yellow/20 rounded-full mix-blend-multiply filter blur-3xl opacity-40' />
             </div>
 
             <div className='container mx-auto px-4'>
                 {/* Hero Section */}
-                <section className='min-h-[90vh] flex items-center py-20'>
-                    <div className='max-w-6xl mx-auto w-full space-y-16'>
-                        <div className='grid gap-12 lg:grid-cols-2 lg:items-center'>
+                <section className='py-16 md:py-20'>
+                    <div className='max-w-6xl mx-auto w-full space-y-12'>
+                        <div className='grid gap-10 lg:grid-cols-2 lg:items-center'>
                             {/* Left: text + CTA */}
-                            <div className='text-center lg:text-left space-y-8'>
+                            <div className='text-center lg:text-left space-y-6'>
                                 {/* Topic pill */}
-                                <div className='inline-flex items-center gap-2 px-6 py-3 rounded-full bg-linear-to-r from-accent-blue/10 to-accent-red/10 backdrop-blur-xl border border-accent-blue/20 shadow-2xl'>
+                                <div className='inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent-blue/10 border border-accent-blue/20'>
                                     <Sparkles className='w-5 h-5 text-accent-blue' />
                                     <span className='text-sm font-semibold text-accent-blue'>
                                         Mobile, Web, Cloud, AI
@@ -101,14 +107,11 @@ const MainPage = () => {
 
                                 {/* Tickets availability announcement (replaces the Get Tickets button until ticketing goes live) */}
                                 <div className='flex items-center justify-center lg:justify-start pt-2'>
-                                    <div className='relative inline-block'>
-                                        <div className='absolute -inset-1 bg-linear-to-r from-accent-blue via-accent-red to-accent-yellow rounded-2xl blur-sm opacity-50 animate-pulse' />
-                                        <div className='relative inline-flex items-center gap-3 px-8 h-16 rounded-2xl bg-white/90 dark:bg-gray-900/90 backdrop-blur-xl border border-accent-blue/30 shadow-2xl'>
-                                            <Ticket className='w-6 h-6 text-accent-blue' />
-                                            <span className='text-xl md:text-2xl font-bold text-accent-blue'>
-                                                Tickets available soon
-                                            </span>
-                                        </div>
+                                    <div className='inline-flex items-center gap-3 px-6 h-14 rounded-2xl bg-accent-blue/5 border border-accent-blue/30'>
+                                        <Ticket className='w-5 h-5 text-accent-blue' />
+                                        <span className='text-lg md:text-xl font-semibold text-accent-blue'>
+                                            Tickets available soon
+                                        </span>
                                     </div>
                                 </div>
                                 {/*
@@ -128,57 +131,62 @@ const MainPage = () => {
                                 */}
                             </div>
 
-                            {/* Right: video */}
-                            <div className='relative aspect-video rounded-2xl overflow-hidden shadow-2xl ring-1 ring-gray-200/50 dark:ring-gray-700/50 bg-black'>
-                                <iframe
-                                    className='absolute inset-0 w-full h-full'
-                                    src={`https://www.youtube-nocookie.com/embed/${HERO_VIDEO_ID}?rel=0`}
-                                    title='DevFest Croatia 2026 preview'
-                                    allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-                                    allowFullScreen
-                                    loading='lazy'
-                                />
+                            {/* Right: video — vertical Shorts on mobile, horizontal preview on desktop */}
+                            <div className='flex justify-center lg:block'>
+                                {/* Mobile: vertical Shorts */}
+                                <div className='relative aspect-[9/16] w-full max-w-sm rounded-2xl overflow-hidden shadow-2xl ring-1 ring-gray-200/50 dark:ring-gray-700/50 bg-black lg:hidden'>
+                                    <iframe
+                                        className='absolute inset-0 w-full h-full'
+                                        src={`https://www.youtube-nocookie.com/embed/${HERO_VIDEO_SHORT_ID}?rel=0`}
+                                        title='DevFest Croatia 2026 — short clip'
+                                        allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+                                        allowFullScreen
+                                        loading='lazy'
+                                    />
+                                </div>
+                                {/* Desktop: horizontal preview */}
+                                <div className='relative aspect-video rounded-2xl overflow-hidden shadow-2xl ring-1 ring-gray-200/50 dark:ring-gray-700/50 bg-black hidden lg:block'>
+                                    <iframe
+                                        className='absolute inset-0 w-full h-full'
+                                        src={`https://www.youtube-nocookie.com/embed/${HERO_VIDEO_ID}?rel=0`}
+                                        title='DevFest Croatia 2026 preview'
+                                        allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+                                        allowFullScreen
+                                        loading='lazy'
+                                    />
+                                </div>
                             </div>
                         </div>
 
                         {/* Stats Cards */}
-                        <div className='grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto'>
-                            <div className='group relative overflow-hidden rounded-3xl bg-linear-to-br from-white/80 to-white/40 dark:from-gray-800/80 dark:to-gray-900/40 backdrop-blur-xl border border-accent-blue/20 p-8 shadow-2xl hover:shadow-accent-blue/50 transition-all duration-500 hover:scale-105'>
-                                <div className='absolute inset-0 bg-linear-to-br from-accent-blue/0 to-accent-blue/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500' />
-                                <div className='relative'>
-                                    <Users className='w-10 h-10 text-accent-blue mb-4' />
-                                    <div className='text-4xl font-black text-accent-blue'>
-                                        10+
-                                    </div>
-                                    <div className='text-sm font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-wider'>
-                                        Expert Speakers
-                                    </div>
+                        <div className='grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto'>
+                            <div className='group rounded-2xl bg-white/60 dark:bg-gray-900/40 border border-accent-blue/20 p-5 transition-colors hover:border-accent-blue/50'>
+                                <Users className='w-7 h-7 text-accent-blue mb-3' />
+                                <div className='text-3xl font-bold text-accent-blue'>
+                                    10+
+                                </div>
+                                <div className='text-xs font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-wider mt-1'>
+                                    Expert Speakers
                                 </div>
                             </div>
 
-                            <div className='group relative overflow-hidden rounded-3xl bg-linear-to-br from-white/80 to-white/40 dark:from-gray-800/80 dark:to-gray-900/40 backdrop-blur-xl border border-accent-red/20 p-8 shadow-2xl hover:shadow-accent-red/50 transition-all duration-500 hover:scale-105'>
-                                <div className='absolute inset-0 bg-linear-to-br from-accent-red/0 to-accent-red/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500' />
-                                <div className='relative'>
-                                    <Sparkles className='w-10 h-10 text-accent-red mb-4' />
-                                    <div className='text-4xl font-black text-accent-red'>
-                                        2
-                                    </div>
-                                    <div className='text-sm font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-wider'>
-                                        Parallel Stages
-                                    </div>
+                            <div className='group rounded-2xl bg-white/60 dark:bg-gray-900/40 border border-accent-red/20 p-5 transition-colors hover:border-accent-red/50'>
+                                <Sparkles className='w-7 h-7 text-accent-red mb-3' />
+                                <div className='text-3xl font-bold text-accent-red'>
+                                    2
+                                </div>
+                                <div className='text-xs font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-wider mt-1'>
+                                    Parallel Stages
                                 </div>
                             </div>
 
-                            <div className='group relative overflow-hidden rounded-3xl bg-linear-to-br from-white/80 to-white/40 dark:from-gray-800/80 dark:to-gray-900/40 backdrop-blur-xl border border-accent-green/20 p-8 shadow-2xl hover:shadow-accent-green/50 transition-all duration-500 hover:scale-105'>
-                                <div className='absolute inset-0 bg-linear-to-br from-accent-green/0 to-accent-green/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500' />
-                                <div className='relative'>
-                                    <MapPin className='w-10 h-10 text-accent-green mb-4' />
-                                    <div className='text-4xl font-black text-accent-green'>
-                                        Zagreb
-                                    </div>
-                                    <div className='text-sm font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-wider'>
-                                        RIT Croatia
-                                    </div>
+                            <div className='group rounded-2xl bg-white/60 dark:bg-gray-900/40 border border-accent-green/20 p-5 transition-colors hover:border-accent-green/50'>
+                                <MapPin className='w-7 h-7 text-accent-green mb-3' />
+                                <div className='text-3xl font-bold text-accent-green'>
+                                    Zagreb
+                                </div>
+                                <div className='text-xs font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-wider mt-1'>
+                                    RIT Croatia
                                 </div>
                             </div>
                         </div>
@@ -186,148 +194,123 @@ const MainPage = () => {
                 </section>
 
                 {/* Topics Section */}
-                <section className='py-20'>
-                    <div className='max-w-6xl mx-auto'>
-                        <div className='relative overflow-hidden rounded-[3rem] bg-linear-to-br from-white/80 to-white/40 dark:from-gray-800/80 dark:to-gray-900/40 backdrop-blur-xl border border-gray-200/50 dark:border-gray-700/50 p-12 md:p-16 shadow-2xl'>
-                            <div className='relative text-center space-y-8'>
-                                <h2 className='text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-700 dark:text-gray-300'>
-                                    Innovation Across All Platforms
-                                </h2>
+                <section className='py-16'>
+                    <div className='max-w-6xl mx-auto text-center space-y-6'>
+                        <h2 className='text-2xl md:text-3xl font-semibold text-gray-800 dark:text-gray-200'>
+                            Innovation Across All Platforms
+                        </h2>
 
-                                <div className='flex flex-wrap items-center justify-center gap-4 text-xl md:text-2xl font-medium'>
-                                    <span className='px-6 py-3 rounded-full bg-accent-blue/10 dark:bg-accent-blue/20 border border-accent-blue/30 text-accent-blue dark:text-accent-blue shadow-md flex items-center gap-2'>
-                                        <Smartphone className='w-5 h-5 md:w-6 md:h-6' />
-                                        Mobile
-                                    </span>
-                                    <span className='px-6 py-3 rounded-full bg-accent-red/10 dark:bg-accent-red/20 border border-accent-red/30 text-accent-red dark:text-accent-red shadow-md flex items-center gap-2'>
-                                        <Globe className='w-5 h-5 md:w-6 md:h-6' />
-                                        Web
-                                    </span>
-                                    <span className='px-6 py-3 rounded-full bg-accent-yellow/10 dark:bg-accent-yellow/20 border border-accent-yellow/30 text-accent-yellow dark:text-accent-yellow shadow-md flex items-center gap-2'>
-                                        <Cloud className='w-5 h-5 md:w-6 md:h-6' />
-                                        Cloud
-                                    </span>
-                                    <span className='px-6 py-3 rounded-full bg-accent-green/10 dark:bg-accent-green/20 border border-accent-green/30 text-accent-green dark:text-accent-green shadow-md flex items-center gap-2'>
-                                        <Sparkles className='w-5 h-5 md:w-6 md:h-6' />
-                                        AI
-                                    </span>
-                                </div>
-                            </div>
+                        <div className='flex flex-wrap items-center justify-center gap-3 text-base md:text-lg font-medium'>
+                            <span className='px-4 py-2 rounded-full bg-accent-blue/10 border border-accent-blue/30 text-accent-blue flex items-center gap-2'>
+                                <Smartphone className='w-4 h-4' />
+                                Mobile
+                            </span>
+                            <span className='px-4 py-2 rounded-full bg-accent-red/10 border border-accent-red/30 text-accent-red flex items-center gap-2'>
+                                <Globe className='w-4 h-4' />
+                                Web
+                            </span>
+                            <span className='px-4 py-2 rounded-full bg-accent-yellow/10 border border-accent-yellow/30 text-accent-yellow flex items-center gap-2'>
+                                <Cloud className='w-4 h-4' />
+                                Cloud
+                            </span>
+                            <span className='px-4 py-2 rounded-full bg-accent-green/10 border border-accent-green/30 text-accent-green flex items-center gap-2'>
+                                <Sparkles className='w-4 h-4' />
+                                AI
+                            </span>
                         </div>
                     </div>
                 </section>
 
-                {/* Gallery Section */}
-                <section className='py-20'>
-                    <ImageGallery />
+                {/* Gallery Section — Option B (ImageMarquee, edge-to-edge band) is active.
+                    Option A (ImageGallery, enlarged mosaic) lives in `components/image-gallery.tsx`;
+                    swap it in by changing the import above and the component below. */}
+                <section className='py-16'>
+                    <ImageMarquee />
                 </section>
 
                 {/* Location Section */}
-                <section className='py-20'>
-                    <div className='max-w-6xl mx-auto'>
-                        <div className='relative overflow-hidden rounded-[3rem] bg-linear-to-br from-white/80 to-white/40 dark:from-gray-800/80 dark:to-gray-900/40 backdrop-blur-xl border border-gray-200/50 dark:border-gray-700/50 p-12 shadow-2xl'>
-                            <h2 className='text-2xl md:text-3xl font-semibold text-center mb-4 text-gray-700 dark:text-gray-300'>
+                <section className='py-16'>
+                    <div className='max-w-6xl mx-auto space-y-6'>
+                        <div className='text-center space-y-1'>
+                            <h2 className='text-2xl md:text-3xl font-semibold text-gray-800 dark:text-gray-200'>
                                 Location
                             </h2>
-                            <Link href={RIT_URL} target='_blank' rel='noopener noreferrer'>
-                                <h3 className='text-center mb-2 text-xl md:text-2xl font-medium text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 hover:scale-105 transition-all duration-300'>
+                            <Link href={RIT_URL} target='_blank' rel='noopener noreferrer' className='inline-block'>
+                                <h3 className='text-lg md:text-xl font-medium text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors'>
                                     RIT Croatia Zagreb
                                 </h3>
                             </Link>
-                            <p className='text-center mb-10 text-base md:text-lg text-gray-500 dark:text-gray-500'>
+                            <p className='text-sm md:text-base text-gray-500 dark:text-gray-500'>
                                 {VENUE_ADDRESS}
                             </p>
-                            <div className='w-full h-[400px] md:h-[500px] rounded-3xl overflow-hidden shadow-2xl'>
-                                <iframe
-                                    className='w-full h-full'
-                                    src={VENUE_EMBED_URL}
-                                    title='Map to RIT Croatia Zagreb'
-                                    loading='lazy'
-                                    referrerPolicy='no-referrer-when-downgrade'
-                                />
-                            </div>
-                            <div className='flex justify-center mt-6'>
-                                <Link
-                                    href={VENUE_MAPS_URL}
-                                    target='_blank'
-                                    rel='noopener noreferrer'
-                                    className='inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/80 dark:bg-gray-800/80 backdrop-blur-xl border border-gray-200 dark:border-gray-700 text-sm font-semibold text-gray-700 dark:text-gray-300 hover:bg-white dark:hover:bg-gray-800 hover:scale-105 shadow-md transition-all duration-300'
-                                >
-                                    <MapPin className='w-4 h-4' />
-                                    Open in Google Maps
-                                </Link>
-                            </div>
+                        </div>
+                        <div className='w-full h-[400px] md:h-[500px] rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-800'>
+                            <iframe
+                                className='w-full h-full'
+                                src={VENUE_EMBED_URL}
+                                title='Map to RIT Croatia Zagreb'
+                                loading='lazy'
+                                referrerPolicy='no-referrer-when-downgrade'
+                            />
+                        </div>
+                        <div className='flex justify-center'>
+                            <Link
+                                href={VENUE_MAPS_URL}
+                                target='_blank'
+                                rel='noopener noreferrer'
+                                className='inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-gray-300 dark:border-gray-700 text-sm font-semibold text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors'
+                            >
+                                <MapPin className='w-4 h-4' />
+                                Open in Google Maps
+                            </Link>
                         </div>
                     </div>
                 </section>
 
                 {/* Sponsors Section */}
-                <section id="sponsors" className='py-20'>
-                    <div className='max-w-6xl mx-auto'>
-                        <div className='relative overflow-hidden rounded-[3rem] bg-linear-to-br from-white/90 to-white/50 dark:from-gray-800/90 dark:to-gray-900/50 backdrop-blur-xl border border-gray-200/50 dark:border-gray-700/50 p-12 md:p-16 shadow-2xl'>
-                            <div className='text-center space-y-8'>
-                                <div className='flex flex-col lg:flex-row items-center justify-center gap-4 mb-8 relative'>
-                                    <div className='p-4 bg-gray-100 dark:bg-gray-700 rounded-3xl shadow-xl'>
-                                        <svg className='w-10 h-10 text-gray-600 dark:text-gray-400' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
-                                            <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z' />
-                                        </svg>
-                                    </div>
-                                    <h2 className='text-2xl md:text-3xl font-semibold text-gray-700 dark:text-gray-300'>
-                                        Become a Sponsor
-                                    </h2>
+                <section id="sponsors" className='py-16'>
+                    <div className='max-w-3xl mx-auto text-center space-y-5 relative'>
+                        <h2 className='text-2xl md:text-3xl font-semibold text-gray-800 dark:text-gray-200'>
+                            Become a Sponsor
+                        </h2>
+                        <button
+                            onClick={() => {
+                                if (typeof window !== 'undefined') {
+                                    navigator.clipboard.writeText(`${window.location.origin}/#sponsors`);
+                                }
+                            }}
+                            className='absolute top-0 right-0 p-2 text-gray-400 hover:text-gray-600 dark:text-gray-500 dark:hover:text-gray-300 transition-colors rounded-full hover:bg-gray-500/10'
+                            title='Copy link to sponsors section'
+                        >
+                            <svg className='w-5 h-5' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+                                <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1' />
+                            </svg>
+                        </button>
 
-                                    <button
-                                        onClick={() => {
-                                            if (typeof window !== 'undefined') {
-                                                navigator.clipboard.writeText(`${window.location.origin}/#sponsors`);
-                                            }
-                                        }}
-                                        className='absolute top-0 right-0 p-3 text-gray-400 hover:text-gray-600 dark:text-gray-500 dark:hover:text-gray-300 transition-colors duration-200 opacity-60 hover:opacity-100 rounded-full hover:bg-gray-500/10'
-                                        title='Copy link to sponsors section'
-                                    >
-                                        <svg className='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
-                                            <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1' />
-                                        </svg>
-                                    </button>
-                                </div>
+                        <p className='text-base md:text-lg text-gray-600 dark:text-gray-400'>
+                            Join us in shaping the future of tech in Croatia. Showcase your brand to hundreds of passionate developers.
+                        </p>
 
-                                <div className='max-w-3xl mx-auto space-y-8'>
-                                    <p className='text-xl md:text-2xl text-gray-700 dark:text-gray-300 font-medium'>
-                                        Join us in shaping the future of tech in Croatia.
-                                        <br />
-                                        Showcase your brand to hundreds of passionate developers.
-                                    </p>
-
-                                    {/* Hidden until sponsorship packages are finalized.
-                                        <div className='relative overflow-hidden rounded-3xl bg-linear-to-br from-purple-500/10 to-blue-500/10 backdrop-blur-xl border border-purple-500/20 p-8 shadow-xl'>
-                                            <Button
-                                                onClick={openModal}
-                                                className='w-full max-w-md h-16 rounded-2xl text-xl font-bold bg-linear-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white shadow-2xl transform transition-all duration-300 hover:scale-105 mx-auto block'
-                                            >
-                                                View Sponsorship Packages
-                                            </Button>
-                                        </div>
-                                    */}
-
-                                    <div className='relative overflow-hidden rounded-3xl bg-linear-to-br from-gray-50/80 to-gray-100/50 dark:from-gray-700/50 dark:to-gray-800/30 backdrop-blur-xl border border-gray-200 dark:border-gray-600 p-6 shadow-lg'>
-                                        <div className='flex items-center justify-center gap-3 flex-wrap'>
-                                            <svg className='w-6 h-6 text-purple-600 dark:text-purple-400' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
-                                                <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z' />
-                                            </svg>
-                                            <span className='text-lg font-semibold text-gray-800 dark:text-gray-200'>
-                                                Contact us at{' '}
-                                                <a
-                                                    href='mailto:zagrebgdg@gmail.com'
-                                                    className='text-purple-600 dark:text-purple-400 font-bold hover:text-purple-700 dark:hover:text-purple-300 transition-colors duration-200 underline decoration-2 underline-offset-2'
-                                                >
-                                                    zagrebgdg@gmail.com
-                                                </a>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
+                        {/* Hidden until sponsorship packages are finalized.
+                            <div className='relative overflow-hidden rounded-3xl bg-linear-to-br from-purple-500/10 to-blue-500/10 backdrop-blur-xl border border-purple-500/20 p-8 shadow-xl'>
+                                <Button
+                                    onClick={openModal}
+                                    className='w-full max-w-md h-16 rounded-2xl text-xl font-bold bg-linear-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white shadow-2xl transform transition-all duration-300 hover:scale-105 mx-auto block'
+                                >
+                                    View Sponsorship Packages
+                                </Button>
                             </div>
-                        </div>
+                        */}
+
+                        <p className='text-sm md:text-base text-gray-700 dark:text-gray-300'>
+                            Contact us at{' '}
+                            <a
+                                href='mailto:zagrebgdg@gmail.com'
+                                className='text-accent-blue font-semibold hover:underline underline-offset-4'
+                            >
+                                zagrebgdg@gmail.com
+                            </a>
+                        </p>
                     </div>
                 </section>
 
@@ -377,21 +360,19 @@ const MainPage = () => {
                 <CommunityPartners />
 
                 {/* Organizers Section */}
-                <section className='py-20'>
-                    <div className='max-w-6xl mx-auto'>
-                        <div className='relative overflow-hidden rounded-[3rem] bg-linear-to-br from-white/90 to-white/50 dark:from-gray-800/90 dark:to-gray-900/50 backdrop-blur-xl border border-gray-200/50 dark:border-gray-700/50 p-12 shadow-2xl'>
-                            <h2 className='text-center mb-12 text-2xl md:text-3xl font-semibold text-gray-700 dark:text-gray-300'>
-                                Organized by
-                            </h2>
-                            <div className='flex flex-row items-center justify-center gap-12 flex-wrap'>
-                                <Link href={'https://gdg.community.dev/gdg-zagreb/'} className='transform hover:scale-110 transition-transform duration-300'>
-                                    <Image
-                                        src={GDGZagrebLogo}
-                                        alt='GDG Zagreb'
-                                        height={50}
-                                    />
-                                </Link>
-                            </div>
+                <section className='py-16'>
+                    <div className='max-w-6xl mx-auto text-center space-y-6'>
+                        <h2 className='text-xs md:text-sm uppercase tracking-widest font-semibold text-gray-500 dark:text-gray-500'>
+                            Organized by
+                        </h2>
+                        <div className='flex flex-row items-center justify-center gap-12 flex-wrap'>
+                            <Link href={'https://gdg.community.dev/gdg-zagreb/'} className='hover:opacity-80 transition-opacity'>
+                                <Image
+                                    src={GDGZagrebLogo}
+                                    alt='GDG Zagreb'
+                                    height={50}
+                                />
+                            </Link>
                         </div>
                     </div>
                 </section>
