@@ -27,8 +27,9 @@ export function SiteHeader() {
     ];
 
     const externalLinks = [
+        // Re-enable with the real ticket URL when ticketing goes live:
         // {
-        //     href: 'https://www.entrio.hr/event/devfest-2025-21473',
+        //     href: '',
         //     label: 'Get Tickets',
         //     icon: Ticket,
         //     highlight: true,

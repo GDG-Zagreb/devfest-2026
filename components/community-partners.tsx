@@ -44,7 +44,7 @@ export default function CommunityPartners() {
             </div>
 
             {/* Partners Grid */}
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
+            <div className='flex flex-wrap justify-center gap-6'>
                 {partners.map((partner) => {
                     // Apply 90% scale to Tabu logo, 80% to all logos for smaller size
                     const logoScale = partner.name === 'Tabu' ? 0.72 : 0.8; // 0.9 * 0.8 for Tabu
@@ -72,7 +72,7 @@ export default function CommunityPartners() {
                                 href={partner.website}
                                 target='_blank'
                                 rel='noopener noreferrer'
-                                className='block'
+                                className='block w-full sm:w-[320px]'
                             >
                                 {content}
                             </a>
@@ -80,7 +80,7 @@ export default function CommunityPartners() {
                     }
 
                     // Otherwise, just render the card
-                    return <div key={partner.name}>{content}</div>;
+                    return <div key={partner.name} className='w-full sm:w-[320px]'>{content}</div>;
                 })}
 
                 {/* Become a Community Partner CTA Card */}

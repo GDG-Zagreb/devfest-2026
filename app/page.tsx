@@ -4,7 +4,8 @@ import ImageGallery from '@/components/image-gallery';
 import PoweredBy from '@/components/powered-by';
 import Sponsors from '@/components/sponsors';
 import CommunityPartners from '@/components/community-partners';
-import { Button } from '@/components/ui/button';
+// import { Button } from '@/components/ui/button'; // re-enable with the Get Tickets / sponsorship packages buttons
+import DevFestLogo from '@/public/assets/DF26-Logo-Lockup-Primary_With Date.png';
 import GDGZagrebLogo from '@/public/assets/GDG-Zagreb-logo@3x.png';
 import SponzorskiPaketi from '@/public/assets/sponzorski-paketi.png';
 import { MapPin, Sparkles, Users, X, Smartphone, Globe, Cloud, Ticket } from 'lucide-react';
@@ -12,12 +13,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 
-// TODO: Replace with the actual DevFest Croatia promo video ID when available.
-// Current value is Big Buck Bunny (Creative Commons) as a safe placeholder.
-const HERO_VIDEO_ID = 'aqz-KE-bpKQ';
+const HERO_VIDEO_ID = 'mLDa5ZLpp0Q';
 
-// TODO: Replace with the real ticket URL once the Entrio event page is live.
-const TICKET_URL = '#';
+// TODO: Replace with the real ticket URL once ticketing goes live,
+// then restore the "Get Tickets" button in the hero (replaces the
+// "Tickets available soon" announcement).
+// const TICKET_URL = '#';
 
 // RIT Croatia Zagreb — venue partner for the 2026 edition.
 const RIT_URL = 'https://www.croatia.rit.edu/';
@@ -28,7 +29,7 @@ const VENUE_EMBED_URL = 'https://www.google.com/maps?q=RIT+Croatia+Zagreb+Damira
 const MainPage = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
-    const openModal = () => setIsModalOpen(true);
+    // const openModal = () => setIsModalOpen(true); // re-enable with the sponsorship packages button
     const closeModal = () => setIsModalOpen(false);
 
     return (
@@ -55,16 +56,16 @@ const MainPage = () => {
                                     </span>
                                 </div>
 
-                                {/* Main Headline */}
+                                {/* Main Headline — primary DevFest 2026 lockup */}
                                 <div className='space-y-4'>
-                                    <h1 className='text-6xl md:text-7xl lg:text-8xl font-black tracking-tight'>
-                                        <span className='block bg-linear-to-r from-[#4285F4] via-[#EA4335] via-[#FBBC04] to-[#34A853] bg-clip-text text-transparent animate-gradient bg-size-[200%_200%]'>
-                                            DevFest
-                                        </span>
-                                        <span className='block text-5xl md:text-6xl lg:text-7xl mt-2 bg-linear-to-r from-[#4285F4] via-[#EA4335] to-[#FBBC04] bg-clip-text text-transparent'>
-                                            Croatia 2026
-                                        </span>
-                                    </h1>
+                                    <h1 className='sr-only'>DevFest Croatia 2026</h1>
+                                    <Image
+                                        src={DevFestLogo}
+                                        alt='DevFest Croatia 2026 — December 5'
+                                        priority
+                                        placeholder='blur'
+                                        className='w-full max-w-xl h-auto mx-auto lg:mx-0'
+                                    />
 
                                     {/* RIT co-brand */}
                                     <Link
@@ -94,7 +95,19 @@ const MainPage = () => {
                                     </span>
                                 </p>
 
-                                {/* CTA */}
+                                {/* Tickets availability announcement (replaces the Get Tickets button until ticketing goes live) */}
+                                <div className='flex items-center justify-center lg:justify-start pt-2'>
+                                    <div className='relative inline-block'>
+                                        <div className='absolute -inset-1 bg-linear-to-r from-[#4285F4] via-[#EA4335] to-[#FBBC04] rounded-2xl blur-sm opacity-50 animate-pulse' />
+                                        <div className='relative inline-flex items-center gap-3 px-8 h-16 rounded-2xl bg-white/90 dark:bg-gray-900/90 backdrop-blur-xl border border-[#4285F4]/30 shadow-2xl'>
+                                            <Ticket className='w-6 h-6 text-[#4285F4]' />
+                                            <span className='text-xl md:text-2xl font-bold bg-linear-to-r from-[#4285F4] via-[#EA4335] to-[#FBBC04] bg-clip-text text-transparent'>
+                                                Tickets available soon
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                {/*
                                 <div className='flex items-center justify-center lg:justify-start pt-2'>
                                     <Link
                                         href={TICKET_URL}
@@ -108,6 +121,7 @@ const MainPage = () => {
                                         </Button>
                                     </Link>
                                 </div>
+                                */}
                             </div>
 
                             {/* Right: video */}
@@ -280,14 +294,16 @@ const MainPage = () => {
                                         Showcase your brand to hundreds of passionate developers.
                                     </p>
 
-                                    <div className='relative overflow-hidden rounded-3xl bg-linear-to-br from-purple-500/10 to-blue-500/10 backdrop-blur-xl border border-purple-500/20 p-8 shadow-xl'>
-                                        <Button
-                                            onClick={openModal}
-                                            className='w-full max-w-md h-16 rounded-2xl text-xl font-bold bg-linear-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white shadow-2xl transform transition-all duration-300 hover:scale-105 mx-auto block'
-                                        >
-                                            View Sponsorship Packages
-                                        </Button>
-                                    </div>
+                                    {/* Hidden until sponsorship packages are finalized.
+                                        <div className='relative overflow-hidden rounded-3xl bg-linear-to-br from-purple-500/10 to-blue-500/10 backdrop-blur-xl border border-purple-500/20 p-8 shadow-xl'>
+                                            <Button
+                                                onClick={openModal}
+                                                className='w-full max-w-md h-16 rounded-2xl text-xl font-bold bg-linear-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white shadow-2xl transform transition-all duration-300 hover:scale-105 mx-auto block'
+                                            >
+                                                View Sponsorship Packages
+                                            </Button>
+                                        </div>
+                                    */}
 
                                     <div className='relative overflow-hidden rounded-3xl bg-linear-to-br from-gray-50/80 to-gray-100/50 dark:from-gray-700/50 dark:to-gray-800/30 backdrop-blur-xl border border-gray-200 dark:border-gray-600 p-6 shadow-lg'>
                                         <div className='flex items-center justify-center gap-3 flex-wrap'>
