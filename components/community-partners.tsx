@@ -7,6 +7,12 @@ type Partner = {
     name: string;
     logo: string;
     website?: string;
+    /**
+     * The partner cards use a light background in both themes. Set this for
+     * logos that ship as white (e.g. RIT Croatia's footer logo) so they stay
+     * visible on the light card.
+     */
+    invertOnCard?: boolean;
 };
 
 export default function CommunityPartners() {
@@ -15,20 +21,11 @@ export default function CommunityPartners() {
 
     const partners: Partner[] = [
         {
-            name: 'The Geek Gathering',
-            logo: '/partners/2025/TGG_logo_black.svg',
-            website: 'https://thegeekgathering.org/'
+            name: 'RIT Croatia',
+            logo: '/partners/2026/rit-croatia-logo.svg',
+            website: 'https://www.croatia.rit.edu/',
+            invertOnCard: true,
         },
-        {
-            name: 'Tabu',
-            logo: '/partners/2025/tabu-logo.svg',
-            website: 'https://tabu.hr/'
-        },
-        {
-            name: 'Wespa',
-            logo: '/partners/2025/wespa-logo.svg',
-            website: 'https://wespa.hr/en/'
-        }
     ];
 
     return (
@@ -38,7 +35,7 @@ export default function CommunityPartners() {
                 <div className='flex items-center justify-center gap-3 mb-4'>
                     <Users className='w-8 h-8 text-blue-600' />
                     <h2 className='text-3xl md:text-4xl font-bold text-gray-800 dark:text-gray-200'>
-                        Our Community Partners in 2025
+                        Our Community Partners
                     </h2>
                 </div>
                 <p className='text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto'>
@@ -60,7 +57,7 @@ export default function CommunityPartners() {
                                     src={partner.logo}
                                     alt={`${partner.name} logo`}
                                     fill
-                                    className='object-contain transition-all duration-300 p-4'
+                                    className={`object-contain transition-all duration-300 p-4 ${partner.invertOnCard ? 'invert' : ''}`}
                                     sizes='(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw'
                                 />
                             </div>
@@ -93,7 +90,7 @@ export default function CommunityPartners() {
                     rel='noopener noreferrer'
                     className='block'
                 >
-                    <div className={`group relative bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 rounded-2xl p-8 shadow-lg border-2 border-dashed border-blue-300 dark:border-blue-600 hover:shadow-2xl transition-all duration-300 hover:scale-105 flex items-center justify-center ${CARD_HEIGHT}`}>
+                    <div className={`group relative bg-linear-to-br from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 rounded-2xl p-8 shadow-lg border-2 border-dashed border-blue-300 dark:border-blue-600 hover:shadow-2xl transition-all duration-300 hover:scale-105 flex items-center justify-center ${CARD_HEIGHT}`}>
                         <div className='text-center space-y-3'>
                             <Users className='w-12 h-12 text-blue-600 dark:text-blue-400 mx-auto' />
                             <p className='text-lg font-bold text-gray-800 dark:text-gray-200'>

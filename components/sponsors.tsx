@@ -94,7 +94,7 @@ export default function Sponsors() {
                                     href='#sponsors'
                                     className='block'
                                 >
-                                    <div className={`group relative bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-900/20 dark:to-blue-900/20 rounded-2xl p-8 shadow-lg border-2 border-dashed border-purple-300 dark:border-purple-600 hover:shadow-2xl transition-all duration-300 hover:scale-105 flex items-center justify-center ${CARD_HEIGHT}`}>
+                                    <div className={`group relative bg-linear-to-br from-purple-50 to-blue-50 dark:from-purple-900/20 dark:to-blue-900/20 rounded-2xl p-8 shadow-lg border-2 border-dashed border-purple-300 dark:border-purple-600 hover:shadow-2xl transition-all duration-300 hover:scale-105 flex items-center justify-center ${CARD_HEIGHT}`}>
                                         <div className='text-center space-y-3'>
                                             <Building2 className='w-12 h-12 text-purple-600 dark:text-purple-400 mx-auto' />
                                             <p className='text-lg font-bold text-gray-800 dark:text-gray-200'>

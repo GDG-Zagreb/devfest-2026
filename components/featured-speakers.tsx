@@ -70,10 +70,10 @@ export default function FeaturedSpeakers() {
             {featuredSpeakers.map((featuredSpeaker: Speaker) => (
                 <div
                     key={featuredSpeaker.speakerName}
-                    className='bg-gradient-to-r from-white via-gray-50 to-white dark:from-gray-700 dark:via-gray-800 dark:to-gray-700 rounded-3xl p-8 shadow-xl border border-gray-200 dark:border-gray-600 hover:shadow-2xl transition-all duration-300'
+                    className='bg-linear-to-r from-white via-gray-50 to-white dark:from-gray-700 dark:via-gray-800 dark:to-gray-700 rounded-3xl p-8 shadow-xl border border-gray-200 dark:border-gray-600 hover:shadow-2xl transition-all duration-300'
                 >
                     <div className='flex flex-col lg:flex-row items-center lg:items-start gap-8'>
-                        <div className='flex-shrink-0'>
+                        <div className='shrink-0'>
                             <div className='relative'>
                                 <Image
                                     src={featuredSpeaker.imgSrc}
@@ -82,7 +82,7 @@ export default function FeaturedSpeakers() {
                                     height={150}
                                     className='w-[150px] h-[150px] rounded-full object-cover border-6 border-white dark:border-gray-600 shadow-2xl'
                                 />
-                                <div className='absolute -bottom-2 -right-2 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full p-2 shadow-lg'>
+                                <div className='absolute -bottom-2 -right-2 bg-linear-to-r from-purple-500 to-blue-500 rounded-full p-2 shadow-lg'>
                                     <Users className='w-5 h-5 text-white' />
                                 </div>
                             </div>
@@ -96,7 +96,7 @@ export default function FeaturedSpeakers() {
                                     {featuredSpeaker.speakerInfo}
                                 </p>
                             </div>
-                            <div className='bg-gradient-to-r from-purple-50 to-blue-50 dark:from-purple-900/20 dark:to-blue-900/20 rounded-xl p-4 border border-purple-200 dark:border-purple-700'>
+                            <div className='bg-linear-to-r from-purple-50 to-blue-50 dark:from-purple-900/20 dark:to-blue-900/20 rounded-xl p-4 border border-purple-200 dark:border-purple-700'>
                                 <h4 className='text-xl font-bold text-gray-800 dark:text-gray-200 mb-2'>
                                     {featuredSpeaker.name}
                                 </h4>
@@ -118,7 +118,7 @@ export default function FeaturedSpeakers() {
             {featuredSpeakers.map((speaker: Speaker) => (
                 <div
                     key={speaker.speakerName}
-                    className='bg-gradient-to-br from-white via-gray-50 to-purple-50 dark:from-gray-700 dark:via-gray-800 dark:to-purple-900/20 rounded-3xl p-6 shadow-xl border border-gray-200 dark:border-gray-600 hover:shadow-2xl transition-all duration-300 self-start min-h-[450px]'
+                    className='bg-linear-to-br from-white via-gray-50 to-purple-50 dark:from-gray-700 dark:via-gray-800 dark:to-purple-900/20 rounded-3xl p-6 shadow-xl border border-gray-200 dark:border-gray-600 hover:shadow-2xl transition-all duration-300 self-start min-h-[450px]'
                 >
                     <div className='flex flex-col items-center text-center space-y-4'>
                         <div className='relative'>
@@ -138,7 +138,7 @@ export default function FeaturedSpeakers() {
                                 {speaker.speakerInfo}
                             </p>
                         </div>
-                        <div className='bg-gradient-to-r from-purple-100 to-blue-100 dark:from-purple-900/30 dark:to-blue-900/30 rounded-xl p-4 w-full'>
+                        <div className='bg-linear-to-r from-purple-100 to-blue-100 dark:from-purple-900/30 dark:to-blue-900/30 rounded-xl p-4 w-full'>
                             <h4 className='text-lg font-bold text-gray-800 dark:text-gray-200 mb-2'>
                                 {speaker.name}
                             </h4>
@@ -157,9 +157,9 @@ export default function FeaturedSpeakers() {
     const renderThreeSpeakersLayout = () => (
         <div className='space-y-8 mb-8'>
             <div className='max-w-4xl mx-auto'>
-                <div className='bg-gradient-to-r from-white via-purple-50 to-white dark:from-gray-700 dark:via-purple-900/10 dark:to-gray-700 rounded-3xl p-6 shadow-xl border border-gray-200 dark:border-gray-600'>
+                <div className='bg-linear-to-r from-white via-purple-50 to-white dark:from-gray-700 dark:via-purple-900/10 dark:to-gray-700 rounded-3xl p-6 shadow-xl border border-gray-200 dark:border-gray-600'>
                     <div className='flex flex-col md:flex-row items-center gap-6'>
-                        <div className='flex-shrink-0'>
+                        <div className='shrink-0'>
                             <Image
                                 src={featuredSpeakers[0].imgSrc}
                                 alt={featuredSpeakers[0].speakerName}
@@ -175,7 +175,7 @@ export default function FeaturedSpeakers() {
                             <p className='text-gray-600 dark:text-gray-400 mb-3'>
                                 {featuredSpeakers[0].speakerInfo}
                             </p>
-                            <div className='bg-gradient-to-r from-purple-100 to-blue-100 dark:from-purple-900/30 dark:to-blue-900/30 rounded-lg p-3'>
+                            <div className='bg-linear-to-r from-purple-100 to-blue-100 dark:from-purple-900/30 dark:to-blue-900/30 rounded-lg p-3'>
                                 <p className='font-semibold text-gray-800 dark:text-gray-200 text-sm mb-2'>
                                     {featuredSpeakers[0].name}
                                 </p>
@@ -193,7 +193,7 @@ export default function FeaturedSpeakers() {
                 {featuredSpeakers.slice(1).map((speaker: Speaker) => (
                     <div
                         key={speaker.speakerName}
-                        className='bg-gradient-to-b from-white to-gray-50 dark:from-gray-700 dark:to-gray-800 rounded-2xl p-6 shadow-lg border border-gray-200 dark:border-gray-600 hover:shadow-xl transition-all duration-300 self-start min-h-[380px]'
+                        className='bg-linear-to-b from-white to-gray-50 dark:from-gray-700 dark:to-gray-800 rounded-2xl p-6 shadow-lg border border-gray-200 dark:border-gray-600 hover:shadow-xl transition-all duration-300 self-start min-h-[380px]'
                     >
                         <div className='flex flex-col items-center text-center'>
                             <Image
@@ -209,7 +209,7 @@ export default function FeaturedSpeakers() {
                             <p className='text-sm text-gray-600 dark:text-gray-400 mb-3'>
                                 {speaker.speakerInfo}
                             </p>
-                            <div className='bg-gradient-to-r from-purple-100 to-blue-100 dark:from-purple-900/30 dark:to-blue-900/30 rounded-lg p-3 w-full'>
+                            <div className='bg-linear-to-r from-purple-100 to-blue-100 dark:from-purple-900/30 dark:to-blue-900/30 rounded-lg p-3 w-full'>
                                 <p className='text-sm font-semibold text-gray-800 dark:text-gray-200 mb-2'>
                                     {speaker.name}
                                 </p>
@@ -231,7 +231,7 @@ export default function FeaturedSpeakers() {
             {featuredSpeakers.map((speaker: Speaker) => (
                 <div
                     key={speaker.speakerName}
-                    className='bg-gradient-to-b from-white to-gray-50 dark:from-gray-700 dark:to-gray-800 rounded-2xl p-6 shadow-lg border border-gray-200 dark:border-gray-600 hover:shadow-xl transition-all duration-300 hover:scale-105 self-start min-h-[420px]'
+                    className='bg-linear-to-b from-white to-gray-50 dark:from-gray-700 dark:to-gray-800 rounded-2xl p-6 shadow-lg border border-gray-200 dark:border-gray-600 hover:shadow-xl transition-all duration-300 hover:scale-105 self-start min-h-[420px]'
                 >
                     <div className='flex flex-col items-center text-center'>
                         <div className='relative mb-4'>
@@ -249,7 +249,7 @@ export default function FeaturedSpeakers() {
                         <p className='text-sm text-gray-600 dark:text-gray-400 mb-3 line-clamp-2'>
                             {speaker.speakerInfo}
                         </p>
-                        <div className='bg-gradient-to-r from-purple-100 to-blue-100 dark:from-purple-900/30 dark:to-blue-900/30 rounded-lg p-3 w-full'>
+                        <div className='bg-linear-to-r from-purple-100 to-blue-100 dark:from-purple-900/30 dark:to-blue-900/30 rounded-lg p-3 w-full'>
                             <p className='text-sm font-semibold text-gray-800 dark:text-gray-200 mb-2'>
                                 {speaker.name}
                             </p>
@@ -267,7 +267,7 @@ export default function FeaturedSpeakers() {
 
     return (
         <div className='w-full max-w-[1020px] mx-auto mt-12'>
-            <div className='bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-gray-200 dark:border-gray-700'>
+            <div className='bg-white/80 dark:bg-gray-800/80 backdrop-blur-xs rounded-3xl p-8 shadow-xl border border-gray-200 dark:border-gray-700'>
                 <div className='text-center mb-8'>
                     <div className='flex items-center justify-center gap-3 mb-4'>
                         <Users className='w-8 h-8 text-purple-600' />
@@ -287,7 +287,7 @@ export default function FeaturedSpeakers() {
 
                 <div className='text-center'>
                     <Link href='/speakers' className='inline-block'>
-                        <Button className='h-14 px-8 rounded-2xl text-lg font-semibold bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white shadow-xl transform transition-all duration-300 hover:scale-105'>
+                        <Button className='h-14 px-8 rounded-2xl text-lg font-semibold bg-linear-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white shadow-xl transform transition-all duration-300 hover:scale-105'>
                             <Users className='mr-3 w-5 h-5' />
                             Meet All Speakers
                         </Button>

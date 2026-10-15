@@ -161,4 +161,4 @@ For questions about DevFest 2025 Zagreb, contact: zagrebgdg@gmail.com
 
 ---
 
-**GDG Zagreb** & **GDG Krapina** - Organizing DevFest 2025 🎉
+**GDG Zagreb** - Organizing DevFest Croatia 2026 🎉

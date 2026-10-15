@@ -51,7 +51,7 @@ export function SiteHeader() {
     ];
 
     return (
-        <header className='supports-backdrop-blur:bg-background/60 sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur'>
+        <header className='supports-backdrop-blur:bg-background/60 sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur-sm'>
             <div className='container flex h-14 items-center'>
                 <Link href={'/'}>
                     <div className='flex gap-x-2 hover:opacity-80 transition-opacity'>
@@ -90,7 +90,7 @@ export function SiteHeader() {
 
                         {/* Get Tickets - Highlighted */}
                         {/* <Link href={externalLinks[0].href} target='_blank' rel='noopener noreferrer'>
-                            <Button size="sm" className="h-9 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white">
+                            <Button size="sm" className="h-9 bg-linear-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white">
                                 <Ticket className='h-4 w-4 mr-2' />
                                 Get Tickets
                             </Button>

@@ -5,7 +5,7 @@ import Link from 'next/link';
 export default function PitchYourProject() {
     return (
         <div className='w-full mt-8'>
-            <div className='bg-gradient-to-r from-yellow-50 to-orange-50 dark:from-yellow-900/20 dark:to-orange-900/20 rounded-3xl p-8 shadow-xl border border-yellow-200 dark:border-yellow-700'>
+            <div className='bg-linear-to-r from-yellow-50 to-orange-50 dark:from-yellow-900/20 dark:to-orange-900/20 rounded-3xl p-8 shadow-xl border border-yellow-200 dark:border-yellow-700'>
                 <div className='text-center space-y-6'>
                     <div className='flex items-center justify-center gap-3 mb-4'>
                         <div className='p-3 bg-yellow-100 dark:bg-yellow-800/50 rounded-full shadow-lg'>
@@ -25,7 +25,7 @@ export default function PitchYourProject() {
                         <div className='space-y-4'>
                             {/* Step 1 */}
                             <div className='flex items-start gap-4 p-4 bg-white/80 dark:bg-gray-800/80 rounded-2xl border border-yellow-200 dark:border-yellow-600'>
-                                <div className='flex-shrink-0 w-8 h-8 bg-yellow-500 text-white rounded-full flex items-center justify-center font-bold text-lg'>
+                                <div className='shrink-0 w-8 h-8 bg-yellow-500 text-white rounded-full flex items-center justify-center font-bold text-lg'>
                                     1
                                 </div>
                                 <div className='text-left'>
@@ -40,7 +40,7 @@ export default function PitchYourProject() {
 
                             {/* Step 2 */}
                             <div className='flex items-start gap-4 p-4 bg-white/80 dark:bg-gray-800/80 rounded-2xl border border-yellow-200 dark:border-yellow-600'>
-                                <div className='flex-shrink-0 w-8 h-8 bg-yellow-500 text-white rounded-full flex items-center justify-center font-bold text-lg'>
+                                <div className='shrink-0 w-8 h-8 bg-yellow-500 text-white rounded-full flex items-center justify-center font-bold text-lg'>
                                     2
                                 </div>
                                 <div className='text-left'>
@@ -55,7 +55,7 @@ export default function PitchYourProject() {
 
                             {/* Step 3 */}
                             <div className='flex items-start gap-4 p-4 bg-white/80 dark:bg-gray-800/80 rounded-2xl border border-yellow-200 dark:border-yellow-600'>
-                                <div className='flex-shrink-0 w-8 h-8 bg-yellow-500 text-white rounded-full flex items-center justify-center font-bold text-lg'>
+                                <div className='shrink-0 w-8 h-8 bg-yellow-500 text-white rounded-full flex items-center justify-center font-bold text-lg'>
                                     3
                                 </div>
                                 <div className='text-left'>
@@ -70,7 +70,7 @@ export default function PitchYourProject() {
 
                             {/* Step 4 */}
                             <div className='flex items-start gap-4 p-4 bg-white/80 dark:bg-gray-800/80 rounded-2xl border border-yellow-200 dark:border-yellow-600'>
-                                <div className='flex-shrink-0 w-8 h-8 bg-yellow-500 text-white rounded-full flex items-center justify-center font-bold text-lg'>
+                                <div className='shrink-0 w-8 h-8 bg-yellow-500 text-white rounded-full flex items-center justify-center font-bold text-lg'>
                                     4
                                 </div>
                                 <div className='text-left'>
@@ -103,7 +103,7 @@ export default function PitchYourProject() {
                                         target='_blank'
                                         className='block'
                                     >
-                                        <Button className='w-full max-w-md h-14 rounded-2xl text-lg font-semibold bg-gradient-to-r from-yellow-500 to-orange-600 hover:from-yellow-600 hover:to-orange-700 text-white shadow-xl transform transition-all duration-300 hover:scale-105'>
+                                        <Button className='w-full max-w-md h-14 rounded-2xl text-lg font-semibold bg-linear-to-r from-yellow-500 to-orange-600 hover:from-yellow-600 hover:to-orange-700 text-white shadow-xl transform transition-all duration-300 hover:scale-105'>
                                             <svg className='mr-3 w-5 h-5' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
                                                 <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z' />
                                             </svg>

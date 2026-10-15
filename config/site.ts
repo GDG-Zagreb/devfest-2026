@@ -46,10 +46,10 @@ export const siteConfig = {
         'Real-world projects',
     ],
     event: {
-        date: 'Late October 2026',
+        date: 'December 5, 2026',
         year: 2026,
         location: 'Zagreb, Croatia',
-        venue: 'TBA',
+        venue: 'RIT Croatia Zagreb',
     },
     links: {
         twitter: 'https://x.com/gdgzagreb',
