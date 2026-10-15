@@ -27,8 +27,9 @@ export function SiteHeader() {
     ];
 
     const externalLinks = [
+        // Re-enable with the real ticket URL when ticketing goes live:
         // {
-        //     href: 'https://www.entrio.hr/event/devfest-2025-21473',
+        //     href: '',
         //     label: 'Get Tickets',
         //     icon: Ticket,
         //     highlight: true,
@@ -45,8 +46,9 @@ export function SiteHeader() {
         },
         {
             href: 'https://docs.google.com/forms/d/e/1FAIpQLSeUlJI3paMOEgSJXL1gFvVRUYFQIdN0stdrgXtNKVRzgG3Elg/viewform',
-            label: 'Become a pitcher!',
+            label: 'Become a pitcher — soon',
             icon: Lightbulb,
+            disabled: true,
         },
     ];
 
@@ -62,7 +64,7 @@ export function SiteHeader() {
                             alt={'GDG logo'}
                         />
                         <div className='text-md mt-1 hidden lg:inline font-medium'>
-                            Google Developer Groups
+                            Google Developer Groups Zagreb
                         </div>
                     </div>
                 </Link>
@@ -109,6 +111,14 @@ export function SiteHeader() {
                                 <DropdownMenuSeparator />
                                 {externalLinks.map((item) => {
                                     const Icon = item.icon;
+                                    if (item.disabled) {
+                                        return (
+                                            <DropdownMenuItem key={item.label} disabled className="flex items-center gap-x-2">
+                                                <Icon className='h-4 w-4' />
+                                                <span>{item.label}</span>
+                                            </DropdownMenuItem>
+                                        );
+                                    }
                                     return (
                                         <DropdownMenuItem key={item.label} asChild>
                                             <Link
@@ -166,6 +176,14 @@ export function SiteHeader() {
                                 {/* External Links */}
                                 {externalLinks.map((item) => {
                                     const Icon = item.icon;
+                                    if (item.disabled) {
+                                        return (
+                                            <DropdownMenuItem key={item.label} disabled className="flex items-center gap-x-2">
+                                                <Icon className='h-4 w-4' />
+                                                <span>{item.label}</span>
+                                            </DropdownMenuItem>
+                                        );
+                                    }
                                     return (
                                         <DropdownMenuItem key={item.label} asChild>
                                             <Link

@@ -4,7 +4,8 @@ import ImageGallery from '@/components/image-gallery';
 import PoweredBy from '@/components/powered-by';
 import Sponsors from '@/components/sponsors';
 import CommunityPartners from '@/components/community-partners';
-import { Button } from '@/components/ui/button';
+// import { Button } from '@/components/ui/button'; // re-enable with the Get Tickets / sponsorship packages buttons
+import DevFestLogo from '@/public/assets/DF26-Logo-Lockup-Primary_With Date.png';
 import GDGZagrebLogo from '@/public/assets/GDG-Zagreb-logo@3x.png';
 import SponzorskiPaketi from '@/public/assets/sponzorski-paketi.png';
 import { MapPin, Sparkles, Users, X, Smartphone, Globe, Cloud, Ticket } from 'lucide-react';
@@ -12,12 +13,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 
-// TODO: Replace with the actual DevFest Croatia promo video ID when available.
-// Current value is Big Buck Bunny (Creative Commons) as a safe placeholder.
-const HERO_VIDEO_ID = 'aqz-KE-bpKQ';
+const HERO_VIDEO_ID = 'mLDa5ZLpp0Q';
 
-// TODO: Replace with the real ticket URL once the Entrio event page is live.
-const TICKET_URL = '#';
+// TODO: Replace with the real ticket URL once ticketing goes live,
+// then restore the "Get Tickets" button in the hero (replaces the
+// "Tickets available soon" announcement).
+// const TICKET_URL = '#';
 
 // RIT Croatia Zagreb — venue partner for the 2026 edition.
 const RIT_URL = 'https://www.croatia.rit.edu/';
@@ -28,16 +29,16 @@ const VENUE_EMBED_URL = 'https://www.google.com/maps?q=RIT+Croatia+Zagreb+Damira
 const MainPage = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
-    const openModal = () => setIsModalOpen(true);
+    // const openModal = () => setIsModalOpen(true); // re-enable with the sponsorship packages button
     const closeModal = () => setIsModalOpen(false);
 
     return (
         <div className='relative overflow-hidden'>
             {/* Animated Background Blobs */}
             <div className='fixed inset-0 -z-10 overflow-hidden pointer-events-none'>
-                <div className='absolute top-0 -left-40 w-96 h-96 bg-[#4285F4]/30 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob' />
-                <div className='absolute top-0 -right-40 w-96 h-96 bg-[#EA4335]/30 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000' />
-                <div className='absolute -bottom-40 left-1/2 w-96 h-96 bg-[#FBBC04]/30 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-4000' />
+                <div className='absolute top-0 -left-40 w-96 h-96 bg-accent-blue/30 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob' />
+                <div className='absolute top-0 -right-40 w-96 h-96 bg-accent-red/30 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000' />
+                <div className='absolute -bottom-40 left-1/2 w-96 h-96 bg-accent-yellow/30 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-4000' />
             </div>
 
             <div className='container mx-auto px-4'>
@@ -47,24 +48,24 @@ const MainPage = () => {
                         <div className='grid gap-12 lg:grid-cols-2 lg:items-center'>
                             {/* Left: text + CTA */}
                             <div className='text-center lg:text-left space-y-8'>
-                                {/* Floating Badge */}
-                                <div className='inline-flex items-center gap-2 px-6 py-3 rounded-full bg-linear-to-r from-[#4285F4]/10 to-[#EA4335]/10 backdrop-blur-xl border border-[#4285F4]/20 shadow-2xl animate-float'>
-                                    <Sparkles className='w-5 h-5 text-[#4285F4]' />
-                                    <span className='text-sm font-semibold bg-linear-to-r from-[#4285F4] to-[#EA4335] bg-clip-text text-transparent'>
-                                        December 5, 2026
+                                {/* Topic pill */}
+                                <div className='inline-flex items-center gap-2 px-6 py-3 rounded-full bg-linear-to-r from-accent-blue/10 to-accent-red/10 backdrop-blur-xl border border-accent-blue/20 shadow-2xl'>
+                                    <Sparkles className='w-5 h-5 text-accent-blue' />
+                                    <span className='text-sm font-semibold text-accent-blue'>
+                                        Mobile, Web, Cloud, AI
                                     </span>
                                 </div>
 
-                                {/* Main Headline */}
+                                {/* Main Headline — primary DevFest 2026 lockup */}
                                 <div className='space-y-4'>
-                                    <h1 className='text-6xl md:text-7xl lg:text-8xl font-black tracking-tight'>
-                                        <span className='block bg-linear-to-r from-[#4285F4] via-[#EA4335] via-[#FBBC04] to-[#34A853] bg-clip-text text-transparent animate-gradient bg-size-[200%_200%]'>
-                                            DevFest
-                                        </span>
-                                        <span className='block text-5xl md:text-6xl lg:text-7xl mt-2 bg-linear-to-r from-[#4285F4] via-[#EA4335] to-[#FBBC04] bg-clip-text text-transparent'>
-                                            Croatia 2026
-                                        </span>
-                                    </h1>
+                                    <h1 className='sr-only'>DevFest Croatia 2026</h1>
+                                    <Image
+                                        src={DevFestLogo}
+                                        alt='DevFest Croatia 2026 — December 5'
+                                        priority
+                                        placeholder='blur'
+                                        className='w-full max-w-xl h-auto mx-auto lg:mx-0'
+                                    />
 
                                     {/* RIT co-brand */}
                                     <Link
@@ -79,9 +80,9 @@ const MainPage = () => {
                                         <Image
                                             src='/partners/2026/rit-croatia-logo.svg'
                                             alt='RIT Croatia'
-                                            width={140}
-                                            height={24}
-                                            className='invert dark:invert-0 opacity-85 group-hover:opacity-100 transition-opacity duration-300'
+                                            width={155}
+                                            height={26}
+                                            className='h-6 w-auto invert dark:invert-0 opacity-85 group-hover:opacity-100 transition-opacity duration-300'
                                         />
                                     </Link>
                                 </div>
@@ -89,25 +90,42 @@ const MainPage = () => {
                                 <p className='text-xl md:text-2xl lg:text-3xl font-light text-gray-700 dark:text-gray-300 leading-relaxed'>
                                     Where innovation meets community.
                                     <br />
-                                    <span className='font-semibold bg-linear-to-r from-[#4285F4] via-[#EA4335] to-[#FBBC04] bg-clip-text text-transparent'>
+                                    <span className='font-semibold text-accent-blue'>
                                         Be part of something extraordinary.
+                                    </span>
+                                    <br />
+                                    <span className='font-semibold text-gray-800 dark:text-gray-200'>
+                                        December 5, 2026
                                     </span>
                                 </p>
 
-                                {/* CTA */}
+                                {/* Tickets availability announcement (replaces the Get Tickets button until ticketing goes live) */}
+                                <div className='flex items-center justify-center lg:justify-start pt-2'>
+                                    <div className='relative inline-block'>
+                                        <div className='absolute -inset-1 bg-linear-to-r from-accent-blue via-accent-red to-accent-yellow rounded-2xl blur-sm opacity-50 animate-pulse' />
+                                        <div className='relative inline-flex items-center gap-3 px-8 h-16 rounded-2xl bg-white/90 dark:bg-gray-900/90 backdrop-blur-xl border border-accent-blue/30 shadow-2xl'>
+                                            <Ticket className='w-6 h-6 text-accent-blue' />
+                                            <span className='text-xl md:text-2xl font-bold text-accent-blue'>
+                                                Tickets available soon
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                {/*
                                 <div className='flex items-center justify-center lg:justify-start pt-2'>
                                     <Link
                                         href={TICKET_URL}
                                         target={TICKET_URL === '#' ? undefined : '_blank'}
                                         className='group relative inline-block'
                                     >
-                                        <div className='absolute -inset-1 bg-linear-to-r from-[#4285F4] via-[#EA4335] to-[#FBBC04] rounded-2xl blur-sm opacity-60 group-hover:opacity-90 transition duration-500 animate-pulse' />
-                                        <Button className='relative w-64 h-16 rounded-2xl text-xl font-bold bg-linear-to-r from-[#4285F4] to-[#EA4335] hover:from-[#4285F4]/90 hover:to-[#EA4335]/90 text-white shadow-2xl transform transition-all duration-300 hover:scale-105'>
+                                        <div className='absolute -inset-1 bg-linear-to-r from-accent-blue via-accent-red to-accent-yellow rounded-2xl blur-sm opacity-60 group-hover:opacity-90 transition duration-500 animate-pulse' />
+                                        <Button className='relative w-64 h-16 rounded-2xl text-xl font-bold bg-linear-to-r from-accent-blue to-accent-red hover:from-accent-blue/90 hover:to-accent-red/90 text-white shadow-2xl transform transition-all duration-300 hover:scale-105'>
                                             <Ticket className='mr-3 w-6 h-6' />
                                             Get Tickets
                                         </Button>
                                     </Link>
                                 </div>
+                                */}
                             </div>
 
                             {/* Right: video */}
@@ -125,11 +143,11 @@ const MainPage = () => {
 
                         {/* Stats Cards */}
                         <div className='grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto'>
-                            <div className='group relative overflow-hidden rounded-3xl bg-linear-to-br from-white/80 to-white/40 dark:from-gray-800/80 dark:to-gray-900/40 backdrop-blur-xl border border-[#4285F4]/20 p-8 shadow-2xl hover:shadow-[#4285F4]/50 transition-all duration-500 hover:scale-105'>
-                                <div className='absolute inset-0 bg-linear-to-br from-[#4285F4]/0 to-[#4285F4]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500' />
+                            <div className='group relative overflow-hidden rounded-3xl bg-linear-to-br from-white/80 to-white/40 dark:from-gray-800/80 dark:to-gray-900/40 backdrop-blur-xl border border-accent-blue/20 p-8 shadow-2xl hover:shadow-accent-blue/50 transition-all duration-500 hover:scale-105'>
+                                <div className='absolute inset-0 bg-linear-to-br from-accent-blue/0 to-accent-blue/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500' />
                                 <div className='relative'>
-                                    <Users className='w-10 h-10 text-[#4285F4] mb-4' />
-                                    <div className='text-4xl font-black bg-linear-to-r from-[#4285F4] to-[#EA4335] bg-clip-text text-transparent'>
+                                    <Users className='w-10 h-10 text-accent-blue mb-4' />
+                                    <div className='text-4xl font-black text-accent-blue'>
                                         10+
                                     </div>
                                     <div className='text-sm font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-wider'>
@@ -138,11 +156,11 @@ const MainPage = () => {
                                 </div>
                             </div>
 
-                            <div className='group relative overflow-hidden rounded-3xl bg-linear-to-br from-white/80 to-white/40 dark:from-gray-800/80 dark:to-gray-900/40 backdrop-blur-xl border border-[#EA4335]/20 p-8 shadow-2xl hover:shadow-[#EA4335]/50 transition-all duration-500 hover:scale-105'>
-                                <div className='absolute inset-0 bg-linear-to-br from-[#EA4335]/0 to-[#EA4335]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500' />
+                            <div className='group relative overflow-hidden rounded-3xl bg-linear-to-br from-white/80 to-white/40 dark:from-gray-800/80 dark:to-gray-900/40 backdrop-blur-xl border border-accent-red/20 p-8 shadow-2xl hover:shadow-accent-red/50 transition-all duration-500 hover:scale-105'>
+                                <div className='absolute inset-0 bg-linear-to-br from-accent-red/0 to-accent-red/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500' />
                                 <div className='relative'>
-                                    <Sparkles className='w-10 h-10 text-[#EA4335] mb-4' />
-                                    <div className='text-4xl font-black bg-linear-to-r from-[#EA4335] to-[#FBBC04] bg-clip-text text-transparent'>
+                                    <Sparkles className='w-10 h-10 text-accent-red mb-4' />
+                                    <div className='text-4xl font-black text-accent-red'>
                                         2
                                     </div>
                                     <div className='text-sm font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-wider'>
@@ -151,11 +169,11 @@ const MainPage = () => {
                                 </div>
                             </div>
 
-                            <div className='group relative overflow-hidden rounded-3xl bg-linear-to-br from-white/80 to-white/40 dark:from-gray-800/80 dark:to-gray-900/40 backdrop-blur-xl border border-[#34A853]/20 p-8 shadow-2xl hover:shadow-[#34A853]/50 transition-all duration-500 hover:scale-105'>
-                                <div className='absolute inset-0 bg-linear-to-br from-[#34A853]/0 to-[#34A853]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500' />
+                            <div className='group relative overflow-hidden rounded-3xl bg-linear-to-br from-white/80 to-white/40 dark:from-gray-800/80 dark:to-gray-900/40 backdrop-blur-xl border border-accent-green/20 p-8 shadow-2xl hover:shadow-accent-green/50 transition-all duration-500 hover:scale-105'>
+                                <div className='absolute inset-0 bg-linear-to-br from-accent-green/0 to-accent-green/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500' />
                                 <div className='relative'>
-                                    <MapPin className='w-10 h-10 text-[#34A853] mb-4' />
-                                    <div className='text-4xl font-black bg-linear-to-r from-[#FBBC04] to-[#34A853] bg-clip-text text-transparent'>
+                                    <MapPin className='w-10 h-10 text-accent-green mb-4' />
+                                    <div className='text-4xl font-black text-accent-green'>
                                         Zagreb
                                     </div>
                                     <div className='text-sm font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-wider'>
@@ -177,19 +195,19 @@ const MainPage = () => {
                                 </h2>
 
                                 <div className='flex flex-wrap items-center justify-center gap-4 text-xl md:text-2xl font-medium'>
-                                    <span className='px-6 py-3 rounded-full bg-[#4285F4]/10 dark:bg-[#4285F4]/20 border border-[#4285F4]/30 text-[#4285F4] dark:text-[#4285F4] shadow-md flex items-center gap-2'>
+                                    <span className='px-6 py-3 rounded-full bg-accent-blue/10 dark:bg-accent-blue/20 border border-accent-blue/30 text-accent-blue dark:text-accent-blue shadow-md flex items-center gap-2'>
                                         <Smartphone className='w-5 h-5 md:w-6 md:h-6' />
                                         Mobile
                                     </span>
-                                    <span className='px-6 py-3 rounded-full bg-[#EA4335]/10 dark:bg-[#EA4335]/20 border border-[#EA4335]/30 text-[#EA4335] dark:text-[#EA4335] shadow-md flex items-center gap-2'>
+                                    <span className='px-6 py-3 rounded-full bg-accent-red/10 dark:bg-accent-red/20 border border-accent-red/30 text-accent-red dark:text-accent-red shadow-md flex items-center gap-2'>
                                         <Globe className='w-5 h-5 md:w-6 md:h-6' />
                                         Web
                                     </span>
-                                    <span className='px-6 py-3 rounded-full bg-[#FBBC04]/10 dark:bg-[#FBBC04]/20 border border-[#FBBC04]/30 text-[#FBBC04] dark:text-[#FBBC04] shadow-md flex items-center gap-2'>
+                                    <span className='px-6 py-3 rounded-full bg-accent-yellow/10 dark:bg-accent-yellow/20 border border-accent-yellow/30 text-accent-yellow dark:text-accent-yellow shadow-md flex items-center gap-2'>
                                         <Cloud className='w-5 h-5 md:w-6 md:h-6' />
                                         Cloud
                                     </span>
-                                    <span className='px-6 py-3 rounded-full bg-[#34A853]/10 dark:bg-[#34A853]/20 border border-[#34A853]/30 text-[#34A853] dark:text-[#34A853] shadow-md flex items-center gap-2'>
+                                    <span className='px-6 py-3 rounded-full bg-accent-green/10 dark:bg-accent-green/20 border border-accent-green/30 text-accent-green dark:text-accent-green shadow-md flex items-center gap-2'>
                                         <Sparkles className='w-5 h-5 md:w-6 md:h-6' />
                                         AI
                                     </span>
@@ -280,14 +298,16 @@ const MainPage = () => {
                                         Showcase your brand to hundreds of passionate developers.
                                     </p>
 
-                                    <div className='relative overflow-hidden rounded-3xl bg-linear-to-br from-purple-500/10 to-blue-500/10 backdrop-blur-xl border border-purple-500/20 p-8 shadow-xl'>
-                                        <Button
-                                            onClick={openModal}
-                                            className='w-full max-w-md h-16 rounded-2xl text-xl font-bold bg-linear-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white shadow-2xl transform transition-all duration-300 hover:scale-105 mx-auto block'
-                                        >
-                                            View Sponsorship Packages
-                                        </Button>
-                                    </div>
+                                    {/* Hidden until sponsorship packages are finalized.
+                                        <div className='relative overflow-hidden rounded-3xl bg-linear-to-br from-purple-500/10 to-blue-500/10 backdrop-blur-xl border border-purple-500/20 p-8 shadow-xl'>
+                                            <Button
+                                                onClick={openModal}
+                                                className='w-full max-w-md h-16 rounded-2xl text-xl font-bold bg-linear-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white shadow-2xl transform transition-all duration-300 hover:scale-105 mx-auto block'
+                                            >
+                                                View Sponsorship Packages
+                                            </Button>
+                                        </div>
+                                    */}
 
                                     <div className='relative overflow-hidden rounded-3xl bg-linear-to-br from-gray-50/80 to-gray-100/50 dark:from-gray-700/50 dark:to-gray-800/30 backdrop-blur-xl border border-gray-200 dark:border-gray-600 p-6 shadow-lg'>
                                         <div className='flex items-center justify-center gap-3 flex-wrap'>
