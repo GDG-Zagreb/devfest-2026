@@ -1,6 +1,9 @@
 'use client';
 
-import ImageGallery from '@/components/image-gallery';
+import ImageMarquee from '@/components/image-marquee';
+// Alternate gallery: `@/components/image-gallery` (enlarged in-place mosaic, Option A).
+// To swap back, replace the ImageMarquee import above and the <ImageMarquee /> render
+// below with their ImageGallery equivalents.
 import PoweredBy from '@/components/powered-by';
 import Sponsors from '@/components/sponsors';
 import CommunityPartners from '@/components/community-partners';
@@ -218,9 +221,11 @@ const MainPage = () => {
                     </div>
                 </section>
 
-                {/* Gallery Section */}
+                {/* Gallery Section — Option B (ImageMarquee, edge-to-edge band) is active.
+                    Option A (ImageGallery, enlarged mosaic) lives in `components/image-gallery.tsx`;
+                    swap it in by changing the import above and the component below. */}
                 <section className='py-16'>
-                    <ImageGallery />
+                    <ImageMarquee />
                 </section>
 
                 {/* Location Section */}
