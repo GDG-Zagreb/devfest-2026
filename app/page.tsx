@@ -13,7 +13,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 
+// Horizontal video for desktop (16:9).
 const HERO_VIDEO_ID = 'mLDa5ZLpp0Q';
+// Vertical Shorts clip for mobile (9:16).
+const HERO_VIDEO_SHORT_ID = '4QwAqwQ6zPs';
 
 // TODO: Replace with the real ticket URL once ticketing goes live,
 // then restore the "Get Tickets" button in the hero (replaces the
@@ -128,16 +131,30 @@ const MainPage = () => {
                                 */}
                             </div>
 
-                            {/* Right: video */}
-                            <div className='relative aspect-video rounded-2xl overflow-hidden shadow-2xl ring-1 ring-gray-200/50 dark:ring-gray-700/50 bg-black'>
-                                <iframe
-                                    className='absolute inset-0 w-full h-full'
-                                    src={`https://www.youtube-nocookie.com/embed/${HERO_VIDEO_ID}?rel=0`}
-                                    title='DevFest Croatia 2026 preview'
-                                    allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-                                    allowFullScreen
-                                    loading='lazy'
-                                />
+                            {/* Right: video — vertical Shorts on mobile, horizontal preview on desktop */}
+                            <div className='flex justify-center lg:block'>
+                                {/* Mobile: vertical Shorts */}
+                                <div className='relative aspect-[9/16] w-full max-w-sm rounded-2xl overflow-hidden shadow-2xl ring-1 ring-gray-200/50 dark:ring-gray-700/50 bg-black lg:hidden'>
+                                    <iframe
+                                        className='absolute inset-0 w-full h-full'
+                                        src={`https://www.youtube-nocookie.com/embed/${HERO_VIDEO_SHORT_ID}?rel=0`}
+                                        title='DevFest Croatia 2026 — short clip'
+                                        allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+                                        allowFullScreen
+                                        loading='lazy'
+                                    />
+                                </div>
+                                {/* Desktop: horizontal preview */}
+                                <div className='relative aspect-video rounded-2xl overflow-hidden shadow-2xl ring-1 ring-gray-200/50 dark:ring-gray-700/50 bg-black hidden lg:block'>
+                                    <iframe
+                                        className='absolute inset-0 w-full h-full'
+                                        src={`https://www.youtube-nocookie.com/embed/${HERO_VIDEO_ID}?rel=0`}
+                                        title='DevFest Croatia 2026 preview'
+                                        allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+                                        allowFullScreen
+                                        loading='lazy'
+                                    />
+                                </div>
                             </div>
                         </div>
 
