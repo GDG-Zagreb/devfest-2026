@@ -19,6 +19,32 @@
   --animate-accordion-down: accordion-down 0.2s ease-out;
   --animate-accordion-up: accordion-up 0.2s ease-out;
 
+  /* --- DevFest 2026 brand palette (static) --- */
+  --color-brand-blue: #4285f4;
+  --color-brand-green: #34a853;
+  --color-brand-yellow: #f9ab00;
+  --color-brand-red: #ea4335;
+
+  --color-brand-blue-ht: #57caff;
+  --color-brand-green-ht: #5cdb6d;
+  --color-brand-yellow-ht: #ffd427;
+  --color-brand-red-ht: #ff7daf;
+
+  --color-brand-blue-pastel: #c3ecf6;
+  --color-brand-green-pastel: #ccf6c5;
+  --color-brand-yellow-pastel: #ffe7a5;
+  --color-brand-red-pastel: #f8d8d8;
+
+  --color-brand-offwhite: #f0f0f0;
+  --color-brand-black: #1e1e1e;
+
+  /* --- Semantic (theme-reactive) accent utilities ---
+     core on light, halftones on dark. See :root / .dark below. */
+  --color-accent-blue: var(--accent-blue);
+  --color-accent-green: var(--accent-green);
+  --color-accent-yellow: var(--accent-yellow);
+  --color-accent-red: var(--accent-red);
+
   --color-border: hsl(var(--border));
   --color-input: hsl(var(--input));
   --color-ring: hsl(var(--ring));
@@ -126,7 +152,14 @@
 
 @layer base {
   :root {
-    --background: 0 0% 93.3%;
+    /* Accent tokens — core on light theme */
+    --accent-blue: #4285f4;
+    --accent-green: #34a853;
+    --accent-yellow: #f9ab00;
+    --accent-red: #ea4335;
+
+    /* OFF White #f0f0f0 ≈ hsl(0, 0%, 94%) */
+    --background: 0 0% 94%;
     --foreground: 240 10% 3.9%;
 
     --muted: 240 4.8% 95.9%;
@@ -159,8 +192,15 @@
   }
 
   .dark {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
+    /* Accent tokens — halftones on dark theme for better luminance */
+    --accent-blue: #57caff;
+    --accent-green: #5cdb6d;
+    --accent-yellow: #ffd427;
+    --accent-red: #ff7daf;
+
+    /* Black 02 #1e1e1e ≈ hsl(0, 0%, 12%) */
+    --background: 0 0% 12%;
+    --foreground: 0 0% 94%;
 
     --muted: 240 3.7% 15.9%;
     --muted-foreground: 240 5% 64.9%;
