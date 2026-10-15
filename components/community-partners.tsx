@@ -1,7 +1,6 @@
 'use client';
 
 import Image from 'next/image';
-import { Users } from 'lucide-react';
 
 type Partner = {
     name: string;
@@ -29,19 +28,17 @@ export default function CommunityPartners() {
     ];
 
     return (
-        <div className='w-full max-w-[1020px] mx-auto mt-12'>
-            {/* Header */}
-            <div className='text-center mb-8'>
-                <div className='flex items-center justify-center gap-3 mb-4'>
-                    <Users className='w-8 h-8 text-blue-600' />
-                    <h2 className='text-3xl md:text-4xl font-bold text-gray-800 dark:text-gray-200'>
-                        Our Community Partners
+        <section className='py-16'>
+            <div className='w-full max-w-[1020px] mx-auto space-y-6'>
+                {/* Header */}
+                <div className='text-center space-y-1'>
+                    <h2 className='text-xs md:text-sm uppercase tracking-widest font-semibold text-gray-500 dark:text-gray-500'>
+                        Community Partners
                     </h2>
+                    <p className='text-sm text-gray-600 dark:text-gray-400'>
+                        Together with our community partners, we create amazing experiences
+                    </p>
                 </div>
-                <p className='text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto'>
-                    Together with our community partners, we create amazing experiences
-                </p>
-            </div>
 
             {/* Partners Grid */}
             <div className='flex flex-wrap justify-center gap-6'>
@@ -51,13 +48,13 @@ export default function CommunityPartners() {
                     const logoStyle = { transform: `scale(${logoScale})` };
 
                     const content = (
-                        <div className={`group relative bg-white dark:bg-gray-200 rounded-2xl p-8 shadow-lg border border-gray-200 dark:border-gray-100 hover:shadow-2xl transition-all duration-300 hover:scale-105 flex items-center justify-center ${CARD_HEIGHT}`}>
+                        <div className={`group relative bg-white dark:bg-gray-200 rounded-2xl p-6 border border-gray-200 dark:border-gray-100 hover:border-gray-400 transition-colors flex items-center justify-center ${CARD_HEIGHT}`}>
                             <div className='relative w-full h-24 flex items-center justify-center' style={logoStyle}>
                                 <Image
                                     src={partner.logo}
                                     alt={`${partner.name} logo`}
                                     fill
-                                    className={`object-contain transition-all duration-300 p-4 ${partner.invertOnCard ? 'invert' : ''}`}
+                                    className={`object-contain p-4 ${partner.invertOnCard ? 'invert' : ''}`}
                                     sizes='(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw'
                                 />
                             </div>
@@ -102,7 +99,8 @@ export default function CommunityPartners() {
                         </div>
                     </div>
                 </a> */}
+                </div>
             </div>
-        </div>
+        </section>
     );
 }
