@@ -11,7 +11,7 @@ import CommunityPartners from '@/components/community-partners';
 import DevFestLogo from '@/public/assets/DF26-Logo-Lockup-Primary_With Date.png';
 import GDGZagrebLogo from '@/public/assets/GDG-Zagreb-logo@3x.png';
 import SponzorskiPaketi from '@/public/assets/sponzorski-paketi.png';
-import { MapPin, Sparkles, Users, X, Smartphone, Globe, Cloud, Ticket } from 'lucide-react';
+import { MapPin, Sparkles, Users, X, Smartphone, Globe, Cloud, Ticket, Laptop } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -159,7 +159,7 @@ const MainPage = () => {
                         </div>
 
                         {/* Stats Cards */}
-                        <div className='grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto'>
+                        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto'>
                             <div className='group rounded-2xl bg-white/60 dark:bg-gray-900/40 border border-accent-blue/20 p-5 transition-colors hover:border-accent-blue/50'>
                                 <Users className='w-7 h-7 text-accent-blue mb-3' />
                                 <div className='text-3xl font-bold text-accent-blue'>
@@ -177,6 +177,16 @@ const MainPage = () => {
                                 </div>
                                 <div className='text-xs font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-wider mt-1'>
                                     Parallel Stages
+                                </div>
+                            </div>
+
+                            <div className='group rounded-2xl bg-white/60 dark:bg-gray-900/40 border border-accent-yellow/20 p-5 transition-colors hover:border-accent-yellow/50'>
+                                <Laptop className='w-7 h-7 text-accent-yellow mb-3' />
+                                <div className='text-3xl font-bold text-accent-yellow'>
+                                    Hands-on
+                                </div>
+                                <div className='text-xs font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-wider mt-1'>
+                                    Workshops
                                 </div>
                             </div>
 
