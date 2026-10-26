@@ -7,7 +7,7 @@ import ImageMarquee from '@/components/image-marquee';
 import PoweredBy from '@/components/powered-by';
 import Sponsors from '@/components/sponsors';
 import CommunityPartners from '@/components/community-partners';
-// import { Button } from '@/components/ui/button'; // re-enable with the Get Tickets / sponsorship packages buttons
+// import { Button } from '@/components/ui/button'; // re-enable with the sponsorship packages button
 import DevFestLogo from '@/public/assets/DF26-Logo-Lockup-Primary_With Date.png';
 import GDGZagrebLogo from '@/public/assets/GDG-Zagreb-logo@3x.png';
 import SponzorskiPaketi from '@/public/assets/sponzorski-paketi.png';
@@ -21,10 +21,9 @@ const HERO_VIDEO_ID = 'mLDa5ZLpp0Q';
 // Vertical Shorts clip for mobile (9:16).
 const HERO_VIDEO_SHORT_ID = '4QwAqwQ6zPs';
 
-// TODO: Replace with the real ticket URL once ticketing goes live,
-// then restore the "Get Tickets" button in the hero (replaces the
-// "Tickets available soon" announcement).
-// const TICKET_URL = '#';
+// Tickets are free; registration is required on the GDG community platform.
+const REGISTER_URL =
+    'https://gdg.community.dev/events/details/google-gdg-zagreb-presents-devfest-2026-developers-and-builders-in-the-agentic-era-1/';
 
 // RIT Croatia Zagreb — venue partner for the 2026 edition.
 const RIT_URL = 'https://www.croatia.rit.edu/';
@@ -93,11 +92,9 @@ const MainPage = () => {
                                     </Link>
                                 </div>
 
-                                <p className='text-xl md:text-2xl lg:text-3xl font-light text-gray-700 dark:text-gray-300 leading-relaxed'>
-                                    Where innovation meets community.
-                                    <br />
+                                <p className='text-xl md:text-2xl lg:text-3xl font-light text-gray-700 dark:text-gray-300 leading-relaxed text-balance'>
                                     <span className='font-semibold text-accent-blue'>
-                                        Be part of something extraordinary.
+                                        Developers and Builders in the Agentic Era
                                     </span>
                                     <br />
                                     <span className='font-semibold text-gray-800 dark:text-gray-200'>
@@ -105,30 +102,26 @@ const MainPage = () => {
                                     </span>
                                 </p>
 
-                                {/* Tickets availability announcement (replaces the Get Tickets button until ticketing goes live) */}
-                                <div className='flex items-center justify-center lg:justify-start pt-2'>
-                                    <div className='inline-flex items-center gap-3 px-6 h-14 rounded-2xl bg-accent-blue/5 border border-accent-blue/30'>
-                                        <Ticket className='w-5 h-5 text-accent-blue' />
-                                        <span className='text-lg md:text-xl font-semibold text-accent-blue'>
-                                            Tickets available soon
+                                {/* Free registration CTA */}
+                                <div className='space-y-3 pt-2'>
+                                    <div className='flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3'>
+                                        <Link
+                                            href={REGISTER_URL}
+                                            target='_blank'
+                                            rel='noopener noreferrer'
+                                            className='inline-flex items-center justify-center gap-3 px-8 h-14 rounded-2xl bg-accent-blue text-white dark:text-brand-black text-xl font-bold transition-opacity hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:ring-offset-2 focus-visible:ring-offset-background'
+                                        >
+                                            <Ticket className='w-5 h-5' />
+                                            Get your free ticket
+                                        </Link>
+                                        <span className='inline-flex items-center h-8 px-3 rounded-full bg-accent-green/10 border border-accent-green/30 text-sm font-semibold text-accent-green'>
+                                            Free for everyone
                                         </span>
                                     </div>
+                                    <p className='text-sm md:text-base text-gray-600 dark:text-gray-400 max-w-md mx-auto lg:mx-0'>
+                                        Everything costs more lately, so we went the other way. If you build things, there&rsquo;s a seat for you. Registration is required.
+                                    </p>
                                 </div>
-                                {/*
-                                <div className='flex items-center justify-center lg:justify-start pt-2'>
-                                    <Link
-                                        href={TICKET_URL}
-                                        target={TICKET_URL === '#' ? undefined : '_blank'}
-                                        className='group relative inline-block'
-                                    >
-                                        <div className='absolute -inset-1 bg-linear-to-r from-accent-blue via-accent-red to-accent-yellow rounded-2xl blur-sm opacity-60 group-hover:opacity-90 transition duration-500 animate-pulse' />
-                                        <Button className='relative w-64 h-16 rounded-2xl text-xl font-bold bg-linear-to-r from-accent-blue to-accent-red hover:from-accent-blue/90 hover:to-accent-red/90 text-white shadow-2xl transform transition-all duration-300 hover:scale-105'>
-                                            <Ticket className='mr-3 w-6 h-6' />
-                                            Get Tickets
-                                        </Button>
-                                    </Link>
-                                </div>
-                                */}
                             </div>
 
                             {/* Right: video — vertical Shorts on mobile, horizontal preview on desktop */}
