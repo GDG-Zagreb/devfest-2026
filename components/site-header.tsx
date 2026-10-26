@@ -26,7 +26,7 @@ export function SiteHeader() {
         // },
     ];
 
-    const externalLinks = [
+    const externalLinks: Array<{ href: string; label: string; icon: LucideIcon; disabled?: boolean }> = [
         // Re-enable with the real ticket URL when ticketing goes live:
         // {
         //     href: '',
@@ -46,9 +46,8 @@ export function SiteHeader() {
         },
         {
             href: 'https://docs.google.com/forms/d/e/1FAIpQLSeUlJI3paMOEgSJXL1gFvVRUYFQIdN0stdrgXtNKVRzgG3Elg/viewform',
-            label: 'Become a pitcher — soon',
+            label: 'Become a pitcher!',
             icon: Lightbulb,
-            disabled: true,
         },
     ];
 

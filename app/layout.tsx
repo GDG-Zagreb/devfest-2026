@@ -48,6 +48,7 @@ export default function RootLayout({
     return (
         <html lang='en' suppressHydrationWarning>
             <body
+                suppressHydrationWarning
                 className={cn(
                     'flex flex-col min-h-screen dark:from-zinc-950 dark:via-zinc-900 dark:to-zinc-950',
                     inter.className
