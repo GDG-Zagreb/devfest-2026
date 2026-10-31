@@ -20,6 +20,7 @@ The single source of truth for all speaker information:
       "name": "Building Scalable Web Applications with Modern Frameworks",
       "info": "In this session, we'll explore how to build scalable web applications using modern JavaScript frameworks. We'll cover best practices for architecture, state management, and performance optimization...",
       "imgSrc": "/speaker-photos/2024/jane-doe.jpg",
+      "bio": "Jane builds web platforms at TechCorp and speaks about frontend architecture.",
       "isFeatured": false
     },
     {
@@ -34,6 +35,8 @@ The single source of truth for all speaker information:
   ]
 }
 ```
+
+`bio` is optional (keep it to roughly 280 characters). The `/speakers` page shows it in the speaker detail dialog and hides it when missing. Use square photos where possible; other aspect ratios are cropped with `object-cover`.
 
 ### 2. Stage Schedule Files
 

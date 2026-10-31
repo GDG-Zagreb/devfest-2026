@@ -1,135 +1,66 @@
 {
-    "speakers": [
-      {
-         "type": "Talk",
-         "speakerName": "Ivan Herak", 
-         "speakerInfo": "Head of Backend Department at Netgen",
-         "name": "Hello from the Other Side",
-         "info": "From Head of Backend to Project Manager and why? Are Project Managers just box-pushers and human notification systems? Are developers truly introverted, tech-obsessed, code machines? Ivan has seen the nuances, frustrations, and challenges that each side faces, and he’ll explore how these two misunderstood roles can learn from one another, and more importantly, work together.",
-         "imgSrc": "/speaker-photos/2025/herak-ivan.jpeg",
-         "isFeatured": false,
-         "isPublishable": true
-        },
-         {
-         "type": "Talk",
-         "speakerName": "Rowdy Rabouw",
-         "speakerInfo": "Google Developer Expert in Web Technologies",
-         "name": "One Small Model for Chrome, One Giant Leap for Local AI",
-         "info": "Discover how Google's Gemini Nano model is a breakthrough for AI in the browser. Like NASA's Gemini spaceflight preceded the Apollo moon landings, Gemini Nano is the stepping stone to an age of powerful AI running locally on every device, starting with Chrome.",
-         "imgSrc": "/speaker-photos/2025/rabouw-rowdy.jpeg",
-         "isFeatured": false,
-         "isPublishable": true
-        },
-        {
-         "type": "Talk",
-         "speakerName": "Senko Rašić",
-         "speakerInfo": "CEO/CTO, Dobar Kod",
-         "name": "Scraping 8 million daily prices for fun",
-         "info": "Senko runs cijene.dev, a free API service that collects (crawls) daily prices from Croatian retail chains. Join him in exploring messy data, file formats in constant flux, overengineered code and a little bit of AI magic.",
-         "imgSrc": "/speaker-photos/2025/rasic-senko.jpeg",
-         "isFeatured": false,
-         "isPublishable": true
-        },
-        {
-         "type": "Talk",
-         "speakerName": "Borna Matijanić",
-         "speakerInfo": "Backend Team Lead and Branch Manager at Netgen",
-         "name": "Real-world Lessons from Technical Debt Autopsy",
-         "info": "In this session, we’ll explore real-world case studies of successfully rehabilitating problematic codebases. Learn diagnostic techniques for uncovering systemic issues and discover practical strategies for refactoring and long-term improvement. Perfect for developers and tech leads aiming to turn “legacy nightmares” into maintainable, high-performing systems.",
-         "imgSrc": "/speaker-photos/2025/matijanic-borna.jpeg",
-         "isFeatured": false,
-         "isPublishable": true
-        },
-            {
-         "type": "Talk",
-         "speakerName": "Elvina Suleimanova",
-         "speakerInfo": "Psychologist",
-         "name": "Perfectionism vs Continuous Growth",
-         "info": "After 8 years as a QA engineer, Elvina now supports CEOs and business owners in transforming mindset and performance, bridging tech and psychology to unlock growth. Evelina will reveal how perfectionism, often disguised as “high standards,” can actually block innovation and how shifting to a growth mindset empowers teams to deliver more impact with less stress.",
-         "imgSrc": "/speaker-photos/2025/suleimanova-elvina.jpeg",
-         "isFeatured": false,
-         "isPublishable": true
-        },
-        {
-         "type": "Talk",
-         "speakerName": "Dean Djermanović",
-         "speakerInfo": "Android Tech Lead & Consultant",
-         "name": "Building a Weather Agent on Android with Koog",
-         "info": "In this session, you will learn the basics of Koog, the new open-source Kotlin framework for building AI agents on the JVM. I'll guide you through building a small Android app that uses Koog to ask a language model for weather forecasts and then displays the results. We'll cover:\n\n• How to add Koog to an Android project setup\n• How to write a simple single-run agent that talks to a weather API\n• How to connect the agent to an LLM (like OpenAI or Google Gemini)\n• How to show the forecast in a basic Compose UI\n\nNo prior experience with Koog is needed. By the end you will have a simple working Android app and code that shows how to build your own agents in Kotlin.",
-         "imgSrc": "/speaker-photos/2025/djermanovic-dean.jpg",
-         "isFeatured": false,
-         "isPublishable": true
-        },
-        {
-         "type": "Talk",
-         "speakerName": "Eddy Wolf",
-         "speakerInfo": "Student at University of practical studies Split",
-         "name": "Containerized Systems and Applications",
-         "info": "A presentation diving in the current state of virtualized and containerized applications/systems, how they can be utilized for cross-platform implementation of applications, and the security and usability concerns they bring with them.",
-         "imgSrc": "/speaker-photos/2025/wolf-eddy.jpeg",
-         "isFeatured": false,
-         "isPublishable": true   
-        },
-        {
-         "type": "Talk",
-         "speakerName": "Bruno Banelli",
-         "speakerInfo": "Emerging Technologies Architect at Sartura d.d.",
-         "name": "TamaGo: The Bare Metal Go Framework for Embedded Devices and Hypervisors",
-         "info": "Trying to bring legacy calmness to modern calamity, Bruno is focused on Go development and participating in various network and cybersecurity projects, namely currently being an ETSI rapporteur for the EN 304 627 Cyber Resilience Act (CRA) project.\n\nHe has chaired 2025 NetDev 0x19, brought the first Linux Foundation Networking hackathon to Croatia and is actively participating in academic teaching at multiple institutions both in Croatia and abroad. Wearing many hats (and beards) in multiple companies, one of his latest engagements is developing and placing to market first fully software open source switch based on mainline Linux (switchdev).\n\nOur talk topic - TamaGo is a revolutionary framework that enables Go applications to run directly on bare metal hardware without requiring an operating system or C runtime dependencies. By extending Go's compiler with a new tamago target, developers can write secure embedded applications using Go's memory-safe language features.\n",
-         "imgSrc": "/speaker-photos/2025/banelli-bruno.jpg",
-         "isFeatured": false,
-         "isPublishable": true
-        },
-        {
-         "type": "Talk",
-         "speakerName": "Fabian Krumbholz",
-         "speakerInfo": "Principal Web Performance Consultant at Cognizant Netcentric",
-         "name": "Future-Proof Your Career: A Student's Guide to Thriving with AI",
-         "info": "After speaking with students at numerous DevFests last year, their biggest anxiety became clear: how to launch a career in the AI era. This hands-on session is built to solve their core challenges with a perfectly matched set of Google technologies. In this practical workshop, we will: Build a unique career website with Google's AI tools, providing a powerful answer to the student question, \"How do I stand out?\" Master the new AI features in Chrome DevTools. As a performance specialist, I’ll show how this proves their professional-grade skills and lets them debug websites significantly faster than most developers. Turn ideas into reality by building and deploying a functional web app with Firebase Studio, creating an impressive project for their portfolio. This session moves beyond theory. Attendees will leave not with more questions, but with a tangible portfolio piece, renewed confidence, and a list of concrete action points they can use immediately to launch their career.",
-         "imgSrc": "/speaker-photos/2025/krumbholz-fabian.jpg",
-         "isFeatured": false,
-         "isPublishable": true
-        },
+  "speakers": [
     {
-        "type": "Talk",
-         "speakerName": "Andre Sara",
-         "speakerInfo": "Chief Technologist at DXC Technology",
-         "name": "Ethical Considerations and Responsible AI Development",
-         "info": "This session is about the Ethical considerations of GenAI development and use and how developers can use Google Cloud tools like SynthID, Model Armor and building guardrails for their Agents/LLM to protect against malicious actors.\n\n\n\nAndre has presented this talk twice, once at Brussels Future of European AI and another time at a DXC speaking event (with more than 700 participants!) - it was really well received and very thought provoking as it gives Developers a different perspective on using/developing GenAI.",
-         "imgSrc": "/speaker-photos/2025/sara-andre.jpeg",
-         "isFeatured": true,
-         "isPublishable": true
-        },
-        {
-        "type": "Talk",
-         "speakerName": "Jasper Duizendstra",
-         "speakerInfo": "Independent Google Solutions Engineer & Expert",
-         "name": "Contextvibes: Opinionated AI-Assisted Solution Development",
-         "info": "Contextvibes is an open-source initiative Jasper created to master our new AI frontier. This presentation introduces solutions for moving beyond simple prompting into a structured, effective partnership with AI. Contextvibes is an opinionated ecosystem designed to provide our AI assistants with the deep, actionable context they need to be truly valuable teammates.",
-         "imgSrc": "/speaker-photos/2025/duizendstra-jasper.jpeg",
-         "isFeatured": true,
-         "isPublishable": true
-        },
-            {
-        "type": "Talk",
-         "speakerName": "Dražen Lučanin",
-         "speakerInfo": "Head of IT Systems and Technical Services at the City of Zagreb",
-         "name": "Open data and open APIs for efficient city management",
-         "info": "Dražen will explore how open data and open APIs can improve city management, showcasing initiatives like the City’s Open Data Portal, real-time traffic regulation app, Waze and Google Maps integrations, and the evolution of public transport data through the ZET info v2 case study.",
-         "imgSrc": "/speaker-photos/2025/lucanin-drazen.jpeg",
-         "isFeatured": true,
-         "isPublishable": true
-        },
-        {
-        "type": "Talk",
-         "speakerName": "Matthias Geisler",
-         "speakerInfo": "Senior Software Engineer at Airalo",
-         "name": "Let's speak about Accessibility",
-         "info": "We will explore practical approaches of making Android apps accessible and how this work naturally improves our development practices. Also, with the European Accessibility Act (EAA) now in effect, understanding these principles isn't just good practice—it's becoming essential for many Android applications and the businesses behind them.",
-         "imgSrc": "/speaker-photos/2025/geisler-matthias.jpeg",
-         "isFeatured": true,
-         "isPublishable": true
-        }
+      "type": "Talk",
+      "speakerName": "Senko Rašić",
+      "speakerInfo": "Partner, VibeScale",
+      "name": "You don't need Fable for that: comparing Jev, open models, and classical ML approach to text classification",
+      "info": "When you have a powerful hammer, everything looks like a nail. But many tasks can be done faster and cheaper using smaller, local, or specialized models. We'll compare how several different approaches fare on a typical AI task: text classification.",
+      "bio": "Senko Rašić has been a software engineer and an active member of the Croatian developer community for several decades, creating a Linux distribution, cofounding the local Ubuntu user group and the WebCamp Zagreb conference. He maintains Cijene API, an open-source project that collects 10 million retail prices a day. Today at VibeScale he helps companies adopt AI in their software development practices and integrate AI into their products.",
+      "imgSrc": "/speaker-photos/2026/senko-rasic.jpeg",
+      "isFeatured": false,
+      "isPublishable": true
+    },
+    {
+      "type": "Talk",
+      "speakerName": "Ivan Herak",
+      "speakerInfo": "Head of Backend Department at Netgen",
+      "name": "Hello from the Other Side",
+      "info": "From Head of Backend to Project Manager and why? Are Project Managers just box-pushers and human notification systems? Are developers truly introverted, tech-obsessed, code machines? Ivan has seen the nuances, frustrations, and challenges that each side faces, and he’ll explore how these two misunderstood roles can learn from one another, and more importantly, work together.",
+      "imgSrc": "/speaker-photos/2025/herak-ivan.jpeg",
+      "isFeatured": false,
+      "isPublishable": true
+    },
+    {
+      "type": "Talk",
+      "speakerName": "Rowdy Rabouw",
+      "speakerInfo": "Google Developer Expert in Web Technologies",
+      "name": "One Small Model for Chrome, One Giant Leap for Local AI",
+      "info": "Discover how Google's Gemini Nano model is a breakthrough for AI in the browser. Like NASA's Gemini spaceflight preceded the Apollo moon landings, Gemini Nano is the stepping stone to an age of powerful AI running locally on every device, starting with Chrome.",
+      "imgSrc": "/speaker-photos/2025/rabouw-rowdy.jpeg",
+      "isFeatured": false,
+      "isPublishable": true
+    },
 
-    ]
+    {
+      "type": "Talk",
+      "speakerName": "Borna Matijanić",
+      "speakerInfo": "Backend Team Lead and Branch Manager at Netgen",
+      "name": "Real-world Lessons from Technical Debt Autopsy",
+      "info": "In this session, we’ll explore real-world case studies of successfully rehabilitating problematic codebases. Learn diagnostic techniques for uncovering systemic issues and discover practical strategies for refactoring and long-term improvement. Perfect for developers and tech leads aiming to turn “legacy nightmares” into maintainable, high-performing systems.",
+      "imgSrc": "/speaker-photos/2025/matijanic-borna.jpeg",
+      "isFeatured": false,
+      "isPublishable": true
+    },
+    {
+      "type": "Talk",
+      "speakerName": "Elvina Suleimanova",
+      "speakerInfo": "Psychologist",
+      "name": "Perfectionism vs Continuous Growth",
+      "info": "After 8 years as a QA engineer, Elvina now supports CEOs and business owners in transforming mindset and performance, bridging tech and psychology to unlock growth. Evelina will reveal how perfectionism, often disguised as “high standards,” can actually block innovation and how shifting to a growth mindset empowers teams to deliver more impact with less stress.",
+      "imgSrc": "/speaker-photos/2025/suleimanova-elvina.jpeg",
+      "isFeatured": false,
+      "isPublishable": true
+    },
+    {
+      "type": "Talk",
+      "speakerName": "Dean Djermanović",
+      "speakerInfo": "Android Tech Lead & Consultant",
+      "name": "Building a Weather Agent on Android with Koog",
+      "info": "In this session, you will learn the basics of Koog, the new open-source Kotlin framework for building AI agents on the JVM. I'll guide you through building a small Android app that uses Koog to ask a language model for weather forecasts and then displays the results. We'll cover:\n\n• How to add Koog to an Android project setup\n• How to write a simple single-run agent that talks to a weather API\n• How to connect the agent to an LLM (like OpenAI or Google Gemini)\n• How to show the forecast in a basic Compose UI\n\nNo prior experience with Koog is needed. By the end you will have a simple working Android app and code that shows how to build your own agents in Kotlin.",
+      "imgSrc": "/speaker-photos/2025/djermanovic-dean.jpg",
+      "isFeatured": false,
+      "isPublishable": true
+    }
+  ]
 }
