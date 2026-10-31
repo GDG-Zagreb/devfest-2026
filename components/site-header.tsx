@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { ModeToggle } from '@/components/theme-toggle';
+import { siteConfig } from '@/config/site';
 import { MessagesSquare, Mic2, Lightbulb, Menu, ChevronDown, ExternalLink, type LucideIcon } from 'lucide-react';
 import { Button } from './ui/button';
 import Link from 'next/link';
@@ -45,7 +46,7 @@ export function SiteHeader() {
             icon: Mic2,
         },
         {
-            href: 'https://docs.google.com/forms/d/e/1FAIpQLSeUlJI3paMOEgSJXL1gFvVRUYFQIdN0stdrgXtNKVRzgG3Elg/viewform',
+            href: siteConfig.links.pitchForm,
             label: 'Become a pitcher!',
             icon: Lightbulb,
         },
