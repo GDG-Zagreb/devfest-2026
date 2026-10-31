@@ -4,11 +4,13 @@ import ImageMarquee from '@/components/image-marquee';
 // Alternate gallery: `@/components/image-gallery` (enlarged in-place mosaic, Option A).
 // To swap back, replace the ImageMarquee import above and the <ImageMarquee /> render
 // below with their ImageGallery equivalents.
+import PitchYourProject from '@/components/pitch-your-project';
 import PoweredBy from '@/components/powered-by';
 import Sponsors from '@/components/sponsors';
 import CommunityPartners from '@/components/community-partners';
 // import { Button } from '@/components/ui/button'; // re-enable with the sponsorship packages button
 import DevFestLogo from '@/public/assets/DF26-Logo-Lockup-Primary_With Date.png';
+import DevFestLogoDark from '@/public/assets/DF26-Logo-Lockup-Primary_With-Date--dark.png';
 import GDGZagrebLogo from '@/public/assets/GDG-Zagreb-logo@3x.png';
 import SponzorskiPaketi from '@/public/assets/sponzorski-paketi.png';
 import { MapPin, Sparkles, Users, X, Smartphone, Globe, Cloud, Ticket, Laptop } from 'lucide-react';
@@ -64,12 +66,18 @@ const MainPage = () => {
                                 {/* Main Headline — primary DevFest 2026 lockup */}
                                 <div className='space-y-4'>
                                     <h1 className='sr-only'>DevFest Croatia 2026</h1>
+                                    {/* Light/dark variants swap via CSS (no theme flash); the hidden one is never fetched */}
                                     <Image
                                         src={DevFestLogo}
                                         alt='DevFest Croatia 2026 — December 5'
-                                        priority
                                         placeholder='blur'
-                                        className='w-full max-w-xl h-auto mx-auto lg:mx-0'
+                                        className='w-full max-w-xl h-auto mx-auto lg:mx-0 dark:hidden'
+                                    />
+                                    <Image
+                                        src={DevFestLogoDark}
+                                        alt='DevFest Croatia 2026 — December 5'
+                                        placeholder='blur'
+                                        className='hidden dark:block w-full max-w-xl h-auto mx-auto lg:mx-0'
                                     />
 
                                     {/* RIT co-brand */}
@@ -223,6 +231,9 @@ const MainPage = () => {
                         </div>
                     </div>
                 </section>
+
+                {/* Pitching */}
+                <PitchYourProject />
 
                 {/* Gallery Section — Option B (ImageMarquee, edge-to-edge band) is active.
                     Option A (ImageGallery, enlarged mosaic) lives in `components/image-gallery.tsx`;

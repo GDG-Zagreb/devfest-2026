@@ -57,7 +57,8 @@ export const siteConfig = {
         linkedIn: 'https://www.linkedin.com/company/gdgzagreb/',
         linkTree: 'https://linktr.ee/zagrebgdg',
         instagram: 'https://www.instagram.com/gdg_zagreb/',
-        
+        pitchForm:
+            'https://docs.google.com/forms/d/e/1FAIpQLSeUlJI3paMOEgSJXL1gFvVRUYFQIdN0stdrgXtNKVRzgG3Elg/viewform',
     },
 };
 

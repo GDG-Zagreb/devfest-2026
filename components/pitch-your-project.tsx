@@ -1,121 +1,126 @@
-import { Button } from '@/components/ui/button';
-import { Lightbulb } from 'lucide-react';
+import { siteConfig } from '@/config/site';
+import { ArrowUpRight, Lightbulb } from 'lucide-react';
 import Link from 'next/link';
 
-export default function PitchYourProject() {
-    return (
-        <div className='w-full mt-8'>
-            <div className='bg-linear-to-r from-yellow-50 to-orange-50 dark:from-yellow-900/20 dark:to-orange-900/20 rounded-3xl p-8 shadow-xl border border-yellow-200 dark:border-yellow-700'>
-                <div className='text-center space-y-6'>
-                    <div className='flex items-center justify-center gap-3 mb-4'>
-                        <div className='p-3 bg-yellow-100 dark:bg-yellow-800/50 rounded-full shadow-lg'>
-                            <Lightbulb className='w-8 h-8' />
-                        </div>
-                        <h2 className='text-2xl md:text-3xl font-bold text-gray-800 dark:text-gray-200'>
-                            Pitch Your Project!
-                        </h2>
-                    </div>
+type PitchYourProjectProps = {
+    /** Number of pitch slots; shown as a fact chip only when provided. */
+    slots?: number;
+    /** Application deadline, e.g. 'November 15, 2026'; shown only when provided. */
+    deadline?: string;
+};
 
-                    <div className='max-w-3xl mx-auto space-y-6'>
+const steps = [
+    {
+        title: 'Apply',
+        text: 'Tell us about your project or solution in a short form.',
+    },
+    {
+        title: 'Get selected',
+        text: 'Selected applicants get a pitch slot on the DevFest stage.',
+    },
+    {
+        title: `Pitch on ${siteConfig.event.date}`,
+        text: `Present live at ${siteConfig.event.venue}, ${siteConfig.event.location}.`,
+    },
+];
+
+export default function PitchYourProject({ slots, deadline }: PitchYourProjectProps) {
+    return (
+        <section id='pitch' className='scroll-mt-20 py-16'>
+            <div className='max-w-6xl mx-auto rounded-3xl border border-accent-yellow/30 bg-accent-yellow/5 p-6 md:p-10'>
+                <div className='grid gap-8 lg:grid-cols-2 lg:items-center'>
+                    {/* Copy + CTA */}
+                    <div className='space-y-5 text-center lg:text-left'>
+                        <div className='inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent-yellow/10 border border-accent-yellow/30'>
+                            <Lightbulb className='w-5 h-5 text-accent-yellow' />
+                            <span className='text-sm font-semibold uppercase tracking-widest text-gray-800 dark:text-gray-200'>
+                                Pitch your project
+                            </span>
+                        </div>
+
+                        <h2 className='text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100'>
+                            Got a project, startup or idea? Pitch it on the DevFest stage.
+                        </h2>
+
                         <p className='text-lg text-gray-700 dark:text-gray-300'>
-                            Got an amazing project or startup idea? Present it to the DevFest community!
+                            Selected applicants present a lightning pitch of their project or
+                            solution to the DevFest community.
                         </p>
 
-                        {/* Step by Step Process */}
-                        <div className='space-y-4'>
-                            {/* Step 1 */}
-                            <div className='flex items-start gap-4 p-4 bg-white/80 dark:bg-gray-800/80 rounded-2xl border border-yellow-200 dark:border-yellow-600'>
-                                <div className='shrink-0 w-8 h-8 bg-yellow-500 text-white rounded-full flex items-center justify-center font-bold text-lg'>
-                                    1
-                                </div>
-                                <div className='text-left'>
-                                    <h4 className='font-semibold text-gray-800 dark:text-gray-200 mb-2'>
-                                        Have a cool side project, idea, or startup?
-                                    </h4>
-                                    <p className='text-sm text-gray-600 dark:text-gray-400'>
-                                        Whether you&rsquo;re working on a side project, have an idea you haven&rsquo;t started yet, or are running a startup - we want to hear from you!
-                                    </p>
-                                </div>
-                            </div>
+                        {(slots !== undefined || deadline) && (
+                            <ul className='flex flex-wrap items-center justify-center lg:justify-start gap-2 text-sm font-semibold'>
+                                {slots !== undefined && (
+                                    <li className='px-3 py-1 rounded-full border border-accent-yellow/30 bg-accent-yellow/10'>
+                                        {slots} pitch slots
+                                    </li>
+                                )}
+                                {deadline && (
+                                    <li className='px-3 py-1 rounded-full border border-accent-yellow/30 bg-accent-yellow/10'>
+                                        Applications close {deadline}
+                                    </li>
+                                )}
+                            </ul>
+                        )}
 
-                            {/* Step 2 */}
-                            <div className='flex items-start gap-4 p-4 bg-white/80 dark:bg-gray-800/80 rounded-2xl border border-yellow-200 dark:border-yellow-600'>
-                                <div className='shrink-0 w-8 h-8 bg-yellow-500 text-white rounded-full flex items-center justify-center font-bold text-lg'>
-                                    2
-                                </div>
-                                <div className='text-left'>
-                                    <h4 className='font-semibold text-gray-800 dark:text-gray-200 mb-2'>
-                                        Apply to pitch form
-                                    </h4>
-                                    <p className='text-sm text-gray-600 dark:text-gray-400'>
-                                        Fill out our application form with details about your project. Applications close September 30, 2025.
-                                    </p>
-                                </div>
-                            </div>
+                        <Link
+                            href={siteConfig.links.pitchForm}
+                            target='_blank'
+                            rel='noopener noreferrer'
+                            className='inline-flex items-center justify-center gap-2 px-8 h-14 rounded-2xl bg-accent-yellow text-brand-black text-xl font-bold hover:opacity-90 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-background'
+                        >
+                            Apply to pitch
+                            <ArrowUpRight className='w-5 h-5' aria-hidden />
+                        </Link>
+                    </div>
 
-                            {/* Step 3 */}
-                            <div className='flex items-start gap-4 p-4 bg-white/80 dark:bg-gray-800/80 rounded-2xl border border-yellow-200 dark:border-yellow-600'>
-                                <div className='shrink-0 w-8 h-8 bg-yellow-500 text-white rounded-full flex items-center justify-center font-bold text-lg'>
-                                    3
-                                </div>
-                                <div className='text-left'>
-                                    <h4 className='font-semibold text-gray-800 dark:text-gray-200 mb-2'>
-                                        Present in flexible 10-minute format
-                                    </h4>
-                                    <p className='text-sm text-gray-600 dark:text-gray-400'>
-                                        You have 10 minutes total. Use it however you want: 5min presenting + 5min Q&A, 7min + 3min, or any combination that works for you!
-                                    </p>
-                                </div>
-                            </div>
+                    {/* Slot card: the 10-minute time-box */}
+                    <div className='rounded-2xl bg-white/60 dark:bg-gray-900/40 border border-accent-yellow/30 p-6 space-y-4'>
+                        <p className='text-xs md:text-sm uppercase tracking-widest font-semibold text-gray-500'>
+                            Your slot
+                        </p>
+                        <p className='text-4xl font-bold text-gray-900 dark:text-gray-100'>
+                            10 minutes max
+                        </p>
 
-                            {/* Step 4 */}
-                            <div className='flex items-start gap-4 p-4 bg-white/80 dark:bg-gray-800/80 rounded-2xl border border-yellow-200 dark:border-yellow-600'>
-                                <div className='shrink-0 w-8 h-8 bg-yellow-500 text-white rounded-full flex items-center justify-center font-bold text-lg'>
-                                    4
-                                </div>
-                                <div className='text-left'>
-                                    <h4 className='font-semibold text-gray-800 dark:text-gray-200 mb-2'>
-                                        Get feedback, inspire others, find collaborators, get users
-                                    </h4>
-                                    <p className='text-sm text-gray-600 dark:text-gray-400'>
-                                        Receive valuable feedback, inspire the community, and potentially find collaborators or investors for your project!
-                                    </p>
-                                </div>
-                            </div>
+                        {/* Decorative example split; the text below carries the meaning */}
+                        <div className='flex h-4 w-full overflow-hidden rounded-full' aria-hidden>
+                            <div className='w-[70%] bg-accent-yellow' />
+                            <div className='w-[30%] bg-accent-yellow/40' />
+                        </div>
+                        <div className='flex justify-between text-sm font-semibold text-gray-800 dark:text-gray-200'>
+                            <span>e.g. 7 min pitch</span>
+                            <span>3 min Q&amp;A</span>
                         </div>
 
-                        {/* Available Slots & Apply Button */}
-                        <div className='bg-white/80 dark:bg-gray-800/80 rounded-2xl p-6 shadow-lg border border-yellow-200 dark:border-yellow-600'>
-                            <div className='space-y-4'>
-                                <div className='flex items-center justify-center gap-3'>
-                                    <span className='text-lg font-semibold text-gray-800 dark:text-gray-200'>
-                                        11 Pitch Slots Available
-                                    </span>
-                                </div>
-
-                                <div className='pt-4 border-t border-yellow-200 dark:border-yellow-600'>
-                                    <p className='text-sm text-gray-600 dark:text-gray-400 mb-4'>
-                                        <strong>Applications close October 12, 2025</strong> • Selected pitchers notified by October 15, 2025
-                                    </p>
-
-                                    <Link
-                                        href='https://docs.google.com/forms/d/e/1FAIpQLSeUlJI3paMOEgSJXL1gFvVRUYFQIdN0stdrgXtNKVRzgG3Elg/viewform'
-                                        target='_blank'
-                                        className='block'
-                                    >
-                                        <Button className='w-full max-w-md h-14 rounded-2xl text-lg font-semibold bg-linear-to-r from-yellow-500 to-orange-600 hover:from-yellow-600 hover:to-orange-700 text-white shadow-xl transform transition-all duration-300 hover:scale-105'>
-                                            <svg className='mr-3 w-5 h-5' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
-                                                <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z' />
-                                            </svg>
-                                            Apply for Pitch Slot
-                                        </Button>
-                                    </Link>
-                                </div>
-                            </div>
-                        </div>
+                        <p className='text-sm text-gray-600 dark:text-gray-400'>
+                            The 10 minutes include Q&amp;A. If your pitch takes the full 10
+                            minutes, no extra time is added for questions.
+                        </p>
                     </div>
                 </div>
+
+                {/* Steps */}
+                <ol className='mt-10 grid gap-4 md:grid-cols-3'>
+                    {steps.map((step, index) => (
+                        <li
+                            key={step.title}
+                            className='flex items-start gap-4 rounded-2xl bg-white/60 dark:bg-gray-900/40 border border-accent-yellow/20 p-5'
+                        >
+                            <span className='shrink-0 w-8 h-8 rounded-full bg-accent-yellow text-brand-black flex items-center justify-center font-bold'>
+                                {index + 1}
+                            </span>
+                            <div>
+                                <h3 className='font-bold text-gray-900 dark:text-gray-100'>
+                                    {step.title}
+                                </h3>
+                                <p className='mt-1 text-sm text-gray-600 dark:text-gray-400'>
+                                    {step.text}
+                                </p>
+                            </div>
+                        </li>
+                    ))}
+                </ol>
             </div>
-        </div>
+        </section>
     );
 }
