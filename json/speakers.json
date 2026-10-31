@@ -10,57 +10,6 @@
       "imgSrc": "/speaker-photos/2026/senko-rasic.jpeg",
       "isFeatured": false,
       "isPublishable": true
-    },
-    {
-      "type": "Talk",
-      "speakerName": "Ivan Herak",
-      "speakerInfo": "Head of Backend Department at Netgen",
-      "name": "Hello from the Other Side",
-      "info": "From Head of Backend to Project Manager and why? Are Project Managers just box-pushers and human notification systems? Are developers truly introverted, tech-obsessed, code machines? Ivan has seen the nuances, frustrations, and challenges that each side faces, and he’ll explore how these two misunderstood roles can learn from one another, and more importantly, work together.",
-      "imgSrc": "/speaker-photos/2025/herak-ivan.jpeg",
-      "isFeatured": false,
-      "isPublishable": true
-    },
-    {
-      "type": "Talk",
-      "speakerName": "Rowdy Rabouw",
-      "speakerInfo": "Google Developer Expert in Web Technologies",
-      "name": "One Small Model for Chrome, One Giant Leap for Local AI",
-      "info": "Discover how Google's Gemini Nano model is a breakthrough for AI in the browser. Like NASA's Gemini spaceflight preceded the Apollo moon landings, Gemini Nano is the stepping stone to an age of powerful AI running locally on every device, starting with Chrome.",
-      "imgSrc": "/speaker-photos/2025/rabouw-rowdy.jpeg",
-      "isFeatured": false,
-      "isPublishable": true
-    },
-
-    {
-      "type": "Talk",
-      "speakerName": "Borna Matijanić",
-      "speakerInfo": "Backend Team Lead and Branch Manager at Netgen",
-      "name": "Real-world Lessons from Technical Debt Autopsy",
-      "info": "In this session, we’ll explore real-world case studies of successfully rehabilitating problematic codebases. Learn diagnostic techniques for uncovering systemic issues and discover practical strategies for refactoring and long-term improvement. Perfect for developers and tech leads aiming to turn “legacy nightmares” into maintainable, high-performing systems.",
-      "imgSrc": "/speaker-photos/2025/matijanic-borna.jpeg",
-      "isFeatured": false,
-      "isPublishable": true
-    },
-    {
-      "type": "Talk",
-      "speakerName": "Elvina Suleimanova",
-      "speakerInfo": "Psychologist",
-      "name": "Perfectionism vs Continuous Growth",
-      "info": "After 8 years as a QA engineer, Elvina now supports CEOs and business owners in transforming mindset and performance, bridging tech and psychology to unlock growth. Evelina will reveal how perfectionism, often disguised as “high standards,” can actually block innovation and how shifting to a growth mindset empowers teams to deliver more impact with less stress.",
-      "imgSrc": "/speaker-photos/2025/suleimanova-elvina.jpeg",
-      "isFeatured": false,
-      "isPublishable": true
-    },
-    {
-      "type": "Talk",
-      "speakerName": "Dean Djermanović",
-      "speakerInfo": "Android Tech Lead & Consultant",
-      "name": "Building a Weather Agent on Android with Koog",
-      "info": "In this session, you will learn the basics of Koog, the new open-source Kotlin framework for building AI agents on the JVM. I'll guide you through building a small Android app that uses Koog to ask a language model for weather forecasts and then displays the results. We'll cover:\n\n• How to add Koog to an Android project setup\n• How to write a simple single-run agent that talks to a weather API\n• How to connect the agent to an LLM (like OpenAI or Google Gemini)\n• How to show the forecast in a basic Compose UI\n\nNo prior experience with Koog is needed. By the end you will have a simple working Android app and code that shows how to build your own agents in Kotlin.",
-      "imgSrc": "/speaker-photos/2025/djermanovic-dean.jpg",
-      "isFeatured": false,
-      "isPublishable": true
     }
   ]
 }

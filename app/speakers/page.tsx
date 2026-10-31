@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 
+import { SpeakerPlaceholder } from '@/components/speakers/speaker-placeholder';
 import { SpeakerTile, type SpeakerEntry } from '@/components/speakers/speaker-tile';
 import speakersData from '@/json/speakers.json';
 
@@ -9,10 +10,14 @@ export const metadata: Metadata = {
         'Meet the speakers of DevFest Croatia 2026 and find out more about their talks.',
 };
 
+// Expected lineup size. Unconfirmed slots render as placeholders until speakers are added.
+const SPEAKER_SLOTS = 12;
+
 const Speakers = () => {
     const speakers: SpeakerEntry[] = speakersData.speakers.filter(
         (speaker) => speaker.isPublishable === true
     );
+    const placeholders = Math.max(0, SPEAKER_SLOTS - speakers.length);
 
     return (
         <section className='container mx-auto px-4 py-16'>
@@ -27,6 +32,12 @@ const Speakers = () => {
                     The people behind this year&apos;s talks. Select a speaker to
                     read their bio and the full talk description.
                 </p>
+                {placeholders > 0 && (
+                    <p className='mt-2 text-sm font-medium text-foreground'>
+                        {speakers.length} of {SPEAKER_SLOTS} speakers announced.
+                        More coming soon.
+                    </p>
+                )}
             </div>
 
             <div className='mx-auto grid max-w-6xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3'>
@@ -37,6 +48,9 @@ const Speakers = () => {
                         index={index}
                         priority={index < 3}
                     />
+                ))}
+                {Array.from({ length: placeholders }, (_, index) => (
+                    <SpeakerPlaceholder key={`placeholder-${index}`} />
                 ))}
             </div>
         </section>
