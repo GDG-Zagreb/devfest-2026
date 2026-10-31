@@ -61,7 +61,9 @@ const ImageMarquee = () => {
                                 alt={`DevFest 2025 gallery image ${index + 1}`}
                                 fill
                                 className='object-cover group-hover:scale-[1.03] transition-transform duration-500'
-                                sizes='(max-width: 640px) 72vw, 380px'
+                                // Cards are portrait but photos are 16:9, so object-cover renders the
+                                // image ~1.78x the card height wide (460px / 540px tall), not card width.
+                                sizes='(max-width: 640px) 820px, 960px'
                                 placeholder='blur'
                                 blurDataURL={blurDataUrl}
                                 quality={85}
