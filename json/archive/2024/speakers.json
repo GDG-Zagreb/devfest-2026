@@ -38,7 +38,7 @@
             "speakerInfo": "Software developer & architect",
             "name": "Back to the future with WebAssembly",
             "info": "WebAssembly has been The Future of Programming™️ for quite some time now, but now that it's finally looking usable - is it worth the hype? Should I even care? Will it take my job?\nIf you want to know the answer to these questions (yes, yes and maybe), join me for a deep dive into the world of WebAssembly and let's learn how to use this technology of the future, today.",
-            "imgSrc": "/speaker-photos/Ian.png"
+            "imgSrc": "/speaker-photos/2023/Ian.png"
         },
         {
             "type": "Talk",

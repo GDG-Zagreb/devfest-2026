@@ -39,8 +39,6 @@ npm run type-check:watch  # Run type checking in watch mode
 │   └── ...            # Custom components
 ├── json/              # Conference data
 │   ├── speakers.json  # Current year speakers database
-│   ├── enter.json     # "Enter" stage schedule
-│   ├── shift.json     # "Shift" stage schedule
 │   └── archive/       # Historical conference data
 ├── lib/               # Utility functions
 └── public/            # Static assets
@@ -69,7 +67,7 @@ This project uses a **referential data architecture** that eliminates duplicatio
   // ... complete speaker info
 }
 
-// enter.json - Stage schedule
+// archive/<year>/enter.json - Stage schedule
 {
   "time": "10:00",
   "speakerRef": "Jane Doe",  // References speaker by name

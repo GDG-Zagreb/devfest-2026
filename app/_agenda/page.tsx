@@ -1,16 +1,16 @@
 'use client';
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import enter from '@/json/enter.json';
-import shift from '@/json/shift.json';
+import enter from '@/json/archive/2025/enter.json';
+import shift from '@/json/archive/2025/shift.json';
 import { enhanceScheduleWithSpeakers } from '@/lib/speaker-utils';
 import Link from 'next/link';
 import AgendaItem from '@/components/AgendaItem';
 
 export default function Agenda() {
-    // Enhance schedules with speaker data from current year (2025)
-    const enhancedEnterTalks = enhanceScheduleWithSpeakers(enter.talks);
-    const enhancedShiftTalks = enhanceScheduleWithSpeakers(shift.talks);
+    // Enhance schedules with speaker data from 2025 archive
+    const enhancedEnterTalks = enhanceScheduleWithSpeakers(enter.talks, '2025');
+    const enhancedShiftTalks = enhanceScheduleWithSpeakers(shift.talks, '2025');
 
     return (
         <div className='container flex flex-col items-center px-4 p-10'>
