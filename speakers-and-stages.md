@@ -40,7 +40,7 @@ The single source of truth for all speaker information:
 
 ### 2. Stage Schedule Files
 
-#### Enter Stage (`enter.json`)
+#### Enter Stage (`archive/<year>/enter.json`)
 ```json
 {
   "talks": [
@@ -68,7 +68,7 @@ The single source of truth for all speaker information:
 }
 ```
 
-#### Shift Stage (`shift.json`)
+#### Shift Stage (`archive/<year>/shift.json`)
 ```json
 {
   "talks": [
@@ -166,8 +166,8 @@ export function enhanceScheduleWithSpeakers(
 
 ```typescript
 // agenda/page.tsx
-import enter from '@/json/enter.json';
-import shift from '@/json/shift.json';
+import enter from '@/json/archive/2025/enter.json';
+import shift from '@/json/archive/2025/shift.json';
 import { enhanceScheduleWithSpeakers } from '@/lib/speaker-utils';
 
 export default function Agenda() {

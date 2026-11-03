@@ -6,7 +6,7 @@
             "speakerInfo": "Mobile team lead @ Teltech, Community lead @ GDG Osijek",
             "name": "Host of Management panel discussion",
             "info": "In this panel discussion, we will cover important topics, such as: How is management different today, vs 5 or 10 years ago?, Should a manager also be a leader and a coach?, Dealing with change in companies, The Difficulty of keping people around and many more!",
-            "imgSrc": "/speaker-photos/Filip.jpeg"
+            "imgSrc": "/speaker-photos/2023/Filip.jpeg"
         },
         {
             "type": "Panel",
@@ -14,7 +14,7 @@
             "speakerInfo": "VP of Engineering @ Teltech",
             "name": "Management panel discussion",
             "info": "I'm an engineer at heart and a jack of all trades kind of guy. For the last handful of years, I've been working at TelTech where we make innovative communications apps. Over the years  grew my team (40+ now) and am currently serving as a VP of Engineering responsible for our Mobile, Backend, Telco, Data, and QA departments. Nowadays I get my energy from seeing the people I lead perform on a world-class scale",
-            "imgSrc": "/speaker-photos/nikola.jpg"
+            "imgSrc": "/speaker-photos/2023/nikola.jpg"
         },
         {
             "type": "Panel",
@@ -22,7 +22,7 @@
             "speakerInfo": "All-kinds-of-software developer",
             "name": "Management panel discussion",
             "info": "A software consultant and developer, AI enthusiast, artist. Ian has been professionally writing software for the last 10 years, building applications for both small startups, large corporations and everything in between. When not writing code, he's talking about it, be it on meetups, online or among policy makers. ",
-            "imgSrc": "/speaker-photos/Ian.png"
+            "imgSrc": "/speaker-photos/2023/Ian.png"
         },
 
         {
@@ -31,7 +31,7 @@
             "speakerInfo": "COO @ Aesuts Accounting",
             "name": "Management panel discussion",
             "info": "Aleksandra Ignatoski is the acting COO at Aestus Accounting. She's making sure that both the development of the application Parra and its quality of service are fully aligned with customer needs. She graduated in the field of management, but her passion towards technology and building something new drew her into IT product development.",
-            "imgSrc": "/speaker-photos/Aleksandra.png"
+            "imgSrc": "/speaker-photos/2023/Aleksandra.png"
         },
         {
             "type": "Panel",
@@ -39,7 +39,7 @@
             "speakerInfo": "COO @ Speck",
             "name": "Management panel discussion",
             "info": "Kaja Pavlinić is a Master of Science in Software Engineering and the Chief Operating Officer in Speck. Additionally, Kaja is an alumna of the US Department of State Exchange community, president of Sustainable Development Forum Green Window, owner of KAJUŠKA business, a mentor within the Clinton Global Initiative University initiative, and a Climate Pact ambassador. Kaja has more than 3.5 years of experience in the IT industry and over 10 years of experience in managing and organizing projects focused on youth and civil society. She currently lives and works in Croatia. Throughout her career, Kaja has received awards such as the „Future Leader“ from the Croatian Women's Network and the „30 Under 30“ award as part of the VIDI Awards. She has participated in the organization and implementation of several dozen local and international projects related to the IT industry, civil society, active citizenship, and youth. Her focus and passion are directed towards empowering youth, sustainable development, active citizenship, project management, business development, and IT.",
-            "imgSrc": "/speaker-photos/Kaja.png"
+            "imgSrc": "/speaker-photos/2023/Kaja.png"
         },
         {
             "type": "Panel",
@@ -47,7 +47,7 @@
             "speakerInfo": "Flutterer @Friendly Fire, Community lead @ GDG Zagreb and @ Flutter Croatia ",
             "name": "Host of Open Source panel discussion",
             "info": "In this panel discussion, we will cover important topics, such as: Commercial Open Source, Relationship between OS and companies, maintainer responsibilites, Community relations and building community from the ground up, why go OS and many more!",
-            "imgSrc": "/speaker-photos/Sandro.jpeg"
+            "imgSrc": "/speaker-photos/2023/Sandro.jpeg"
         },
         {
             "type": "Panel",
@@ -55,7 +55,7 @@
             "speakerInfo": "CEO and Co-founder @ Wasp",
             "name": "Open Source panel discussion",
             "info": "Matija is the CEO & co-founder of Wasp together with his twin brother. This is the second startup they started together, funded by Y Combinator and top deep tech funds in 2021. Matija's background is an MSc in Computer Science from the University of Zagreb. His previous work spans from a research institute in Singapore to top-growing startups in NYC and London, covering fields of bioinformatics, mobile, and web development.",
-            "imgSrc": "/speaker-photos/Matija.png"
+            "imgSrc": "/speaker-photos/2023/Matija.png"
         },
         {
             "type": "Panel",
@@ -63,7 +63,7 @@
             "speakerInfo": "Full-type OS author and developer  @ mdxeditor.dev @ virtuoso.dev",
             "name": "Open Source panel discussion",
             "info": "A prolific GitHub star collector, Petyo is currently exploring the options of developing profitable bootstrapped business models with an open-source core.",
-            "imgSrc": "/speaker-photos/Petyo.jpg"
+            "imgSrc": "/speaker-photos/2023/Petyo.jpg"
         },
         {
             "type": "Talk",
@@ -71,7 +71,7 @@
             "speakerInfo": "Senior Software Engineer @ Miro, GDE Web Technologies",
             "name": "Embrace the web performance budget rituals",
             "info": "In this talk I will use the dental metaphor in order to introduce the performance budgets just like brushing teeth everyday to keep them clean and healthy you should do the same for your website by setting a performance budget and check it in every pull request in your pipelines, the target audience is mid-level to advanced, I will start by the example of the tooth decay and cleaning them then brushing them everyday as the dentist advice, then explain decay as the performance issue and performance budgeting is like the toothpaste and go from here with the different techniques that developers can do in order to prevent any loss in the performance wins they made.",
-            "imgSrc": "/speaker-photos/Medhat.jpeg"
+            "imgSrc": "/speaker-photos/2023/Medhat.jpeg"
         },
         {
             "type": "Talk",
@@ -79,7 +79,7 @@
             "speakerInfo": "GDE Web technologies, Developer Advocate and Senior Staff Engineer @ Sfeir Luxembourg",
             "name": "The digital age of web hydrations",
             "info": "Hydration is a very large concept which is quite difficult to understand and apply. In this talk, you will get to know what web hydration really is and the different kinds of web hydration that are applicable for different use cases.",
-            "imgSrc": "/speaker-photos/Nicolas.jpg"
+            "imgSrc": "/speaker-photos/2023/Nicolas.jpg"
         },
         {
             "type": "Talk",
@@ -87,7 +87,7 @@
             "speakerInfo": "CXO – Chief eXcitement Officer @ CITUS",
             "name": "Why do we need middleware for the (G)AI",
             "info": "Almost every day, new (generative) artificial intelligence services are emerging around the world. Wouldn't it be great if we had something to help us connect our apps to existing or new (G)AI services? This lecture describes how the middleware platform could be a solution to more easily catch up with the different APIs of existing and new services that are emerging.",
-            "imgSrc": "/speaker-photos/Tomislav.jpeg"
+            "imgSrc": "/speaker-photos/2023/Tomislav.jpeg"
         },
         {
             "type": "Talk",
@@ -95,7 +95,7 @@
             "speakerInfo": "Strategic IT Consultant @ CITUS",
             "name": "Why do we need middleware for the (G)AI",
             "info": "Almost every day, new (generative) artificial intelligence services are emerging around the world. Wouldn't it be great if we had something to help us connect our apps to existing or new (G)AI services? This lecture describes how the middleware platform could be a solution to more easily catch up with the different APIs of existing and new services that are emerging.",
-            "imgSrc": "/speaker-photos/Arian.jpeg"
+            "imgSrc": "/speaker-photos/2023/Arian.jpeg"
         },
         {
             "type": "Talk",
@@ -103,7 +103,7 @@
             "speakerInfo": "GDE Web technologies",
             "name": "Chrome DevTools LIVE LIVE LIVE",
             "info": "Chrome DevTools is getting more and more powerful in the past few years. In this session, Henry will takes us through a tour of all the interesting, useful, as well as rarely-known features of DevTools in the form of live demo. Furthermore, he will also live demo the very first version of DevTools, DevTools behind-the-scene, and tips on contributing to DevTools.",
-            "imgSrc": "/speaker-photos/Henry.png"
+            "imgSrc": "/speaker-photos/2023/Henry.png"
         },
         {
             "type": "Talk",
@@ -111,7 +111,7 @@
             "speakerInfo": "GDE Web technologies, Senior Full-stack Engineer at EQT Group @ Motherbrain",
             "name": " WebAuth and Passkeys: The future of authentication",
             "info": "In the face of digital threats, strong, easy-to-use authentication is key. 'WebAuth and Passkeys: The future of authentication' examines WebAuth and Passkeys, their constraints, user experience effects, and cybersecurity impacts. Discover why these innovations could revolutionize online authentication.",
-            "imgSrc": "/speaker-photos/Guilermo.JPG"
+            "imgSrc": "/speaker-photos/2023/Guilermo.JPG"
         },
         {
             "type": "Talk",
@@ -119,7 +119,7 @@
             "speakerInfo": "GDE Web technologies, Architect, @ Boehringer Ingelheim",
             "name": "Unleashing the Potential of AI Tools in Web Development ",
             "info": "Embark on a journey that explores the seamless synergy of web development and cutting-edge AI capabilities. Discover how AI enhances code quality, testing precision, and offers insights into performance optimization.",
-            "imgSrc": "/speaker-photos/Balram.png"
+            "imgSrc": "/speaker-photos/2023/Balram.png"
         },
         {
             "type": "Talk",
@@ -127,7 +127,7 @@
             "speakerInfo": "GDE Android and Kotlin, Senior Android Engineer @ NordVPN",
             "name": "Elevating app performance",
             "info": "With apps being developed at a rapid pace for diverse locales and users, it is crucial to continuously enhance app performance to provide an exceptional user experience. This talk will focus on various strategies to improve app performance and empower developers to create high-performing apps.",
-            "imgSrc": "/speaker-photos/Himanshu.jpg"
+            "imgSrc": "/speaker-photos/2023/Himanshu.jpg"
         },
         {
             "type": "Talk",
@@ -135,7 +135,7 @@
             "speakerInfo": "Software Engineer @ LichtBlick SE",
             "name": "TDD for Kotlin (and for Beginners)",
             "info": "This talk will give a (brief) intro into TDD (with Kotlin), so that people lose their fear to try it themselves. Ever wondered what TDD is or 'how' you can use it? You think you cannot TDD projects in a reasonable type? You doubt the value of testing in any case. Well let me bring you the good word of TDD and what wonders it can for you!",
-            "imgSrc": "/speaker-photos/Matthias.jpg"
+            "imgSrc": "/speaker-photos/2023/Matthias.jpg"
         },
         {
             "type": "Talk",
@@ -143,7 +143,7 @@
             "speakerInfo": "Developer Relations Engineer @ Kadena, GDE",
             "name": "Happy Healthy Team",
             "info": "How not to go crazy when you have just 2 weeks before the release, and the design is not yet fully ready? What if the important developers leave the team before the release? Let’s talk about how to build processes in a team to have a self-managing team with a healthy environment.",
-            "imgSrc": "/speaker-photos/Vasilika.jpg"
+            "imgSrc": "/speaker-photos/2023/Vasilika.jpg"
         },
         {
             "type": "Talk",
@@ -151,7 +151,7 @@
             "speakerInfo": "Maintainer at Decap CMS",
             "name": "Unleashing the Power of Git-Based Content Management Systems",
             "info": "If you’re starting a small blog or if you’re scaling up an enterprise website, a headless Git-based CMS could be the content management solution you’re looking for. At this session, discover how storing your content with your code can speed up, simplify, and streamline your workflow and how making content developer-first makes everyone happier to contribute.",
-            "imgSrc": "/speaker-photos/Martin.png"
+            "imgSrc": "/speaker-photos/2023/Martin.png"
         },
         {
             "type": "Talk",
@@ -159,7 +159,7 @@
             "speakerInfo": "Software enginneer @ Euroherc Insurance, Community lead @ GDG Zagreb",
             "name": "From Punch Cards to Predictive Coding",
             "info": "We will go through the history of development workflow and how it could change in the near future. First, we will go through some of significant eras and advantages that were gained with incorporating new tech or processes. Afterwards, we will talk about how development workflows work now compared to before. Finally, we will be focusing on AI. More specifically, how AI could change our working and learning processes and compare this to some of more radical changes that happened before.",
-            "imgSrc": "/speaker-photos/Boris.jpg"
+            "imgSrc": "/speaker-photos/2023/Boris.jpg"
         }
     ]
 }
