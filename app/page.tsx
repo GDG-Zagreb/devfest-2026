@@ -1,5 +1,6 @@
 'use client';
 
+import FeaturedSpeakers from '@/components/featured-speakers';
 import ImageMarquee from '@/components/image-marquee';
 // Alternate gallery: `@/components/image-gallery` (enlarged in-place mosaic, Option A).
 // To swap back, replace the ImageMarquee import above and the <ImageMarquee /> render
@@ -203,6 +204,9 @@ const MainPage = () => {
                         </div>
                     </div>
                 </section>
+
+                {/* Featured Speakers (isFeatured + isPublishable, max 3; hidden when none) */}
+                <FeaturedSpeakers />
 
                 {/* Topics Section */}
                 <section className='py-16'>

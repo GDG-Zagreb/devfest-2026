@@ -23,7 +23,7 @@ export type SpeakerEntry = {
 };
 
 // Static class names so Tailwind can see them at build time
-const accents = [
+export const accents = [
     {
         card: 'border-accent-blue/20 hover:border-accent-blue/50 focus-visible:ring-accent-blue',
         pill: 'bg-accent-blue/10 border-accent-blue/20 text-accent-blue',
@@ -45,6 +45,8 @@ const accents = [
         text: 'text-accent-red',
     },
 ];
+
+export type Accent = (typeof accents)[number];
 
 type SpeakerTileProps = {
     speaker: SpeakerEntry;
@@ -101,46 +103,60 @@ export function SpeakerTile({ speaker, index, priority }: SpeakerTileProps) {
             </DialogTrigger>
 
             <DialogContent>
-                <div className='flex flex-col gap-6 p-6 sm:flex-row sm:p-8'>
-                    <div className='relative aspect-square w-40 shrink-0 self-center overflow-hidden rounded-xl bg-muted sm:self-start'>
-                        <Image
-                            src={speaker.imgSrc}
-                            alt={speaker.speakerName}
-                            fill
-                            sizes='160px'
-                            className='object-cover object-top'
-                        />
-                    </div>
-                    <div className='min-w-0 flex-1'>
-                        <DialogTitle>{speaker.speakerName}</DialogTitle>
-                        <p className='mt-1 text-sm text-muted-foreground'>
-                            {speaker.speakerInfo}
-                        </p>
-                        {speaker.bio && (
-                            <p className='mt-4 text-sm leading-relaxed'>
-                                {speaker.bio}
-                            </p>
-                        )}
-                    </div>
-                </div>
-
-                <div className='border-t bg-muted/40 p-6 sm:p-8'>
-                    <span
-                        className={cn(
-                            'inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold',
-                            accent.pill
-                        )}
-                    >
-                        {speaker.type}
-                    </span>
-                    <h3 className='mt-3 text-xl font-bold leading-tight'>
-                        {speaker.name}
-                    </h3>
-                    <DialogDescription className='mt-3 text-sm leading-relaxed text-foreground/80'>
-                        {speaker.info}
-                    </DialogDescription>
-                </div>
+                <SpeakerDetails speaker={speaker} accent={accent} />
             </DialogContent>
         </Dialog>
+    );
+}
+
+export function SpeakerDetails({
+    speaker,
+    accent,
+}: {
+    speaker: SpeakerEntry;
+    accent: Accent;
+}) {
+    return (
+        <>
+            <div className='flex flex-col gap-6 p-6 sm:flex-row sm:p-8'>
+                <div className='relative aspect-square w-40 shrink-0 self-center overflow-hidden rounded-xl bg-muted sm:self-start'>
+                    <Image
+                        src={speaker.imgSrc}
+                        alt={speaker.speakerName}
+                        fill
+                        sizes='160px'
+                        className='object-cover object-top'
+                    />
+                </div>
+                <div className='min-w-0 flex-1'>
+                    <DialogTitle>{speaker.speakerName}</DialogTitle>
+                    <p className='mt-1 text-sm text-muted-foreground'>
+                        {speaker.speakerInfo}
+                    </p>
+                    {speaker.bio && (
+                        <p className='mt-4 text-sm leading-relaxed'>
+                            {speaker.bio}
+                        </p>
+                    )}
+                </div>
+            </div>
+
+            <div className='border-t bg-muted/40 p-6 sm:p-8'>
+                <span
+                    className={cn(
+                        'inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold',
+                        accent.pill
+                    )}
+                >
+                    {speaker.type}
+                </span>
+                <h3 className='mt-3 text-xl font-bold leading-tight'>
+                    {speaker.name}
+                </h3>
+                <DialogDescription className='mt-3 text-sm leading-relaxed text-foreground/80'>
+                    {speaker.info}
+                </DialogDescription>
+            </div>
+        </>
     );
 }

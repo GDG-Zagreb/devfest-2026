@@ -36,6 +36,8 @@ The single source of truth for all speaker information:
 }
 ```
 
+`isPublishable` controls whether a speaker is visible anywhere on the site (keep it `false` while a speaker is under embargo). `isFeatured` additionally puts a published speaker in the "Featured speakers" section of the landing page: at most 3 are shown, in the order they appear in the file, and the section is hidden when there are none. With fewer than 3, "To be announced" placeholders only fill the row the cards sit in: 1 featured speaker gets 2 placeholders on desktop, 1 on tablet and none on mobile; 2 featured speakers get 1 placeholder on desktop and none below that.
+
 `bio` is optional (keep it to roughly 280 characters). The `/speakers` page shows it in the speaker detail dialog and hides it when missing. Use square photos where possible; other aspect ratios are cropped with `object-cover`.
 
 ### 2. Stage Schedule Files

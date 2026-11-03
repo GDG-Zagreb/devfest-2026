@@ -8,8 +8,8 @@
       "info": "When you have a powerful hammer, everything looks like a nail. But many tasks can be done faster and cheaper using smaller, local, or specialized models. We'll compare how several different approaches fare on a typical AI task: text classification.",
       "bio": "Senko Rašić has been a software engineer and an active member of the Croatian developer community for several decades, creating a Linux distribution, cofounding the local Ubuntu user group and the WebCamp Zagreb conference. He maintains Cijene API, an open-source project that collects 10 million retail prices a day. Today at VibeScale he helps companies adopt AI in their software development practices and integrate AI into their products.",
       "imgSrc": "/speaker-photos/2026/senko-rasic.jpeg",
-      "isFeatured": false,
-      "isPublishable": false
+      "isFeatured": true,
+      "isPublishable": true
     },
     {
       "type": "Talk",
