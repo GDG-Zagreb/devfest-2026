@@ -11,6 +11,7 @@ import CommunityPartners from '@/components/community-partners';
 // import { Button } from '@/components/ui/button'; // re-enable with the sponsorship packages button
 import DevFestLogo from '@/public/assets/DF26-Logo-Lockup-Primary_With Date.png';
 import DevFestLogoDark from '@/public/assets/DF26-Logo-Lockup-Primary_With-Date--dark.png';
+import FlutterCroatiaLogo from '@/public/assets/flutter-croatia-logo.jpg';
 import GDGZagrebLogo from '@/public/assets/GDG-Zagreb-logo@3x.png';
 import SponzorskiPaketi from '@/public/assets/sponzorski-paketi.png';
 import { MapPin, Sparkles, Users, X, Smartphone, Globe, Cloud, Ticket, Laptop } from 'lucide-react';
@@ -26,6 +27,9 @@ const HERO_VIDEO_SHORT_ID = '4QwAqwQ6zPs';
 // Tickets are free; registration is required on the GDG community platform.
 const REGISTER_URL =
     'https://gdg.community.dev/events/details/google-gdg-zagreb-presents-devfest-2026-developers-and-builders-in-the-agentic-era-1/';
+
+// Flutter Croatia meetup group — co-organizer.
+const FLUTTER_CROATIA_URL = 'https://www.meetup.com/flutter-zg/';
 
 // RIT Croatia Zagreb — venue partner for the 2026 edition.
 const RIT_URL = 'https://www.croatia.rit.edu/';
@@ -386,6 +390,23 @@ const MainPage = () => {
                                     alt='GDG Zagreb'
                                     height={50}
                                 />
+                            </Link>
+                            <Link
+                                href={FLUTTER_CROATIA_URL}
+                                target='_blank'
+                                rel='noopener noreferrer'
+                                className='flex items-center gap-3 hover:opacity-80 transition-opacity'
+                            >
+                                <Image
+                                    src={FlutterCroatiaLogo}
+                                    alt=''
+                                    height={56}
+                                    width={56}
+                                    className='rounded-xl'
+                                />
+                                <span className='text-xl font-semibold text-gray-800 dark:text-gray-200'>
+                                    Flutter Croatia
+                                </span>
                             </Link>
                         </div>
                     </div>
