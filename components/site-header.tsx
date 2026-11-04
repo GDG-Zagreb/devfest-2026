@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { ModeToggle } from '@/components/theme-toggle';
 import { siteConfig } from '@/config/site';
-import { MessagesSquare, Mic2, Lightbulb, Menu, ChevronDown, ExternalLink, type LucideIcon } from 'lucide-react';
+import { MessagesSquare, Mic2, Lightbulb, Menu, ChevronDown, ExternalLink, Users, type LucideIcon } from 'lucide-react';
 import { Button } from './ui/button';
 import Link from 'next/link';
 import {
@@ -15,11 +15,11 @@ import {
 
 export function SiteHeader() {
     const internalLinks: Array<{ href: string; label: string; icon: LucideIcon }> = [
-        // {
-        //     href: '/speakers',
-        //     label: 'Speakers',
-        //     icon: Users,
-        // },
+        {
+            href: '/speakers',
+            label: 'Speakers',
+            icon: Users,
+        },
         // {
         //     href: '/agenda',
         //     label: 'Agenda',

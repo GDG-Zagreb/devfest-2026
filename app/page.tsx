@@ -7,7 +7,7 @@ import ImageMarquee from '@/components/image-marquee';
 // below with their ImageGallery equivalents.
 import PitchYourProject from '@/components/pitch-your-project';
 import PoweredBy from '@/components/powered-by';
-import Sponsors from '@/components/sponsors';
+// import Sponsors from '@/components/sponsors'; // re-enable with the 2026 sponsors section
 import CommunityPartners from '@/components/community-partners';
 // import { Button } from '@/components/ui/button'; // re-enable with the sponsorship packages button
 import DevFestLogo from '@/public/assets/DF26-Logo-Lockup-Primary_With Date.png';
@@ -375,8 +375,9 @@ const MainPage = () => {
                 {/* Powered By Section */}
                 <PoweredBy />
 
-                {/* Sponsors Section */}
+                {/* Hidden: shows the 2025 sponsors. Re-enable once 2026 sponsors are confirmed.
                 <Sponsors />
+                */}
 
                 {/* Community Partners Section */}
                 <CommunityPartners />

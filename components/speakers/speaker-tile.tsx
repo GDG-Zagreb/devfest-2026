@@ -63,7 +63,10 @@ export function SpeakerTile({ speaker, index, priority }: SpeakerTileProps) {
                 <button
                     type='button'
                     className={cn(
-                        'group flex h-full flex-col overflow-hidden rounded-2xl border bg-white/60 text-left transition-colors focus:outline-hidden focus-visible:ring-2 dark:bg-gray-900/40',
+                        // Spans 3 rows of the page grid via subgrid (photo / name / talk title), so within a row of
+                        // cards the longest name or title sets the height and everything lines up. The page grid
+                        // has no row gap; mb-6 is the gap between rows.
+                        'group mb-6 row-span-3 grid grid-rows-subgrid overflow-hidden rounded-2xl border bg-white/60 text-left transition-colors focus:outline-hidden focus-visible:ring-2 dark:bg-gray-900/40',
                         accent.card
                     )}
                 >
@@ -77,27 +80,25 @@ export function SpeakerTile({ speaker, index, priority }: SpeakerTileProps) {
                             className='object-cover object-top transition-transform duration-500 group-hover:scale-105'
                         />
                     </div>
-                    <div className='flex flex-1 flex-col gap-3 p-5'>
-                        <div>
-                            <span className='block text-lg font-bold leading-tight'>
-                                {speaker.speakerName}
-                            </span>
-                            <span className='mt-1 block text-sm text-muted-foreground'>
-                                {speaker.speakerInfo}
-                            </span>
-                        </div>
-                        <div className='mt-auto flex items-end justify-between gap-3 border-t pt-3'>
-                            <span className='line-clamp-2 text-sm font-medium'>
-                                {speaker.name}
-                            </span>
-                            <ArrowUpRight
-                                className={cn(
-                                    'h-4 w-4 shrink-0 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5',
-                                    accent.text
-                                )}
-                                aria-hidden
-                            />
-                        </div>
+                    <div className='px-5 pb-3 pt-5'>
+                        <span className='block text-lg font-bold leading-tight'>
+                            {speaker.speakerName}
+                        </span>
+                        <span className='mt-1 block text-sm text-muted-foreground'>
+                            {speaker.speakerInfo}
+                        </span>
+                    </div>
+                    <div className='mx-5 mb-5 flex items-start justify-between gap-3 border-t pt-3'>
+                        <span className='line-clamp-4 text-sm font-medium'>
+                            {speaker.name}
+                        </span>
+                        <ArrowUpRight
+                            className={cn(
+                                'mt-0.5 h-4 w-4 shrink-0 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5',
+                                accent.text
+                            )}
+                            aria-hidden
+                        />
                     </div>
                 </button>
             </DialogTrigger>

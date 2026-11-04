@@ -26,9 +26,6 @@ const featuredSpeakers: SpeakerEntry[] = speakersData.speakers
     .filter((speaker) => speaker.isFeatured && speaker.isPublishable)
     .slice(0, MAX_FEATURED);
 
-// Row widths: 1 column on mobile, 2 from md, 3 from lg (gaps are 1.5rem).
-const CARD_WIDTH = 'w-full md:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]';
-
 // Placeholders only fill the row the cards sit in, so they never add vertical scrolling on small screens.
 // Slots 0-1 exist in the 2-column (md) row, slot 2 only in the 3-column (lg) row; mobile shows none.
 const placeholderSlots = Array.from(
@@ -58,7 +55,10 @@ export default function FeaturedSpeakers() {
                     </p>
                 </div>
 
-                <div className='flex flex-wrap justify-center gap-6'>
+                {/* 1 column on mobile, 2 from md, 3 from lg. Each card spans 5 rows of this grid via subgrid
+                    (photo / name / title / blurb / link), so within a row the longest name, title or blurb sets
+                    the height and everything lines up, same as /speakers. No row gap: cards use mb-6. */}
+                <div className='grid grid-cols-1 gap-x-6 md:grid-cols-2 lg:grid-cols-3'>
                     {featuredSpeakers.map((speaker, index) => {
                         const accent = accents[index % accents.length];
 
@@ -68,8 +68,10 @@ export default function FeaturedSpeakers() {
                                     <button
                                         type='button'
                                         className={cn(
-                                            'group flex w-full flex-col overflow-hidden rounded-3xl border bg-white/60 text-left transition-colors focus:outline-hidden focus-visible:ring-2 dark:bg-gray-900/40',
-                                            CARD_WIDTH,
+                                            'group mb-6 row-span-5 grid grid-rows-subgrid overflow-hidden rounded-3xl border bg-white/60 text-left transition-colors focus:outline-hidden focus-visible:ring-2 dark:bg-gray-900/40',
+                                            // With 3 speakers the last card sits alone in the 2-column row: centre it.
+                                            index === 2 &&
+                                                'md:col-span-2 md:w-[calc(50%-0.75rem)] md:justify-self-center lg:col-span-1 lg:w-auto lg:justify-self-stretch',
                                             accent.card
                                         )}
                                     >
@@ -94,34 +96,32 @@ export default function FeaturedSpeakers() {
                                                 {speaker.type}
                                             </span>
                                         </div>
-                                        <div className='flex flex-1 flex-col gap-4 p-6'>
-                                            <div>
-                                                <span className='block text-sm font-semibold'>
-                                                    {speaker.speakerName}
-                                                </span>
-                                                <span className='mt-0.5 block text-sm text-muted-foreground'>
-                                                    {speaker.speakerInfo}
-                                                </span>
-                                            </div>
-                                            <h3 className='line-clamp-3 text-xl font-bold leading-tight'>
-                                                {speaker.name}
-                                            </h3>
-                                            <p className='line-clamp-3 text-sm leading-relaxed text-muted-foreground'>
-                                                {speaker.info}
-                                            </p>
-                                            <span
-                                                className={cn(
-                                                    'mt-auto inline-flex items-center gap-1.5 border-t pt-4 text-sm font-semibold',
-                                                    accent.text
-                                                )}
-                                            >
-                                                Read bio and talk
-                                                <ArrowUpRight
-                                                    className='h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 motion-reduce:transition-none'
-                                                    aria-hidden
-                                                />
+                                        <div className='px-6 pt-6'>
+                                            <span className='block text-sm font-semibold'>
+                                                {speaker.speakerName}
+                                            </span>
+                                            <span className='mt-0.5 block text-sm text-muted-foreground'>
+                                                {speaker.speakerInfo}
                                             </span>
                                         </div>
+                                        <h3 className='line-clamp-4 px-6 pt-4 text-xl font-bold leading-tight'>
+                                            {speaker.name}
+                                        </h3>
+                                        <p className='line-clamp-3 px-6 pt-4 text-sm leading-relaxed text-muted-foreground'>
+                                            {speaker.info}
+                                        </p>
+                                        <span
+                                            className={cn(
+                                                'mx-6 mb-6 mt-4 inline-flex items-center gap-1.5 border-t pt-4 text-sm font-semibold',
+                                                accent.text
+                                            )}
+                                        >
+                                            Read bio and talk
+                                            <ArrowUpRight
+                                                className='h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 motion-reduce:transition-none'
+                                                aria-hidden
+                                            />
+                                        </span>
                                     </button>
                                 </DialogTrigger>
 
@@ -138,16 +138,12 @@ export default function FeaturedSpeakers() {
                         <SpeakerPlaceholder
                             key={`placeholder-${slot}`}
                             variant='featured'
-                            className={cn(
-                                'h-auto',
-                                CARD_WIDTH,
-                                slot < 2 ? 'hidden md:flex' : 'hidden lg:flex'
-                            )}
+                            className={slot < 2 ? 'hidden md:grid' : 'hidden lg:grid'}
                         />
                     ))}
                 </div>
 
-                <div className='mt-12 text-center'>
+                <div className='mt-6 text-center'>
                     <Button asChild size='lg' variant='outline' className='rounded-2xl'>
                         <Link href='/speakers'>
                             See all speakers

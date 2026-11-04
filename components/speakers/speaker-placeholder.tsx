@@ -7,7 +7,9 @@ import { cn } from '@/lib/utils';
 const bar = 'bg-foreground/10 motion-reduce:animate-none';
 
 // Same footprint as the card it stands in for so the grid doesn't shift when a speaker is confirmed.
-// `tile` mirrors SpeakerTile (/speakers), `featured` mirrors the landing page spotlight card.
+// Both variants span rows of their parent grid via subgrid, like the cards they mirror:
+// `tile` = SpeakerTile (/speakers, 3 rows), `featured` = landing page spotlight card (5 rows).
+// The parent grid has no row gap, so cards and placeholders carry mb-6.
 // Decorative only (aria-hidden): the page announces how many speakers are confirmed.
 // `className` sizes/hides the card.
 export function SpeakerPlaceholder({
@@ -23,8 +25,9 @@ export function SpeakerPlaceholder({
         <div
             aria-hidden
             className={cn(
-                'flex h-full flex-col overflow-hidden border border-dashed border-gray-300 bg-white/30 dark:border-gray-700 dark:bg-gray-900/20',
-                featured ? 'rounded-3xl' : 'rounded-2xl',
+                'overflow-hidden border border-dashed border-gray-300 bg-white/30 dark:border-gray-700 dark:bg-gray-900/20',
+                'mb-6 grid grid-rows-subgrid',
+                featured ? 'row-span-5 rounded-3xl' : 'row-span-3 rounded-2xl',
                 className
             )}
         >
@@ -44,39 +47,41 @@ export function SpeakerPlaceholder({
             </div>
 
             {featured ? (
-                <div className='flex flex-1 flex-col gap-4 p-6'>
-                    {/* name + role */}
-                    <div className='space-y-2'>
+                <>
+                    {/* name + role row */}
+                    <div className='space-y-2 px-6 pt-6'>
                         <Skeleton className={cn('h-3.5 w-2/5', bar)} />
                         <Skeleton className={cn('h-3.5 w-3/5', bar)} />
                     </div>
-                    {/* talk title */}
-                    <div className='space-y-2.5'>
+                    {/* talk title row */}
+                    <div className='space-y-2.5 px-6 pt-4'>
                         <Skeleton className={cn('h-5 w-full', bar)} />
                         <Skeleton className={cn('h-5 w-4/5', bar)} />
                     </div>
-                    {/* blurb */}
-                    <div className='space-y-2'>
+                    {/* blurb row */}
+                    <div className='space-y-2 px-6 pt-4'>
                         <Skeleton className={cn('h-3.5 w-full', bar)} />
                         <Skeleton className={cn('h-3.5 w-full', bar)} />
                         <Skeleton className={cn('h-3.5 w-2/3', bar)} />
                     </div>
-                    {/* "Read bio and talk" */}
-                    <div className='mt-auto border-t pt-4'>
+                    {/* "Read bio and talk" row */}
+                    <div className='mx-6 mb-6 mt-4 border-t pt-4'>
                         <Skeleton className={cn('h-4 w-32', bar)} />
                     </div>
-                </div>
+                </>
             ) : (
-                <div className='flex flex-1 flex-col gap-3 p-5'>
-                    <div className='space-y-2'>
+                <>
+                    {/* name + role row */}
+                    <div className='space-y-2 px-5 pb-3 pt-5'>
                         <Skeleton className={cn('h-5 w-2/3', bar)} />
                         <Skeleton className={cn('h-4 w-1/2', bar)} />
                     </div>
-                    <div className='mt-auto space-y-2 border-t pt-3'>
+                    {/* talk title row */}
+                    <div className='mx-5 mb-5 space-y-2 border-t pt-3'>
                         <Skeleton className={cn('h-4 w-full', bar)} />
                         <Skeleton className={cn('h-4 w-3/4', bar)} />
                     </div>
-                </div>
+                </>
             )}
         </div>
     );
