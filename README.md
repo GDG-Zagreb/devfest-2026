@@ -1,6 +1,6 @@
-# DevFest 2025 Zagreb Website
+# DevFest Croatia 2026 Website
 
-This is the official website for DevFest 2025 Zagreb, built with [Next.js](https://nextjs.org/) and featuring a modern, responsive design with multi-stage conference management.
+This is the official website for DevFest Croatia 2026 (organized by GDG Zagreb), built with [Next.js](https://nextjs.org/) and featuring a modern, responsive design with a multi-year archive.
 
 ## 🚀 Getting Started
 
@@ -30,18 +30,21 @@ npm run type-check:watch  # Run type checking in watch mode
 ## 🏗️ Project Structure
 
 ```
-├── app/                 # Next.js 15 App Router pages
-│   ├── agenda/         # Conference agenda page
+├── app/                 # Next.js 16 App Router pages
+│   ├── page.tsx        # Landing page (incl. featured speakers)
 │   ├── speakers/       # Speakers listing page
-│   └── archive/        # Historical conference data
+│   ├── _agenda/        # Agenda page, disabled (underscore = not routed)
+│   └── archive/        # Past editions: 2023, 2024, 2025 (speakers + agenda)
 ├── components/         # React components
 │   ├── ui/            # shadcn/ui components
+│   ├── speakers/      # Speaker tile, detail dialog, placeholder card
 │   └── ...            # Custom components
+├── config/            # Site config (config/site.ts)
 ├── json/              # Conference data
 │   ├── speakers.json  # Current year speakers database
-│   └── archive/       # Historical conference data
+│   └── archive/       # Past editions: speakers.json + enter.json/shift.json per year
 ├── lib/               # Utility functions
-└── public/            # Static assets
+└── public/            # Static assets (speaker-photos/<year>/ holds speaker photos)
 ```
 
 ## 📊 Data Architecture
@@ -52,7 +55,7 @@ This project uses a **referential data architecture** that eliminates duplicatio
 
 **Key Features:**
 - ✅ **Single source of truth** for speaker data
-- ✅ **Multi-stage support** (Enter & Shift stages)
+- ✅ **Multi-stage support** for past editions (Enter & Shift stages)
 - ✅ **Archive system** for historical conferences
 - ✅ **Type-safe** speaker references
 - ✅ **Easy maintenance** and updates
@@ -83,14 +86,15 @@ Built with modern design patterns:
 - **shadcn/ui** components for consistent design
 - **Tailwind CSS** for responsive styling  
 - **Lucide React** icons
-- **Framer Motion** for animations
+- **Radix UI** primitives (dialog, tabs, accordion)
 - **Next.js Image** optimization
 
 ### Featured Components
-- **FeaturedSpeakers**: Dynamic layouts (1, 2, 3, 4+ speakers)
-- **SpeakerCard**: Modern accordion-style speaker profiles
-- **ImageGallery**: Responsive gallery with hover effects
-- **AgendaItem**: Clean agenda display with speaker integration
+- **FeaturedSpeakers**: Landing page spotlight cards for up to 3 speakers with `isFeatured` and `isPublishable`; hidden when there are none, "To be announced" placeholders fill the row on larger screens when there are fewer than 3
+- **SpeakerTile / SpeakerDetails / SpeakerPlaceholder** (`components/speakers/`): Speaker card, bio and talk dialog, and placeholder used on `/speakers` and the landing page
+- **SpeakerCard**: Accordion-style speaker profiles used by the archive pages
+- **ImageGallery / ImageMarquee**: Responsive photo gallery and marquee band
+- **AgendaItem**: Agenda display with speaker integration (archive agendas)
 
 ## 🛠️ Development Features
 
@@ -103,8 +107,10 @@ npm run type-check:watch  # Catch type errors during development
 ### Archive System
 Supports multiple conference years with backward compatibility:
 - `2023/` - Original conference data structure
-- `2024/` - Referential speaker system  
-- `2025/` - Current year with featured speakers
+- `2024/` - Referential speaker system
+- `2025/` - Last archived edition (speakers and both stage schedules)
+
+The current edition (2026) lives in `json/speakers.json`. Speakers stay hidden until `isPublishable` is `true`, and `isFeatured` adds them to the landing page (max 3). See [`speakers-and-stages.md`](./speakers-and-stages.md).
 
 ### Responsive Design
 - **Mobile-first** approach
@@ -113,15 +119,16 @@ Supports multiple conference years with backward compatibility:
 
 ## 📝 Key Technologies
 
-- **Next.js 15** - React framework with App Router
+- **Next.js 16** - React framework with App Router
+- **React 19**
 - **TypeScript** - Type safety and developer experience
-- **Tailwind CSS** - Utility-first styling
+- **Tailwind CSS 4** - Utility-first styling (configured in CSS, `app/globals.css`)
 - **shadcn/ui** - Modern component library
 - **Radix UI** - Accessible component primitives
 
 ## 🔧 Configuration Files
 
-- `tailwind.config.js` - Tailwind CSS configuration
+- `postcss.config.js` - PostCSS / Tailwind CSS 4 setup
 - `tsconfig.json` - TypeScript configuration
 - `next.config.js` - Next.js configuration
 - `CLAUDE.md` - Claude Code development guidelines
@@ -155,7 +162,7 @@ npm run start     # Serves production build locally
 
 ## 📧 Contact
 
-For questions about DevFest 2025 Zagreb, contact: zagrebgdg@gmail.com
+For questions about DevFest Croatia 2026, contact: zagrebgdg@gmail.com
 
 ---
 
