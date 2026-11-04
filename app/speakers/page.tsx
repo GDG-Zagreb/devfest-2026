@@ -40,7 +40,7 @@ const Speakers = () => {
                 )}
             </div>
 
-            <div className='mx-auto grid max-w-6xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3'>
+            <div className='mx-auto grid max-w-6xl grid-cols-1 gap-x-6 sm:grid-cols-2 lg:grid-cols-3'>
                 {speakers.map((speaker, index) => (
                     <SpeakerTile
                         key={speaker.speakerName}

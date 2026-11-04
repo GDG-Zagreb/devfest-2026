@@ -1,12 +1,13 @@
 'use client';
 
+import FeaturedSpeakers from '@/components/featured-speakers';
 import ImageMarquee from '@/components/image-marquee';
 // Alternate gallery: `@/components/image-gallery` (enlarged in-place mosaic, Option A).
 // To swap back, replace the ImageMarquee import above and the <ImageMarquee /> render
 // below with their ImageGallery equivalents.
 import PitchYourProject from '@/components/pitch-your-project';
 import PoweredBy from '@/components/powered-by';
-import Sponsors from '@/components/sponsors';
+// import Sponsors from '@/components/sponsors'; // re-enable with the 2026 sponsors section
 import CommunityPartners from '@/components/community-partners';
 // import { Button } from '@/components/ui/button'; // re-enable with the sponsorship packages button
 import DevFestLogo from '@/public/assets/DF26-Logo-Lockup-Primary_With Date.png';
@@ -208,6 +209,9 @@ const MainPage = () => {
                     </div>
                 </section>
 
+                {/* Featured Speakers (isFeatured + isPublishable, max 3; hidden when none) */}
+                <FeaturedSpeakers />
+
                 {/* Topics Section */}
                 <section className='py-16'>
                     <div className='max-w-6xl mx-auto text-center space-y-6'>
@@ -371,8 +375,9 @@ const MainPage = () => {
                 {/* Powered By Section */}
                 <PoweredBy />
 
-                {/* Sponsors Section */}
+                {/* Hidden: shows the 2025 sponsors. Re-enable once 2026 sponsors are confirmed.
                 <Sponsors />
+                */}
 
                 {/* Community Partners Section */}
                 <CommunityPartners />

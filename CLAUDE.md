@@ -20,15 +20,19 @@ This is a **Next.js 16** website for the **DevFest Croatia 2026** conference org
 - **Layout**: Root layout in `app/layout.tsx` with global theme provider
 - **Pages**: Route-based pages (e.g., `app/speakers/page.tsx`, `app/agenda/page.tsx`)
 - **Archive System**: Historical data organized in `/app/archive/[year]/` directories
+- **Disabled routes**: Folders prefixed with `_` (e.g. `app/_agenda/`) are not routed
 
 ### Component Organization
 - **UI Components**: Shadcn/UI components in `/components/ui/`
 - **Custom Components**: Application-specific components in `/components/`
+- **Speakers**: `SpeakerTile`, `SpeakerDetails` (bio dialog) and `SpeakerPlaceholder` in `/components/speakers/`; `FeaturedSpeakers` (`featured-speakers.tsx`) renders the landing page spotlight
 - **Site Layout**: Header (`site-header.tsx`) and Footer (`site-footer.tsx`)
 
 ### Data Management
 - **JSON Data**: Static data stored in `/json/` directory
-- **Archive Data**: Historical conference data in `/json/archive/[year]/`
+- **Archive Data**: Historical conference data in `/json/archive/[year]/` (`speakers.json`, `enter.json`, `shift.json`); the current year has no stage schedules yet
+- **Speaker visibility**: In `json/speakers.json`, `isPublishable` gates visibility everywhere (embargo) and `isFeatured` adds a published speaker to the landing page (max 3, JSON order)
+- **Photos**: `/public/speaker-photos/[year]/`
 - **Configuration**: Site config in `/config/site.ts`
 
 ### Styling Architecture
@@ -38,7 +42,7 @@ This is a **Next.js 16** website for the **DevFest Croatia 2026** conference org
 - **CSS Variables**: Theme-aware color system using HSL variables
 
 ### Key Features
-1. **Multi-year Archive**: Conference data organized by year (2023, 2024, 2025)
+1. **Multi-year Archive**: Conference data organized by year (2023, 2024, 2025); current edition is 2026
 2. **Speaker Management**: Speaker profiles with photos and bio data
 3. **Agenda System**: Event scheduling and session management  
 4. **Sponsorship**: Sponsor showcase and partnership information
@@ -47,15 +51,14 @@ This is a **Next.js 16** website for the **DevFest Croatia 2026** conference org
 ## Key Dependencies
 
 ### Core Framework
-- **Next.js 15**: React framework with App Router
-- **React 18**: Latest React with client/server components
+- **Next.js 16**: React framework with App Router
+- **React 19**: React with client/server components
 - **TypeScript**: Full type safety
 
 ### UI & Styling  
-- **Tailwind CSS**: Utility-first CSS framework
+- **Tailwind CSS 4**: Utility-first CSS framework (CSS-based config in `app/globals.css`, no `tailwind.config.js`)
 - **Shadcn/UI**: Pre-built accessible components
 - **Radix UI**: Headless component primitives
-- **Framer Motion**: Animation library
 - **Lucide React**: Icon system
 
 ### Development Tools
