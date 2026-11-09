@@ -1,6 +1,6 @@
 export const siteConfig = {
     name: 'GDG Croatia DevFest 2026',
-    url: 'https://devfesthr.com',
+    url: 'https://www.devfesthr.com',
     description: 'Join us for DevFest Croatia 2026 - the largest community-driven tech conference in Croatia. Connect with developers, learn cutting-edge Google technologies, and build the future together.',
     tagline: 'Developers and Builders in the Agentic Era',
     keywords: [

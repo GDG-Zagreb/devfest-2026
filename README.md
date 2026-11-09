@@ -42,6 +42,7 @@ npm run type-check:watch  # Run type checking in watch mode
 ├── config/            # Site config (config/site.ts)
 ├── json/              # Conference data
 │   ├── speakers.json  # Current year speakers database
+│   ├── sessions.json  # Current year schedule, served by /api/sessions
 │   └── archive/       # Past editions: speakers.json + enter.json/shift.json per year
 ├── lib/               # Utility functions
 └── public/            # Static assets (speaker-photos/<year>/ holds speaker photos)
@@ -110,7 +111,7 @@ Supports multiple conference years with backward compatibility:
 - `2024/` - Referential speaker system
 - `2025/` - Last archived edition (speakers and both stage schedules)
 
-The current edition (2026) lives in `json/speakers.json`. Speakers stay hidden until `isPublishable` is `true`, and `isFeatured` adds them to the landing page (max 3). See [`speakers-and-stages.md`](./speakers-and-stages.md).
+The current edition (2026) lives in `json/speakers.json`. Speakers stay hidden until `isPublishable` is `true`, and `isFeatured` adds them to the landing page (max 3). The schedule lives in `json/sessions.json` and is exposed as a public JSON API (`/api/sessions`, `/api/sessions?type=talk|workshop`, `/api/sessions/{id}`); a session appears there once its speaker is publishable and it has a room and times. See [`speakers-and-stages.md`](./speakers-and-stages.md).
 
 ### Responsive Design
 - **Mobile-first** approach

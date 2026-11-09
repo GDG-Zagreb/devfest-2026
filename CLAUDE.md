@@ -32,6 +32,7 @@ This is a **Next.js 16** website for the **DevFest Croatia 2026** conference org
 - **JSON Data**: Static data stored in `/json/` directory
 - **Archive Data**: Historical conference data in `/json/archive/[year]/` (`speakers.json`, `enter.json`, `shift.json`); the current year has no stage schedules yet
 - **Speaker visibility**: In `json/speakers.json`, `isPublishable` gates visibility everywhere (embargo) and `isFeatured` adds a published speaker to the landing page (max 3, JSON order)
+- **Sessions API**: `json/sessions.json` (hand-written stable ids, `speakers` reference `speakerName`) is served by `app/api/sessions/` (`GET /api/sessions`, `?type=talk|workshop`, `/api/sessions/{id}`). All visibility rules (embargo via `isPublishable`, hidden until room and times are set) live in `lib/sessions.ts`; use its functions, never read `sessions.json` directly for public output. Never renumber or reuse an id. See `speakers-and-stages.md`
 - **Photos**: `/public/speaker-photos/[year]/`
 - **Configuration**: Site config in `/config/site.ts`
 

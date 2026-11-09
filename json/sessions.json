@@ -1,0 +1,14 @@
+{
+  "event": {
+    "name": "GDG DevFest Zagreb 2026",
+    "date": "2026-12-05",
+    "timezone": "Europe/Zagreb"
+  },
+  "sessions": [
+    {
+      "id": "talk-01",
+      "type": "talk",
+      "speakers": ["Senko Rašić"]
+    }
+  ]
+}
