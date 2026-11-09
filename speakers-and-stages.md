@@ -4,6 +4,8 @@
 
 This document explains how the DevFest conference manages speaker data and stage scheduling using a referential data architecture that eliminates duplication and provides flexibility across multiple stages.
 
+> **2026 edition:** there are no Enter/Shift stage files any more (the venue changed). The current schedule lives in `json/sessions.json` and is served by the Sessions API, see [Sessions (2026) and the Sessions API](#sessions-2026-and-the-sessions-api) below. The stage files described in section 2 are archive-only (`json/archive/<year>/`).
+
 ## Data Structure
 
 ### 1. Central Speaker Database (`speakers.json`)
@@ -37,6 +39,8 @@ The single source of truth for all speaker information:
 ```
 
 `isPublishable` controls whether a speaker is visible anywhere on the site (keep it `false` while a speaker is under embargo). `isFeatured` additionally puts a published speaker in the "Featured speakers" section of the landing page: at most 3 are shown, in the order they appear in the file, and the section is hidden when there are none. With fewer than 3, "To be announced" placeholders only fill the row the cards sit in: 1 featured speaker gets 2 placeholders on desktop, 1 on tablet and none on mobile; 2 featured speakers get 1 placeholder on desktop and none below that.
+
+`company` is optional and only used by the Sessions API (`null` when missing); `speakerInfo` is still the free-text "Role, Company" line shown on the site.
 
 `bio` is optional (keep it to roughly 280 characters). The `/speakers` page shows it in the speaker detail dialog and hides it when missing. Use square photos where possible; other aspect ratios are cropped with `object-cover`.
 
@@ -92,6 +96,49 @@ The single source of truth for all speaker information:
   ]
 }
 ```
+
+## Sessions (2026) and the Sessions API
+
+`json/sessions.json` holds the 2026 schedule and feeds a public, read-only JSON API (the builder track builds apps on it):
+
+| Endpoint | Returns |
+| --- | --- |
+| `GET /api/sessions` | `{ event, sessions }`, all talks and workshops, chronological |
+| `GET /api/sessions?type=talk` or `workshop` | same shape, one type (case-insensitive); anything else is `400` `{ "error": "Invalid type. Use 'talk' or 'workshop'." }` |
+| `GET /api/sessions/{id}` | the session object itself (no `event` wrapper); unknown id is `404` `{ "error": "Session not found" }` |
+
+Base URL `siteConfig.url` (`https://www.devfesthr.com`; also used for photo URLs), documented for participants at `/builders`. No auth, no pagination, CORS open to any origin, CDN-cached for 60 s (Vercel purges the cache on every deploy). Times are ISO 8601 with an offset in `Europe/Zagreb`, e.g. `2026-12-05T10:00:00+01:00`.
+
+### `sessions.json` entry
+
+```json
+{
+  "id": "talk-01",
+  "type": "talk",
+  "room": "Hall A",
+  "startTime": "2026-12-05T10:00:00+01:00",
+  "endTime": "2026-12-05T10:40:00+01:00",
+  "speakers": ["Senko Rašić"]
+}
+```
+
+- `id`: written by hand, lowercase letters/digits/dashes (`talk-01`, `ws-01`). **Never renumber or reuse an id**: participants' ratings and comments are linked to it.
+- `type`: `talk` or `workshop`.
+- `speakers`: `speakerName` values from `speakers.json`, the first one is the primary presenter.
+- `title` / `description` (optional): override the text; by default they come from the primary speaker's `name` / `info`. Use them for workshops or sessions with several presenters.
+- `room`, `startTime`, `endTime`: set all three or none. The API contract has no nulls for these.
+
+### Visibility rules
+
+- Speakers with `isPublishable: false` are removed from `presenters`; a session with no publishable presenter is hidden.
+- A session without `room` + `startTime` + `endTime` is hidden (not scheduled yet). Adding the three fields is all it takes to publish it.
+- If title/description are inherited and the primary speaker is embargoed, the whole session is hidden so the embargoed talk can't leak.
+- Hidden sessions return the same `404` as unknown ids.
+- Invalid data (duplicate id, unknown speaker, bad timestamp, partial schedule, ...) fails `npm run build` with a list of problems.
+
+### Code
+
+`lib/sessions.ts` is the only place that applies these rules (`getPublishedSessions()`, `getPublishedSession()`); the route handlers in `app/api/sessions/` and `lib/api-response.ts` (CORS and cache headers) are thin wrappers around it. Any page that shows the schedule should use the same functions.
 
 ## Data Enhancement Process
 
