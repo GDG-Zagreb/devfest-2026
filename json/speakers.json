@@ -16,12 +16,12 @@
       "type": "Talk",
       "speakerName": "Josip Krnjić",
       "speakerInfo": "Technical Contractor",
-      "name": "Loop engineering",
+      "name": "Loop Engineering",
       "info": "Move beyond constant prompting and build systems where AI works in a loop while you oversee the process. Discover Loop Engineering: give AI larger tasks and spend less time micromanaging every step. Then look beyond development: you’ve built it - now what? Explore how marketing, sales, and distribution become essential parts of building something successful.",
       "bio": "Josip is a software developer with deep experience in Flutter, native iOS and Android, web, and Firebase. With over 50 apps shipped, he combines modern AI-driven workflows without AI vibe-coded slop. Organizer of Flutter Croatia.",
       "imgSrc": "/speaker-photos/2026/josip-krnjic.jpeg",
-      "isFeatured": false,
-      "isPublishable": false
+      "isFeatured": true,
+      "isPublishable": true
     },
     {
       "type": "Talk",
