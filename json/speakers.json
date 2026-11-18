@@ -32,8 +32,8 @@
       "info": "AI can now do what a good developer does: take a clear spec and write code that works. So what's left for us? Everything that makes a developer excellent. Drawing on his journey from designer to founder to Head of Product, Robert breaks down the difference between good and excellent developers, from questioning the ticket instead of just building it to knowing when the AI is confidently wrong. With everyday analogies and real stories from building products and teams, this talk is for students wondering if they'll have a job in five years and seniors deciding what to grow into next.",
       "bio": "Robert is Head of Product at Barricade Systems in Norway. He started as a designer and became creative director for some of Romania's most successful educational books for kids. Since then, he has shipped his own games to every major platform, helped launch dozens of apps with millions of downloads, built platforms for the NHS, construction companies and Silicon Valley startups, and founded his own company. He builds and leads product teams, and believes job titles are a starting point, not a limit.",
       "imgSrc": "/speaker-photos/2026/robert-szocs.png",
-      "isFeatured": false,
-      "isPublishable": false
+      "isFeatured": true,
+      "isPublishable": true
     }
   ]
 }
