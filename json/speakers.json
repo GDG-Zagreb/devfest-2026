@@ -20,7 +20,7 @@
       "info": "Move beyond constant prompting and build systems where AI works in a loop while you oversee the process. Discover Loop Engineering: give AI larger tasks and spend less time micromanaging every step. Then look beyond development: you’ve built it - now what? Explore how marketing, sales, and distribution become essential parts of building something successful.",
       "bio": "Josip is a software developer with deep experience in Flutter, native iOS and Android, web, and Firebase. With over 50 apps shipped, he combines modern AI-driven workflows without AI vibe-coded slop. Organizer of Flutter Croatia.",
       "imgSrc": "/speaker-photos/2026/josip-krnjic.jpeg",
-      "isFeatured": true,
+      "isFeatured": false,
       "isPublishable": true
     },
     {
@@ -44,6 +44,30 @@
       "info": "Are AI agents really as complicated as the hype makes them sound? Ian will cut through the myths around magic prompts, agent swarms, and AI-powered workflows, sharing practical ways to build agents and processes you can trust.",
       "bio": "With 15+ years of engineering experience, he will explore how these practices can work for individuals and scale across teams.",
       "imgSrc": "/speaker-photos/2026/ian-rumac.jpeg",
+      "isFeatured": false,
+      "isPublishable": false
+    },
+    {
+      "type": "Workshop",
+      "speakerName": "Vasudev Maduri",
+      "speakerInfo": "Principal Engineer at ISS STOXX (Deutsche Börse Group)",
+      "company": "ISS STOXX",
+      "name": "Curious about building AI agents but unsure where to begin?",
+      "info": "Vasudev will walk through the fundamentals of agent design, including how to balance human guidance with autonomous decisions, choose the right tools, and think through real-world trade-offs.This is a practical starting point for developers and newcomers who want to build AI systems that actually work.",
+      "bio": "Vasudev is a seasoned professional currently serving as a Principal Engineer at ISS Stoxx (Deutsche Börse Group). With a wealth of experience in Google Cloud Platform (GCP), big data, and data architectures, Vasudev has consistently demonstrated his prowess in implementing industry-leading products recognized by Gartner. His journey in the world of technology has encompassed stints at organizations like Hitachi and Ford, where he honed his expertise in data engineering and analysis. Vasudev is not only a practitioner but also an active mentor, deeply committed to fostering talent and contributing to open-source technologies. As a thought leader in his field, Vasudev has shared his insights and knowledge with a global audience through over 30 impactful talks, mentorship programs, and supporting startups. Vasudev continues to inspire and innovate, driving transformative change in the world of data and technology.",
+      "imgSrc": "/speaker-photos/2026/vasudev-masuri.png",
+      "isFeatured": true,
+      "isPublishable": true
+    },
+    {
+      "type": "talk",
+      "speakerName": "Danny Preussler",
+      "speakerInfo": "Google Developer Expert for Android ",
+      "company": "",
+      "name": "This is the End!? Being a Software Developer in the AI Age",
+      "info": "The world of software engineering is undergoing a drastic and rapid transformation. And many developers are asking themselves if they will become obsolete very soon. This presentation tries to answer this a bit differently by asking: Do we still need the traditional split of specializations—like frontend, mobile, and backend developers? To understand that, it is worth explaining why this split happened in the first place. It will give us a clearer picture of the current situation and what skill sets are needed going forward. As Grady Booch recently noted, we have entered the 3rd Golden Age of Software Development. Join us to discuss how we got here and where we can go in this new era, focusing on why human-centric skills, such as system architecture and ethical judgment, are more critical than ever. Let's talk about how we got here and where we can go from here in the new era.",
+      "bio": "Danny is a developer at heart, regularly writing and talking about development and testing, and is a Google Developer Expert for Android. He worked for companies like Groupon, Viacom, and eBay, writing Android apps, but started his mobile career long before Android with Java ME and BlackBerry applications. After transitioning to full-stack development at SoundCloud, he now spends his time across various frontend and backend technologies and products, usually with a few trusted AI agents.",
+      "imgSrc": "/speaker-photos/2026/danny-preussler.jpeg",
       "isFeatured": true,
       "isPublishable": true
     }
