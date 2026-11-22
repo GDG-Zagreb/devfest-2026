@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 };
 
 // Expected lineup size. Unconfirmed slots render as placeholders until speakers are added.
-const SPEAKER_SLOTS = 12;
+const SPEAKER_SLOTS = 13;
 
 const Speakers = () => {
     const speakers: SpeakerEntry[] = speakersData.speakers.filter(
