@@ -68,6 +68,18 @@
       "info": "The world of software engineering is undergoing a drastic and rapid transformation. And many developers are asking themselves if they will become obsolete very soon. This presentation tries to answer this a bit differently by asking: Do we still need the traditional split of specializations—like frontend, mobile, and backend developers? To understand that, it is worth explaining why this split happened in the first place. It will give us a clearer picture of the current situation and what skill sets are needed going forward. As Grady Booch recently noted, we have entered the 3rd Golden Age of Software Development. Join us to discuss how we got here and where we can go in this new era, focusing on why human-centric skills, such as system architecture and ethical judgment, are more critical than ever. Let's talk about how we got here and where we can go from here in the new era.",
       "bio": "Danny is a developer at heart, regularly writing and talking about development and testing, and is a Google Developer Expert for Android. He worked for companies like Groupon, Viacom, and eBay, writing Android apps, but started his mobile career long before Android with Java ME and BlackBerry applications. After transitioning to full-stack development at SoundCloud, he now spends his time across various frontend and backend technologies and products, usually with a few trusted AI agents.",
       "imgSrc": "/speaker-photos/2026/danny-preussler.jpeg",
+      "isFeatured": false,
+      "isPublishable": true
+    },
+    {
+      "type": "Talk",
+      "speakerName": "Oleg Pustovit",
+      "speakerInfo": "Senior Fullstack and UX Engineer, Exponential",
+      "company": "Exponential",
+      "name": "What If We Rebuilt the Software Stack?",
+      "info": "For decades, we've built software by assembling general-purpose frameworks, databases and runtimes. What if AI coding agents make building our own cheaper than reusing theirs?\n\nI'll share experiments once too ambitious for one developer: a creative coding framework that grew into a GPU cross-compiler with hardware ray tracing, and a UI framework that compiles TypeScript to native code.\n\nIf building software gets this cheap, should we keep assembling general-purpose layers, or build vertically integrated stacks tailored to each problem?",
+      "bio": "Oleg Pustovit is a Senior Fullstack and UX Engineer at Exponential, Cox Enterprises' AI startup accelerator, where he works with early-stage Silicon Valley startups in AI and robotics. He has been a tech lead and a fractional CTO, building full-stack web products and the cloud infrastructure behind them, from frontend and APIs to AWS. He started as a 3D designer and technical artist, licensing work to companies including Adobe. In his own time he builds developer tools, graphics and UI experiments.",
+      "imgSrc": "/speaker-photos/2026/oleg-pustovit.jpeg",
       "isFeatured": true,
       "isPublishable": true
     }
