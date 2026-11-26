@@ -25,6 +25,11 @@ export default function CommunityPartners() {
             website: 'https://www.croatia.rit.edu/',
             invertOnCard: true,
         },
+        {
+            name: 'Dream',
+            logo: '/partners/2026/Dream-logo.png',
+            website: 'https://www.aboutdream.io/',
+        },
     ];
 
     return (
